@@ -1,68 +1,145 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Web API 示例</title>
+  <title>Web API Example</title>
   <style>
     video {
       width: 320px;
       height: 240px;
       border: 1px solid black;
     }
+    textarea {
+      width: 100%;
+      height: 200px;
+      font-family: monospace;
+    }
   </style>
 </head>
 <body>
-  <h1>Web API 示例</h1>
+  <h1>Web API Example</h1>
 
-  <h2>相机访问</h2>
+  <h2>Camera Access</h2>
   <video></video>
-  <button onclick="startCamera(true)">开启前置相机</button>
-  <button onclick="startCamera(false)">开启后置相机</button>
-  <button onclick="stopCamera()">关闭相机</button>
+  <button onclick="startCamera(true)">Start Front Camera</button>
+  <button onclick="startCamera(false)">Start Rear Camera</button>
+  <button onclick="stopCamera()">Stop Camera</button>
+  <button onclick="toggleFlash()">Toggle Flash</button>
 
-  <h2>地理位置</h2>
+  <h2>Geolocation</h2>
   <p id="location"></p>
-  <button onclick="getLocation()">获取位置</button>
+  <button onclick="getLocation()">Get Location</button>
 
-  <h2>设备震动</h2>
-  <button onclick="vibrate()">震动提醒</button>
+  <h2>Vibration</h2>
+  <button onclick="vibrate()">Vibrate</button>
 
-  <h2>全屏模式</h2>
-  <button onclick="toggleFullScreen()">切换全屏</button>
+  <h2>Full Screen</h2>
+  <button onclick="toggleFullScreen()">Toggle Full Screen</button>
 
-  <h2>电池状态</h2>
+  <h2>Battery Status</h2>
   <p id="battery"></p>
 
-  <h2>剪贴板操作</h2>
-  <input type="text" id="clipboard-input" placeholder="输入要复制的内容">
-  <button onclick="copyToClipboard()">复制到剪贴板</button>
-  <button onclick="pasteFromClipboard()">从剪贴板粘贴</button>
+  <h2>Clipboard</h2>
+  <input type="text" id="clipboard-input" placeholder="Enter text to copy">
+  <button onclick="copyToClipboard()">Copy to Clipboard</button>
+  <button onclick="pasteFromClipboard()">Paste from Clipboard</button>
 
-  <h2>网络状态</h2>
+  <h2>Network Status</h2>
   <p id="network-status"></p>
 
   <h2>Web Notifications</h2>
-  <button onclick="sendNotification()">发送通知</button>
+  <button onclick="sendNotification()">Send Notification</button>
+
+  <h2>Text Input</h2>
+  <textarea id="input-box" placeholder="Enter text here..."></textarea>
+  <pre id="output-box"></pre>
 
   <script>
-    // ... 之前的代码
+    // 之前的代码...
 
-    function sendNotification() {
-      if (Notification.permission === 'granted') {
-        const notification = new Notification('Web API 示例', {
-          body: '这是一条来自网页的通知',
-          icon: 'https://via.placeholder.com/64'
-        });
-        notification.onclick = () => {
-          window.focus();
-        }
-      } else if (Notification.permission !== 'denied') {
-        Notification.requestPermission().then(permission => {
-          if (permission === 'granted') {
-            sendNotification();
+    let stream;
+    let deviceMotion;
+    let geoWatchId;
+
+    function toggleFlash() {
+      if (stream && stream.getTracks) {
+        const tracks = stream.getTracks();
+        tracks.forEach(track => {
+          if (track.kind === 'video') {
+            track.applyConstraints({ advanced: [{ torch: !track.getConstraints().advanced[0].torch }] });
           }
         });
       }
     }
+
+    function startCamera(isFrontCamera) {
+      const constraints = {
+        video: {
+          facingMode: isFrontCamera ? 'user' : 'environment',
+          advanced: [{ torch: false }]
+        }
+      };
+
+      navigator.mediaDevices.getUserMedia(constraints)
+        .then(function(mediaStream) {
+          let video = document.querySelector('video');
+          video.srcObject = mediaStream;
+          video.play();
+          stream = mediaStream;
+        })
+        .catch(function(err) {
+          console.log("Unable to access camera stream " + err);
+        });
+    }
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        geoWatchId = navigator.geolocation.watchPosition(
+          function(position) {
+            let latitude = position.coords.latitude;
+            let longitude = position.coords.longitude;
+            document.getElementById("location").innerHTML = "Latitude: " + latitude + ", Longitude: " + longitude;
+          },
+          function(error) {
+            console.log("Unable to get location: " + error.message);
+          }
+        );
+      } else {
+        alert("Your browser does not support Geolocation");
+      }
+    }
+
+    if (window.DeviceMotionEvent) {
+      window.addEventListener("devicemotion", handleMotion, true);
+    } else {
+      alert("Your device does not support motion detection");
+    }
+
+    function handleMotion(event) {
+      deviceMotion = event;
+    }
+
+    function sendNotification() {
+      // 之前的代码...
+    }
+
+    const inputBox = document.getElementById('input-box');
+    const outputBox = document.getElementById('output-box');
+
+    inputBox.addEventListener('input', function() {
+      const now = new Date();
+      const timestamp = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+      const newLine = `${timestamp} ${this.value}\n`;
+      outputBox.textContent += newLine;
+      this.focus();
+    });
+
+    inputBox.addEventListener('devicemotion', function() {
+      this.focus();
+    });
+
+    inputBox.addEventListener('click', function() {
+      this.focus();
+    });
   </script>
 </body>
 </html>
