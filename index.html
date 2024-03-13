@@ -55,10 +55,143 @@
   <pre id="output-box"></pre>
 
   <script>
-    // 之前的代码...
+    let stream;
+    let deviceMotion;
+    let geoWatchId;
 
     const inputBox = document.getElementById('input-box');
     const outputBox = document.getElementById('output-box');
+
+    function toggleFlash() {
+      if (stream && stream.getTracks) {
+        const tracks = stream.getTracks();
+        tracks.forEach(track => {
+          if (track.kind === 'video') {
+            track.applyConstraints({ advanced: [{ torch: !track.getConstraints().advanced[0].torch }] });
+          }
+        });
+      }
+    }
+
+    function startCamera(isFrontCamera) {
+      const constraints = {
+        video: {
+          facingMode: isFrontCamera ? 'user' : 'environment',
+          advanced: [{ torch: false }]
+        }
+      };
+
+      navigator.mediaDevices.getUserMedia(constraints)
+        .then(function(mediaStream) {
+          let video = document.querySelector('video');
+          video.srcObject = mediaStream;
+          video.play();
+          stream = mediaStream;
+        })
+        .catch(function(err) {
+          console.log("Unable to access camera stream " + err);
+        });
+    }
+
+    function stopCamera() {
+      if (stream) {
+        const tracks = stream.getTracks();
+        tracks.forEach(track => track.stop());
+        stream = null;
+      }
+    }
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        geoWatchId = navigator.geolocation.watchPosition(
+          function(position) {
+            let latitude = position.coords.latitude;
+            let longitude = position.coords.longitude;
+            document.getElementById("location").innerHTML = "Latitude: " + latitude + ", Longitude: " + longitude;
+          },
+          function(error) {
+            console.log("Unable to get location: " + error.message);
+          }
+        );
+      } else {
+        alert("Your browser does not support Geolocation");
+      }
+    }
+
+    if (window.DeviceMotionEvent) {
+      window.addEventListener("devicemotion", handleMotion, true);
+    } else {
+      alert("Your device does not support motion detection");
+    }
+
+    function handleMotion(event) {
+      deviceMotion = event;
+    }
+
+    function vibrate() {
+      window.navigator.vibrate([200, 100, 300]);
+    }
+
+    function toggleFullScreen() {
+      let elem = document.documentElement;
+      if (!document.fullscreenElement) {
+        elem.requestFullscreen().catch(err => {
+          alert(`Unable to enter full screen mode: ${err.message}`);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    navigator.getBattery().then(function(battery) {
+      document.getElementById("battery").innerHTML = "Battery level: " + (battery.level * 100).toFixed(2) + "%";
+      battery.addEventListener('levelchange', function() {
+        document.getElementById("battery").innerHTML = "Battery level: " + (battery.level * 100).toFixed(2) + "%";
+      });
+    });
+
+    function copyToClipboard() {
+      const input = document.getElementById('clipboard-input');
+      input.select();
+      document.execCommand('copy');
+      alert('Copied to clipboard');
+    }
+
+    function pasteFromClipboard() {
+      const input = document.getElementById('clipboard-input');
+      navigator.clipboard.readText().then(text => {
+        input.value = text;
+      });
+    }
+
+    function updateNetworkStatus() {
+      const status = navigator.onLine ? 'Online' : 'Offline';
+      document.getElementById('network-status').textContent = `Network status: ${status}`;
+    }
+
+    window.addEventListener('online', updateNetworkStatus);
+    window.addEventListener('offline', updateNetworkStatus);
+    updateNetworkStatus();
+
+    function sendNotification() {
+      if (Notification.permission === 'granted') {
+        const notification = new Notification('Web API Example', {
+          body: 'This is a notification from the web page',
+          icon: 'https://via.placeholder.com/64'
+        });
+        notification.onclick = () => {
+          window.focus();
+        }
+      } else if (Notification.permission !== 'denied') {
+        Notification.requestPermission().then(permission => {
+          if (permission === 'granted') {
+            sendNotification();
+          }
+        });
+      }
+    }
 
     function submitInput() {
       const now = new Date();
