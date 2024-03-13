@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web API 示例</title>
+  <style>
+    video {
+      width: 320px;
+      height: 240px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Web API 示例</h1>
+
+  <h2>相機訪問</h2>
+  <video></video>
+  <button onclick="startCamera()">開啟相機</button>
+  <button onclick="stopCamera()">關閉相機</button>
+
+  <h2>地理位置</h2>
+  <p id="location"></p>
+  <button onclick="getLocation()">獲取位置</button>
+
+  <h2>設備震動</h2>
+  <button onclick="vibrate()">震動提醒</button>
+
+  <h2>全屏模式</h2>
+  <button onclick="toggleFullScreen()">切換全屏</button>
+
+  <h2>電池狀態</h2>
+  <p id="battery"></p>
+
+  <script>
+    let videoStream;
+
+    function startCamera() {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function(stream) {
+          let video = document.querySelector('video');
+          video.srcObject = stream;
+          video.play();
+          videoStream = stream;
+        })
+        .catch(function(err) {
+          console.log("無法獲取相機流 " + err);
+        });
+    }
+
+    function stopCamera() {
+      if (videoStream) {
+        let tracks = videoStream.getTracks();
+        tracks.forEach(function(track) {
+          track.stop();
+        });
+        videoStream = null;
+      }
+    }
+
+    function getLocation() {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        let latitude = position.coords.latitude;
+        let longitude = position.coords.longitude;
+        document.getElementById("location").innerHTML = "緯度: " + latitude + ", 經度: " + longitude;
+      });
+    }
+
+    function vibrate() {
+      window.navigator.vibrate([200, 100, 300]);
+    }
+
+    function toggleFullScreen() {
+      let elem = document.documentElement;
+      if (!document.fullscreenElement) {
+        elem.requestFullscreen().catch(err => {
+          alert(`無法進入全屏模式: ${err.message}`);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    navigator.getBattery().then(function(battery) {
+      document.getElementById("battery").innerHTML = "電量: " + (battery.level * 100).toFixed(2) + "%";
+      battery.addEventListener('levelchange', function() {
+        document.getElementById("battery").innerHTML = "電量: " + (battery.level * 100).toFixed(2) + "%";
+      });
+    });
+  </script>
+</body>
+</html>
