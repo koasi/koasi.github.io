@@ -51,86 +51,27 @@
 
   <h2>Text Input</h2>
   <textarea id="input-box" placeholder="Enter text here..."></textarea>
+  <button onclick="submitInput()">Submit</button>
   <pre id="output-box"></pre>
 
   <script>
     // 之前的代码...
 
-    let stream;
-    let deviceMotion;
-    let geoWatchId;
-
-    function toggleFlash() {
-      if (stream && stream.getTracks) {
-        const tracks = stream.getTracks();
-        tracks.forEach(track => {
-          if (track.kind === 'video') {
-            track.applyConstraints({ advanced: [{ torch: !track.getConstraints().advanced[0].torch }] });
-          }
-        });
-      }
-    }
-
-    function startCamera(isFrontCamera) {
-      const constraints = {
-        video: {
-          facingMode: isFrontCamera ? 'user' : 'environment',
-          advanced: [{ torch: false }]
-        }
-      };
-
-      navigator.mediaDevices.getUserMedia(constraints)
-        .then(function(mediaStream) {
-          let video = document.querySelector('video');
-          video.srcObject = mediaStream;
-          video.play();
-          stream = mediaStream;
-        })
-        .catch(function(err) {
-          console.log("Unable to access camera stream " + err);
-        });
-    }
-
-    function getLocation() {
-      if (navigator.geolocation) {
-        geoWatchId = navigator.geolocation.watchPosition(
-          function(position) {
-            let latitude = position.coords.latitude;
-            let longitude = position.coords.longitude;
-            document.getElementById("location").innerHTML = "Latitude: " + latitude + ", Longitude: " + longitude;
-          },
-          function(error) {
-            console.log("Unable to get location: " + error.message);
-          }
-        );
-      } else {
-        alert("Your browser does not support Geolocation");
-      }
-    }
-
-    if (window.DeviceMotionEvent) {
-      window.addEventListener("devicemotion", handleMotion, true);
-    } else {
-      alert("Your device does not support motion detection");
-    }
-
-    function handleMotion(event) {
-      deviceMotion = event;
-    }
-
-    function sendNotification() {
-      // 之前的代码...
-    }
-
     const inputBox = document.getElementById('input-box');
     const outputBox = document.getElementById('output-box');
 
-    inputBox.addEventListener('input', function() {
+    function submitInput() {
       const now = new Date();
       const timestamp = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
-      const newLine = `${timestamp} ${this.value}\n`;
+      const newLine = `${timestamp} ${inputBox.value}\n`;
       outputBox.textContent += newLine;
-      this.focus();
+      inputBox.value = '';
+    }
+
+    inputBox.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        submitInput();
+      }
     });
 
     inputBox.addEventListener('devicemotion', function() {
