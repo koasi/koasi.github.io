@@ -13,117 +13,56 @@
 <body>
   <h1>Web API 示例</h1>
 
-  <h2>相機訪問</h2>
+  <h2>相机访问</h2>
   <video></video>
-  <button onclick="startCamera(true)">開啟前置相機</button>
-  <button onclick="startCamera(false)">開啟後置相機</button>
-  <button onclick="stopCamera()">關閉相機</button>
+  <button onclick="startCamera(true)">开启前置相机</button>
+  <button onclick="startCamera(false)">开启后置相机</button>
+  <button onclick="stopCamera()">关闭相机</button>
 
   <h2>地理位置</h2>
   <p id="location"></p>
-  <button onclick="getLocation()">獲取位置</button>
+  <button onclick="getLocation()">获取位置</button>
 
-  <h2>設備震動</h2>
-  <button onclick="vibrate()">震動提醒</button>
+  <h2>设备震动</h2>
+  <button onclick="vibrate()">震动提醒</button>
 
   <h2>全屏模式</h2>
-  <button onclick="toggleFullScreen()">切換全屏</button>
+  <button onclick="toggleFullScreen()">切换全屏</button>
 
-  <h2>電池狀態</h2>
+  <h2>电池状态</h2>
   <p id="battery"></p>
 
-  <h2>剪貼板操作</h2>
-  <input type="text" id="clipboard-input" placeholder="輸入要複製的內容">
-  <button onclick="copyToClipboard()">複製到剪貼板</button>
-  <button onclick="pasteFromClipboard()">從剪貼板粘貼</button>
+  <h2>剪贴板操作</h2>
+  <input type="text" id="clipboard-input" placeholder="输入要复制的内容">
+  <button onclick="copyToClipboard()">复制到剪贴板</button>
+  <button onclick="pasteFromClipboard()">从剪贴板粘贴</button>
 
-  <h2>網路狀態</h2>
+  <h2>网络状态</h2>
   <p id="network-status"></p>
 
+  <h2>Web Notifications</h2>
+  <button onclick="sendNotification()">发送通知</button>
+
   <script>
-    let videoStream;
+    // ... 之前的代码
 
-    function startCamera(isFrontCamera) {
-      const constraints = {
-        video: { facingMode: isFrontCamera ? 'user' : 'environment' }
-      };
-
-      navigator.mediaDevices.getUserMedia(constraints)
-        .then(function(stream) {
-          let video = document.querySelector('video');
-          video.srcObject = stream;
-          video.play();
-          videoStream = stream;
-        })
-        .catch(function(err) {
-          console.log("無法獲取相機流 " + err);
+    function sendNotification() {
+      if (Notification.permission === 'granted') {
+        const notification = new Notification('Web API 示例', {
+          body: '这是一条来自网页的通知',
+          icon: 'https://via.placeholder.com/64'
         });
-    }
-
-    function stopCamera() {
-      if (videoStream) {
-        let tracks = videoStream.getTracks();
-        tracks.forEach(function(track) {
-          track.stop();
-        });
-        videoStream = null;
-      }
-    }
-
-    function getLocation() {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        let latitude = position.coords.latitude;
-        let longitude = position.coords.longitude;
-        document.getElementById("location").innerHTML = "緯度: " + latitude + ", 經度: " + longitude;
-      });
-    }
-
-    function vibrate() {
-      window.navigator.vibrate([200, 100, 300]);
-    }
-
-    function toggleFullScreen() {
-      let elem = document.documentElement;
-      if (!document.fullscreenElement) {
-        elem.requestFullscreen().catch(err => {
-          alert(`無法進入全屏模式: ${err.message}`);
-        });
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
+        notification.onclick = () => {
+          window.focus();
         }
+      } else if (Notification.permission !== 'denied') {
+        Notification.requestPermission().then(permission => {
+          if (permission === 'granted') {
+            sendNotification();
+          }
+        });
       }
     }
-
-    navigator.getBattery().then(function(battery) {
-      document.getElementById("battery").innerHTML = "電量: " + (battery.level * 100).toFixed(2) + "%";
-      battery.addEventListener('levelchange', function() {
-        document.getElementById("battery").innerHTML = "電量: " + (battery.level * 100).toFixed(2) + "%";
-      });
-    });
-
-    function copyToClipboard() {
-      const input = document.getElementById('clipboard-input');
-      input.select();
-      document.execCommand('copy');
-      alert('已複製到剪貼板');
-    }
-
-    function pasteFromClipboard() {
-      const input = document.getElementById('clipboard-input');
-      navigator.clipboard.readText().then(text => {
-        input.value = text;
-      });
-    }
-
-    function updateNetworkStatus() {
-      const status = navigator.onLine ? '在線' : '離線';
-      document.getElementById('network-status').textContent = `網路狀態: ${status}`;
-    }
-
-    window.addEventListener('online', updateNetworkStatus);
-    window.addEventListener('offline', updateNetworkStatus);
-    updateNetworkStatus();
   </script>
 </body>
 </html>
