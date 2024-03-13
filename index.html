@@ -15,7 +15,8 @@
 
   <h2>相機訪問</h2>
   <video></video>
-  <button onclick="startCamera()">開啟相機</button>
+  <button onclick="startCamera(true)">開啟前置相機</button>
+  <button onclick="startCamera(false)">開啟後置相機</button>
   <button onclick="stopCamera()">關閉相機</button>
 
   <h2>地理位置</h2>
@@ -31,11 +32,23 @@
   <h2>電池狀態</h2>
   <p id="battery"></p>
 
+  <h2>剪貼板操作</h2>
+  <input type="text" id="clipboard-input" placeholder="輸入要複製的內容">
+  <button onclick="copyToClipboard()">複製到剪貼板</button>
+  <button onclick="pasteFromClipboard()">從剪貼板粘貼</button>
+
+  <h2>網路狀態</h2>
+  <p id="network-status"></p>
+
   <script>
     let videoStream;
 
-    function startCamera() {
-      navigator.mediaDevices.getUserMedia({ video: true })
+    function startCamera(isFrontCamera) {
+      const constraints = {
+        video: { facingMode: isFrontCamera ? 'user' : 'environment' }
+      };
+
+      navigator.mediaDevices.getUserMedia(constraints)
         .then(function(stream) {
           let video = document.querySelector('video');
           video.srcObject = stream;
@@ -88,6 +101,29 @@
         document.getElementById("battery").innerHTML = "電量: " + (battery.level * 100).toFixed(2) + "%";
       });
     });
+
+    function copyToClipboard() {
+      const input = document.getElementById('clipboard-input');
+      input.select();
+      document.execCommand('copy');
+      alert('已複製到剪貼板');
+    }
+
+    function pasteFromClipboard() {
+      const input = document.getElementById('clipboard-input');
+      navigator.clipboard.readText().then(text => {
+        input.value = text;
+      });
+    }
+
+    function updateNetworkStatus() {
+      const status = navigator.onLine ? '在線' : '離線';
+      document.getElementById('network-status').textContent = `網路狀態: ${status}`;
+    }
+
+    window.addEventListener('online', updateNetworkStatus);
+    window.addEventListener('offline', updateNetworkStatus);
+    updateNetworkStatus();
   </script>
 </body>
 </html>
