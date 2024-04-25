@@ -1,218 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Web API Example</title>
+  <title>條碼掃描程式</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/@zxing/library@latest"></script>
   <style>
-    video {
-      width: 320px;
-      height: 240px;
-      border: 1px solid black;
+    #video {
+      position: relative;
     }
-    textarea {
-      width: 100%;
-      height: 200px;
-      font-family: monospace;
+    .barcode-box {
+      position: absolute;
+      border: 2px solid;
+    }
+    .barcode-box.success {
+      border-color: green;
+    }
+    .barcode-box.processing {
+      border-color: blue;
+    }
+    .barcode-box.failure {
+      border-color: red;
     }
   </style>
 </head>
 <body>
-  <h1>Web API Example</h1>
-
-  <h2>Camera Access</h2>
-  <video></video>
-  <button onclick="startCamera(true)">Start Front Camera</button>
-  <button onclick="startCamera(false)">Start Rear Camera</button>
-  <button onclick="stopCamera()">Stop Camera</button>
-  <button onclick="toggleFlash()">Toggle Flash</button>
-
-  <h2>Geolocation</h2>
-  <p id="location"></p>
-  <button onclick="getLocation()">Get Location</button>
-
-  <h2>Vibration</h2>
-  <button onclick="vibrate()">Vibrate</button>
-
-  <h2>Full Screen</h2>
-  <button onclick="toggleFullScreen()">Toggle Full Screen</button>
-
-  <h2>Battery Status</h2>
-  <p id="battery"></p>
-
-  <h2>Clipboard</h2>
-  <input type="text" id="clipboard-input" placeholder="Enter text to copy">
-  <button onclick="copyToClipboard()">Copy to Clipboard</button>
-  <button onclick="pasteFromClipboard()">Paste from Clipboard</button>
-
-  <h2>Network Status</h2>
-  <p id="network-status"></p>
-
-  <h2>Web Notifications</h2>
-  <button onclick="sendNotification()">Send Notification</button>
-
-  <h2>Text Input</h2>
-  <textarea id="input-box" placeholder="Enter text here..."></textarea>
-  <button onclick="submitInput()">Submit</button>
-  <pre id="output-box"></pre>
+  <video id="video" width="400" height="300" autoplay></video>
+  <button id="startButton">開始掃描</button>
+  <button id="stopButton">停止掃描</button>
+  <div id="result"></div>
 
   <script>
-    let stream;
-    let deviceMotion;
-    let geoWatchId;
+    $(document).ready(function() {
+      const video = document.getElementById('video');
+      const codeReader = new ZXing.BrowserMultiFormatReader();
+      let isScanning = false;
 
-    const inputBox = document.getElementById('input-box');
-    const outputBox = document.getElementById('output-box');
-
-    function toggleFlash() {
-      if (stream && stream.getTracks) {
-        const tracks = stream.getTracks();
-        tracks.forEach(track => {
-          if (track.kind === 'video') {
-            track.applyConstraints({ advanced: [{ torch: !track.getConstraints().advanced[0].torch }] });
-          }
-        });
-      }
-    }
-
-    function startCamera(isFrontCamera) {
-      const constraints = {
-        video: {
-          facingMode: isFrontCamera ? 'user' : 'environment',
-          advanced: [{ torch: false }]
+      $('#startButton').click(function() {
+        if (!isScanning) {
+          isScanning = true;
+          startScanning();
         }
-      };
-
-      navigator.mediaDevices.getUserMedia(constraints)
-        .then(function(mediaStream) {
-          let video = document.querySelector('video');
-          video.srcObject = mediaStream;
-          video.play();
-          stream = mediaStream;
-        })
-        .catch(function(err) {
-          console.log("Unable to access camera stream " + err);
-        });
-    }
-
-    function stopCamera() {
-      if (stream) {
-        const tracks = stream.getTracks();
-        tracks.forEach(track => track.stop());
-        stream = null;
-      }
-    }
-
-    function getLocation() {
-      if (navigator.geolocation) {
-        geoWatchId = navigator.geolocation.watchPosition(
-          function(position) {
-            let latitude = position.coords.latitude;
-            let longitude = position.coords.longitude;
-            document.getElementById("location").innerHTML = "Latitude: " + latitude + ", Longitude: " + longitude;
-          },
-          function(error) {
-            console.log("Unable to get location: " + error.message);
-          }
-        );
-      } else {
-        alert("Your browser does not support Geolocation");
-      }
-    }
-
-    if (window.DeviceMotionEvent) {
-      window.addEventListener("devicemotion", handleMotion, true);
-    } else {
-      alert("Your device does not support motion detection");
-    }
-
-    function handleMotion(event) {
-      deviceMotion = event;
-    }
-
-    function vibrate() {
-      window.navigator.vibrate([200, 100, 300]);
-    }
-
-    function toggleFullScreen() {
-      let elem = document.documentElement;
-      if (!document.fullscreenElement) {
-        elem.requestFullscreen().catch(err => {
-          alert(`Unable to enter full screen mode: ${err.message}`);
-        });
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-      }
-    }
-
-    navigator.getBattery().then(function(battery) {
-      document.getElementById("battery").innerHTML = "Battery level: " + (battery.level * 100).toFixed(2) + "%";
-      battery.addEventListener('levelchange', function() {
-        document.getElementById("battery").innerHTML = "Battery level: " + (battery.level * 100).toFixed(2) + "%";
       });
-    });
 
-    function copyToClipboard() {
-      const input = document.getElementById('clipboard-input');
-      input.select();
-      document.execCommand('copy');
-      alert('Copied to clipboard');
-    }
-
-    function pasteFromClipboard() {
-      const input = document.getElementById('clipboard-input');
-      navigator.clipboard.readText().then(text => {
-        input.value = text;
-      });
-    }
-
-    function updateNetworkStatus() {
-      const status = navigator.onLine ? 'Online' : 'Offline';
-      document.getElementById('network-status').textContent = `Network status: ${status}`;
-    }
-
-    window.addEventListener('online', updateNetworkStatus);
-    window.addEventListener('offline', updateNetworkStatus);
-    updateNetworkStatus();
-
-    function sendNotification() {
-      if (Notification.permission === 'granted') {
-        const notification = new Notification('Web API Example', {
-          body: 'This is a notification from the web page',
-          icon: 'https://via.placeholder.com/64'
-        });
-        notification.onclick = () => {
-          window.focus();
+      $('#stopButton').click(function() {
+        if (isScanning) {
+          isScanning = false;
+          codeReader.reset();
+          $('.barcode-box').remove();
         }
-      } else if (Notification.permission !== 'denied') {
-        Notification.requestPermission().then(permission => {
-          if (permission === 'granted') {
-            sendNotification();
+      });
+
+      function startScanning() {
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function(stream) {
+            video.srcObject = stream;
+            video.play();
+            requestAnimationFrame(scan);
+          })
+          .catch(function(err) {
+            console.error(err);
+          });
+      }
+
+      function scan() {
+        if (!isScanning) {
+          return;
+        }
+
+        codeReader.decodeFromVideoDevice(null, 'video', (result, err) => {
+          if (result) {
+            const barcode = result.text;
+            const barcodeBox = $('<div class="barcode-box success"></div>');
+            barcodeBox.css({
+              left: result.resultPoints[0].x + 'px',
+              top: result.resultPoints[0].y + 'px',
+              width: (result.resultPoints[1].x - result.resultPoints[0].x) + 'px',
+              height: (result.resultPoints[2].y - result.resultPoints[0].y) + 'px'
+            });
+            $(video).parent().append(barcodeBox);
+            $('#result').append('<p>條碼/QR Code: ' + barcode + '</p>');
+          } else if (err) {
+            const barcodeBox = $('<div class="barcode-box failure"></div>');
+            barcodeBox.css({
+              left: '0px',
+              top: '0px',
+              width: video.offsetWidth + 'px',
+              height: video.offsetHeight + 'px'
+            });
+            $(video).parent().append(barcodeBox);
+          } else {
+            const barcodeBox = $('<div class="barcode-box processing"></div>');
+            barcodeBox.css({
+              left: '0px',
+              top: '0px',
+              width: video.offsetWidth + 'px',
+              height: video.offsetHeight + 'px'
+            });
+            $(video).parent().append(barcodeBox);
           }
+          requestAnimationFrame(scan);
         });
       }
-    }
-
-    function submitInput() {
-      const now = new Date();
-      const timestamp = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
-      const newLine = `${timestamp} ${inputBox.value}\n`;
-      outputBox.textContent += newLine;
-      inputBox.value = '';
-    }
-
-    inputBox.addEventListener('keydown', function(event) {
-      if (event.key === 'Enter') {
-        submitInput();
-      }
-    });
-
-    inputBox.addEventListener('devicemotion', function() {
-      this.focus();
-    });
-
-    inputBox.addEventListener('click', function() {
-      this.focus();
     });
   </script>
 </body>
