@@ -7,6 +7,8 @@
   <style>
     #video {
       position: relative;
+      width: 800px;
+      height: 600px;
     }
     .barcode-box {
       position: absolute;
@@ -18,9 +20,6 @@
     .barcode-box.processing {
       border-color: blue;
     }
-    .barcode-box.failure {
-      border-color: red;
-    }
     #result {
       width: 100%;
       height: 200px;
@@ -29,7 +28,7 @@
   </style>
 </head>
 <body>
-  <video id="video" width="400" height="300" autoplay></video>
+  <video id="video" autoplay></video>
   <button id="startButton">開始掃描</button>
   <button id="stopButton">停止掃描</button>
   <textarea id="result" readonly></textarea>
@@ -56,15 +55,24 @@
       });
 
       function startScanning() {
-        navigator.mediaDevices.getUserMedia({ video: true })
+        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
           .then(function(stream) {
             video.srcObject = stream;
             video.play();
             requestAnimationFrame(scan);
+            initAutoFocus();
           })
           .catch(function(err) {
             console.error(err);
           });
+      }
+
+      function initAutoFocus() {
+        const track = video.srcObject.getVideoTracks()[0];
+        const capabilities = track.getCapabilities();
+        if (capabilities.focusMode && capabilities.focusMode.includes('continuous')) {
+          track.applyConstraints({ advanced: [{ focusMode: 'continuous' }] });
+        }
       }
 
       function scan() {
@@ -84,15 +92,6 @@
             });
             $(video).parent().append(barcodeBox);
             updateResult(barcode);
-          } else if (err) {
-            const barcodeBox = $('<div class="barcode-box failure"></div>');
-            barcodeBox.css({
-              left: '0px',
-              top: '0px',
-              width: video.offsetWidth + 'px',
-              height: video.offsetHeight + 'px'
-            });
-            $(video).parent().append(barcodeBox);
           } else {
             const barcodeBox = $('<div class="barcode-box processing"></div>');
             barcodeBox.css({
