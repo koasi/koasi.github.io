@@ -11,8 +11,8 @@
     <link rel="icon" href="/assets/favicon-33996469.ico">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon-07eae208.png" sizes="128x128">
     <meta name="theme-color" content="#eea600">
-  <script type="module" crossorigin src="/assets/main-04baad83.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/DarkTheme-7d442e55.js">
+  <script type="module" crossorigin src="/assets/main-c549d78a.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/DarkTheme-6565bed1.js">
   <link rel="stylesheet" href="/assets/DarkTheme-6db07867.css">
   <link rel="stylesheet" href="/assets/index-cb1f4cc5.css">
 <link rel="manifest" href="/manifest.webmanifest"></head>
@@ -302,122 +302,5 @@
             <a href="#" class="dialogInteractive-closeButton regular-button"></a>
         </div>
     </dialog>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>條碼掃描程式</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://unpkg.com/@zxing/library@latest"></script>
-  <style>
-    #video {
-      position: relative;
-      width: 800px;
-      height: 600px;
-    }
-    .barcode-box {
-      position: absolute;
-      border: 2px solid;
-    }
-    .barcode-box.success {
-      border-color: green;
-    }
-    .barcode-box.processing {
-      border-color: blue;
-    }
-    #result {
-      width: 100%;
-      height: 200px;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-  <video id="video" autoplay></video>
-  <button id="startButton">開始掃描</button>
-  <button id="stopButton">停止掃描</button>
-  <textarea id="result" readonly></textarea>
-
-  <script>
-    $(document).ready(function() {
-      const video = document.getElementById('video');
-      const codeReader = new ZXing.BrowserMultiFormatReader();
-      let isScanning = false;
-
-      $('#startButton').click(function() {
-        if (!isScanning) {
-          isScanning = true;
-          startScanning();
-        }
-      });
-
-      $('#stopButton').click(function() {
-        if (isScanning) {
-          isScanning = false;
-          codeReader.reset();
-          $('.barcode-box').remove();
-        }
-      });
-
-      function startScanning() {
-        navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
-          .then(function(stream) {
-            video.srcObject = stream;
-            video.play();
-            requestAnimationFrame(scan);
-            initAutoFocus();
-          })
-          .catch(function(err) {
-            console.error(err);
-          });
-      }
-
-      function initAutoFocus() {
-        const track = video.srcObject.getVideoTracks()[0];
-        const capabilities = track.getCapabilities();
-        if (capabilities.focusMode && capabilities.focusMode.includes('continuous')) {
-          track.applyConstraints({ advanced: [{ focusMode: 'continuous' }] });
-        }
-      }
-
-      function scan() {
-        if (!isScanning) {
-          return;
-        }
-
-        codeReader.decodeFromVideoDevice(null, 'video', (result, err) => {
-          if (result) {
-            const barcode = result.text;
-            const barcodeBox = $('<div class="barcode-box success"></div>');
-            barcodeBox.css({
-              left: result.resultPoints[0].x + 'px',
-              top: result.resultPoints[0].y + 'px',
-              width: (result.resultPoints[1].x - result.resultPoints[0].x) + 'px',
-              height: (result.resultPoints[2].y - result.resultPoints[0].y) + 'px'
-            });
-            $(video).parent().append(barcodeBox);
-            updateResult(barcode);
-          } else {
-            const barcodeBox = $('<div class="barcode-box processing"></div>');
-            barcodeBox.css({
-              left: '0px',
-              top: '0px',
-              width: video.offsetWidth + 'px',
-              height: video.offsetHeight + 'px'
-            });
-            $(video).parent().append(barcodeBox);
-          }
-          requestAnimationFrame(scan);
-        });
-      }
-
-      function updateResult(barcode) {
-        const resultText = $('#result').val();
-        const newResult = barcode + '\n' + resultText;
-        $('#result').val(newResult);
-      }
-    });
-  </script>
 </body>
 </html>
