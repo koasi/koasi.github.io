@@ -1,0 +1,2046 @@
+[
+    {
+      "unique_id": "c1q1",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 1,
+      [cite_start]"text": "遙控無人機如為不法份子作為犯罪工具或因不當操作而致失控墜落者,可能導致何種後果? [cite: 4]",
+      "options": {
+        [cite_start]"A": "造成他人生命財產之損失。 [cite: 5]",
+        [cite_start]"B": "危害公共利益。 [cite: 6]",
+        [cite_start]"C": "影響飛航安全。 [cite: 7]",
+        [cite_start]"D": "以上皆是。 [cite: 8]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q2",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 2,
+      [cite_start]"text": "市面上遙控無人機類型繁多,為保障操作安全,操作人於購買時應留意產品何項資訊? [cite: 9]",
+      "options": {
+        [cite_start]"A": "使用限制。 [cite: 10]",
+        [cite_start]"B": "操作性能。 [cite: 11]",
+        [cite_start]"C": "保固範圍。 [cite: 12]",
+        [cite_start]"D": "以上皆是。 [cite: 13]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q3",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 3,
+      [cite_start]"text": "遙控無人機之註冊、針對操作人員進行教育宣導及操作範圍警示之規定,係為達到哪個目的? [cite: 14]",
+      "options": {
+        [cite_start]"A": "刁難操作人員。 [cite: 16]",
+        [cite_start]"B": "打擊遙控無人機市場。 [cite: 17]",
+        [cite_start]"C": "安全使用。 [cite: 18]",
+        [cite_start]"D": "以上皆是。 [cite: 19]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q4",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 4,
+      [cite_start]"text": "操作證考取目的係為確保操作人於哪個階段能熟悉相關航空知識與管理規範,並具備一定操作熟練度及緊急處置能力? [cite: 20]",
+      "options": {
+        [cite_start]"A": "操作前及操作時。 [cite: 22]",
+        [cite_start]"B": "操作前及操作後。 [cite: 23]",
+        [cite_start]"C": "操作前。 [cite: 24]",
+        [cite_start]"D": "操作後。 [cite: 25]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q5",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 5,
+      [cite_start]"text": "外國人領有外國政府對於所持有遙控無人機之註冊、操作證及檢驗合格等證明文件者,必須向哪個單位申請認可後,於遵守我國相關法令下從事遙控無人機活動? [cite: 26, 27]",
+      "options": {
+        [cite_start]"A": "外交部。 [cite: 28]",
+        [cite_start]"B": "駐外單位。 [cite: 29]",
+        [cite_start]"C": "民航局。 [cite: 31]",
+        [cite_start]"D": "科技部。 [cite: 32]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q6",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 6,
+      [cite_start]"text": "操作人僅透過遙控無人機即時傳輸圖像功能,是否即足以監控鏡頭外之周遭狀況? [cite: 33]",
+      "options": {
+        [cite_start]"A": "否。 [cite: 34]",
+        [cite_start]"B": "是。 [cite: 35]",
+        [cite_start]"C": "視傳輸圖像清晰度而定。 [cite: 36]",
+        [cite_start]"D": "視天氣狀況而定。 [cite: 37]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q7",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 7,
+      [cite_start]"text": "操作人不得利用遙控無人機從事哪種行為? [cite: 38]",
+      "options": {
+        [cite_start]"A": "合法行為。 [cite: 39]",
+        [cite_start]"B": "非法行為。 [cite: 40]",
+        [cite_start]"C": "適法行為。 [cite: 41]",
+        [cite_start]"D": "法定行為。 [cite: 42]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q8",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 8,
+      [cite_start]"text": "操作人不得無故利用遙控無人機對他人進行何種行為? [cite: 43]",
+      "options": {
+        [cite_start]"A": "攝錄非公開活動。 [cite: 44]",
+        [cite_start]"B": "竊聽私下談話。 [cite: 45]",
+        [cite_start]"C": "窺視身體隱私部位。 [cite: 46]",
+        [cite_start]"D": "以上皆是。 [cite: 47]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q9",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 9,
+      [cite_start]"text": "操作人未經同意,不得以遙控無人機對他人進行何種行為? [cite: 48]",
+      "options": {
+        [cite_start]"A": "錄音。 [cite: 49]",
+        [cite_start]"B": "照相、錄影。 [cite: 50]",
+        [cite_start]"C": "電磁紀錄竊錄。 [cite: 51]",
+        [cite_start]"D": "以上皆是。 [cite: 52]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q10",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 10,
+      [cite_start]"text": "操作人不得無故利用遙控無人機於哪個場所進行飛航活動? [cite: 53]",
+      "options": {
+        [cite_start]"A": "私人庭院。 [cite: 54]",
+        [cite_start]"B": "學校教室。 [cite: 55]",
+        [cite_start]"C": "辦公室場所。 [cite: 56]",
+        [cite_start]"D": "以上皆是。 [cite: 57]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q11",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 11,
+      [cite_start]"text": "遙控無人機於空中進行飛航活動時,易伴隨較高之何種風險? [cite: 58]",
+      "options": {
+        [cite_start]"A": "文化風險。 [cite: 59]",
+        [cite_start]"B": "健康風險。 [cite: 60]",
+        [cite_start]"C": "社會風險。 [cite: 61]",
+        [cite_start]"D": "貿易風險。 [cite: 62]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q12",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 12,
+      [cite_start]"text": "對違反規範之遙控無人機操作人及所有人所為之處罰,係欲達到哪個目的? [cite: 64]",
+      "options": {
+        [cite_start]"A": "維持社會秩序。 [cite: 65]",
+        [cite_start]"B": "增進公共利益。 [cite: 66]",
+        [cite_start]"C": "維護公共安全。 [cite: 67]",
+        [cite_start]"D": "以上皆是。 [cite: 68]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q13",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 13,
+      [cite_start]"text": "針對違反規範之遙控無人機操作人及所有人所處以罰鍰額度,係衡量何種因素而定? [cite: 69]",
+      "options": {
+        [cite_start]"A": "公眾利益及安全財產危害程度。 [cite: 70]",
+        [cite_start]"B": "政府稅收及國家經濟指數。 [cite: 71]",
+        [cite_start]"C": "國力強弱及世界局勢。 [cite: 72]",
+        [cite_start]"D": "教育程度及人民素質等。 [cite: 73]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q14",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 14,
+      [cite_start]"text": "操作人於遵守相關規範下從事屬休閒娛樂性質之遙控無人機活動,其活動風險以何種管理方式為主? [cite: 74]",
+      "options": {
+        [cite_start]"A": "財政管理。 [cite: 75]",
+        [cite_start]"B": "自我管理。 [cite: 76]",
+        [cite_start]"C": "衛生管理。 [cite: 77]",
+        [cite_start]"D": "健康管理。 [cite: 78]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q15",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 15,
+      [cite_start]"text": "為法人從事業務之遙控無人機操作人,依法須強制加入何種保險? [cite: 79]",
+      "options": {
+        [cite_start]"A": "積水險。 [cite: 80]",
+        [cite_start]"B": "責任險。 [cite: 81]",
+        [cite_start]"C": "地震險。 [cite: 82]",
+        [cite_start]"D": "颱風險。 [cite: 83]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q16",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 16,
+      [cite_start]"text": "遙控無人機定義為何? [cite: 84]",
+      "options": {
+        [cite_start]"A": "自遙控設備以信號鏈路進行飛航控制之無人航空器。 [cite: 85]",
+        [cite_start]"B": "自遙控設備以自動駕駛操作之無人航空器。 [cite: 86]",
+        [cite_start]"C": "其他經民航局公告之無人航空器。 [cite: 87]",
+        [cite_start]"D": "以上皆是。 [cite: 88]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q17",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 17,
+      [cite_start]"text": "某遙控無人機操作人欲代地方農會執行農藥噴灑作業,以下敘述何者正確? [cite: 89]",
+      "options": {
+        [cite_start]"A": "該操作人須通過學、術科測驗。 [cite: 90]",
+        [cite_start]"B": "該操作人不須通過術科測驗。 [cite: 91]",
+        [cite_start]"C": "執行農藥噴灑作業前不需經申請核准。 [cite: 92]",
+        [cite_start]"D": "以上皆是。 [cite: 93]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q18",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 18,
+      [cite_start]"text": "於何處進行遙控無人機飛航活動適用民用航空法之「遙控無人機」相關規定? [cite: 95]",
+      "options": {
+        [cite_start]"A": "建築物內密閉空間。 [cite: 96]",
+        [cite_start]"B": "建築物外開放空間。 [cite: 97]",
+        [cite_start]"C": "任何空間。 [cite: 98]",
+        [cite_start]"D": "以上皆非。 [cite: 99]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q19",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 19,
+      [cite_start]"text": "遙控無人機活動期間,其所有人或操作人應負責任為何? [cite: 100]",
+      "options": {
+        [cite_start]"A": "使用安全之責。 [cite: 101]",
+        [cite_start]"B": "風險管理之責。 [cite: 102]",
+        [cite_start]"C": "法規遵循之責。 [cite: 103]",
+        [cite_start]"D": "以上皆是。 [cite: 104]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q20",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 20,
+      [cite_start]"text": "有關遙控無人機飛航活動,下列敘述何者正確? [cite: 105]",
+      "options": {
+        [cite_start]"A": "未經許可不得飛航於禁航區。 [cite: 106]",
+        [cite_start]"B": "可任意飛航於限航區。 [cite: 107]",
+        [cite_start]"C": "航空站四周之一定距離範圍內飛航無相關規定。 [cite: 108]",
+        [cite_start]"D": "以上皆是。 [cite: 109]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q21",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 21,
+      [cite_start]"text": "航空站或飛行場四周之一定距離範圍係由哪個機關進行公告? [cite: 110]",
+      "options": {
+        [cite_start]"A": "民航局。 [cite: 111]",
+        [cite_start]"B": "衛福部。 [cite: 112]",
+        [cite_start]"C": "內政部。 [cite: 113]",
+        [cite_start]"D": "文化部。 [cite: 114]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q22",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 22,
+      [cite_start]"text": "直轄市、縣(市)政府依民航法第99條之13第2項所規範之區域內,得依公益及安全需要,進行哪些項目之公告? [cite: 115, 116]",
+      "options": {
+        [cite_start]"A": "遙控無人機活動區域。 [cite: 117]",
+        [cite_start]"B": "遙控無人機活動時間。 [cite: 118]",
+        [cite_start]"C": "其他管理事項。 [cite: 119]",
+        [cite_start]"D": "以上皆是。 [cite: 120]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q23",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 23,
+      [cite_start]"text": "中央主管機關認有禁止或限制遙控無人機飛航活動需求者,得提請所在地哪個機關進行公告? [cite: 121]",
+      "options": {
+        [cite_start]"A": "鄉鎮區公所。 [cite: 122]",
+        [cite_start]"B": "直轄市、縣(市)政府。 [cite: 123]",
+        [cite_start]"C": "地方派出所。 [cite: 124]",
+        [cite_start]"D": "地方農會。 [cite: 125]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q24",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 24,
+      [cite_start]"text": "政府機關(構)、學校或法人因執行業務需於禁、限航區及航空站或飛行場四周一定距離範圍內從事遙控無人機飛航活動者,應申請何者會商目的事業主管機關同意後,始得為之? [cite: 127, 128]",
+      "options": {
+        [cite_start]"A": "鄉鎮區公所。 [cite: 129]",
+        [cite_start]"B": "衛福部。 [cite: 130]",
+        [cite_start]"C": "民航局。 [cite: 131]",
+        [cite_start]"D": "科技部。 [cite: 132]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q25",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 25,
+      [cite_start]"text": "政府機關(構)、學校或法人因執行業務需於直轄市、縣(市)政府所公告之遙控無人機活動區域、時間及其他管理事項外從事飛航活動者,應申請何者會商相關中央主管機關同意後,始得為之? [cite: 133]",
+      "options": {
+        [cite_start]"A": "直轄市、縣(市)政府。 [cite: 134]",
+        [cite_start]"B": "衛福部。 [cite: 135]",
+        [cite_start]"C": "農委會。 [cite: 136]",
+        [cite_start]"D": "交通部。 [cite: 137]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q26",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 26,
+      [cite_start]"text": "遙控無人機未經同意飛入禁航區、限航區,得由何者採取適當措施予以制止或排除? [cite: 138]",
+      "options": {
+        [cite_start]"A": "交通警察大隊。 [cite: 139]",
+        [cite_start]"B": "禁航區、限航區之管理人。 [cite: 140]",
+        [cite_start]"C": "鄉鎮區公所。 [cite: 141]",
+        [cite_start]"D": "地方派出所。 [cite: 142]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q27",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 27,
+      [cite_start]"text": "遙控無人機未經同意飛入航空站或飛行場四周之一定距離範圍內者,航空站、飛行場之經營人或管理人得會同何者予以取締? [cite: 143]",
+      "options": {
+        [cite_start]"A": "當地里長。 [cite: 144]",
+        [cite_start]"B": "地方派出所。 [cite: 145]",
+        [cite_start]"C": "航空警察局。 [cite: 146]",
+        [cite_start]"D": "交通警察大隊。 [cite: 147]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q28",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 28,
+      [cite_start]"text": "遙控無人機未經同意飛入直轄市、縣(市)政府所公告之活動區域、時間及其他管理事項外者,得由何者進行取締? [cite: 148, 149]",
+      "options": {
+        [cite_start]"A": "直轄市、縣(市)政府。 [cite: 150]",
+        [cite_start]"B": "鄉鎮區公所。 [cite: 151]",
+        [cite_start]"C": "地方派出所。 [cite: 152]",
+        [cite_start]"D": "衛福部。 [cite: 153]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q29",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 29,
+      [cite_start]"text": "從事休閒娛樂用途之遙控無人機活動,其飛航實際高度不得逾距地面或水面多少高度? [cite: 154]",
+      "options": {
+        [cite_start]"A": "800呎。 [cite: 155]",
+        [cite_start]"B": "400呎。 [cite: 157]",
+        [cite_start]"C": "200呎。 [cite: 158]",
+        [cite_start]"D": "100呎。 [cite: 159]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q30",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 30,
+      [cite_start]"text": "從事遙控無人機飛航活動,非經民航局核准不得執行下列何者行為? [cite: 160]",
+      "options": {
+        [cite_start]"A": "以信號鏈路進行飛航控制。 [cite: 161]",
+        [cite_start]"B": "以自動駕駛操作。 [cite: 162]",
+        [cite_start]"C": "投擲或噴灑任何物件。 [cite: 163]",
+        [cite_start]"D": "其他經民航局同意之操作。 [cite: 164]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q31",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 31,
+      [cite_start]"text": "從事遙控無人機飛航活動,不得裝載哪種物品? [cite: 165]",
+      "options": {
+        [cite_start]"A": "光學酬載。 [cite: 166]",
+        [cite_start]"B": "飛航所需燃油或電池。 [cite: 167]",
+        [cite_start]"C": "民用航空法所公告之危險物品。 [cite: 168]",
+        [cite_start]"D": "調整重心所需之配重塊。 [cite: 169]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q32",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 32,
+      [cite_start]"text": "哪個機關負責訂定從事遙控無人機飛航活動所應遵守之規範? [cite: 170]",
+      "options": {
+        [cite_start]"A": "衛福部。 [cite: 171]",
+        [cite_start]"B": "交通部。 [cite: 172]",
+        [cite_start]"C": "內政部。 [cite: 173]",
+        [cite_start]"D": "文化部。 [cite: 174]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q33",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 33,
+      [cite_start]"text": "從事休閒娛樂用途之遙控無人機不得於下列哪個區域進行飛航活動? [cite: 175]",
+      "options": {
+        [cite_start]"A": "人群聚集或室外集會遊行上空。 [cite: 176]",
+        [cite_start]"B": "經地方政府同意開放無人機活動之公園綠地。 [cite: 177]",
+        [cite_start]"C": "經地方政府同意開放無人機活動之人煙稀少區。 [cite: 178]",
+        [cite_start]"D": "經地方政府同意開放無人機活動之河灘地。 [cite: 179]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q34",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 34,
+      [cite_start]"text": "從事休閒娛樂用途之遙控無人機不得於下列哪個時間進行飛航活動? [cite: 180]",
+      "options": {
+        [cite_start]"A": "日落後至日出前。 [cite: 181]",
+        [cite_start]"B": "日出後。 [cite: 182]",
+        [cite_start]"C": "正中午。 [cite: 183]",
+        [cite_start]"D": "無特別規定。 [cite: 184]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q35",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 35,
+      [cite_start]"text": "操作人於從事休閒娛樂用途之遙控無人機飛航活動時,最多得同時控制幾架遙控無人機? [cite: 185]",
+      "options": {
+        [cite_start]"A": "1架。 [cite: 187]",
+        [cite_start]"B": "2架。 [cite: 188]",
+        [cite_start]"C": "5架。 [cite: 190]",
+        [cite_start]"D": "10架以上。 [cite: 191]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q36",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 36,
+      [cite_start]"text": "操作人於從事遙控無人機飛航活動期間,應留意下列何者? [cite: 192]",
+      "options": {
+        [cite_start]"A": "遙控無人機之販售包裝。 [cite: 193]",
+        [cite_start]"B": "遙控無人機之外觀造型。 [cite: 194]",
+        [cite_start]"C": "遙控無人機飛航及其周遭狀況。 [cite: 195]",
+        [cite_start]"D": "以上皆非。 [cite: 196]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q37",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 37,
+      [cite_start]"text": "從事遙控無人機飛航活動時,應防止其與何者之接近或碰撞? [cite: 197]",
+      "options": {
+        [cite_start]"A": "其他航空器。 [cite: 198]",
+        [cite_start]"B": "建築物。 [cite: 199]",
+        [cite_start]"C": "人群。 [cite: 200]",
+        [cite_start]"D": "以上皆是。 [cite: 201]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q38",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 38,
+      [cite_start]"text": "政府機關(構)、學校或法人欲執行遙控無人機法規所訂之操作限制者,得檢附相關文書並向下列何者申請核准後為之? [cite: 202, 203]",
+      "options": {
+        [cite_start]"A": "直轄市、縣(市)政府。 [cite: 204]",
+        [cite_start]"B": "民航局。 [cite: 205]",
+        [cite_start]"C": "警察機關。 [cite: 206]",
+        [cite_start]"D": "衛福部。 [cite: 207]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q39",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 39,
+      [cite_start]"text": "政府機關(構)、學校或法人經民航局核准得於「人群聚集或室外集會遊行上空」進行飛航活動者,其活動場地部分仍應取得何者之同意? [cite: 208, 209]",
+      "options": {
+        [cite_start]"A": "直轄市、縣(市)政府及相關中央主管機關。 [cite: 210]",
+        [cite_start]"B": "直轄市、縣(市)政府。 [cite: 211]",
+        [cite_start]"C": "相關中央主管機關。 [cite: 212]",
+        [cite_start]"D": "當地派出所。 [cite: 213]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q40",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 40,
+      [cite_start]"text": "操作遙控無人機發生下列哪種情形時,遙控無人機所有人應負賠償責任? [cite: 214]",
+      "options": {
+        [cite_start]"A": "故意致他人死傷。 [cite: 215]",
+        [cite_start]"B": "過失致他人死傷。 [cite: 216]",
+        [cite_start]"C": "故意或過失毀損他人財物。 [cite: 217]",
+        [cite_start]"D": "以上皆是。 [cite: 218]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q41",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 41,
+      [cite_start]"text": "遙控無人機所有人將其遙控無人機交由他人進行操作而不慎墜落傷人,應由何人負連帶賠償責任? [cite: 219]",
+      "options": {
+        [cite_start]"A": "所有人及旁觀人。 [cite: 221]",
+        [cite_start]"B": "所有人及設計者。 [cite: 223]",
+        [cite_start]"C": "所有人及操作人。 [cite: 224]",
+        [cite_start]"D": "所有人及製造者。 [cite: 225]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q42",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 42,
+      [cite_start]"text": "政府機關(構)、學校或法人於從事民航局核准之遙控無人機飛航活動前,應依法投保責任保險,係依據何法所定之內容? [cite: 226]",
+      "options": {
+        [cite_start]"A": "保險法。 [cite: 227]",
+        [cite_start]"B": "民用航空法。 [cite: 228]",
+        [cite_start]"C": "民法。 [cite: 229]",
+        [cite_start]"D": "勞動基準法。 [cite: 230]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q43",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 43,
+      [cite_start]"text": "遙控無人機所有人或操作人違反「禁航區、限航區及航空站或飛行場四周之一定距離範圍內從事飛航活動」之相關規定者,民航局除廢止其操作證並得沒入遙控無人機外,另處多少新臺幣之罰鍰? [cite: 231]",
+      "options": {
+        [cite_start]"A": "3萬元以上18萬元以下。 [cite: 232]",
+        [cite_start]"B": "5萬元以上28萬元以下。 [cite: 233]",
+        [cite_start]"C": "10萬元以上48萬元以下。 [cite: 234]",
+        [cite_start]"D": "30萬元以上150萬元以下。 [cite: 235]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q44",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 44,
+      [cite_start]"text": "遙控無人機所有人或操作人違反「不得逾距地面或水面高度400呎從事飛航活動」之規定者,民航局除廢止其操作證並得沒入遙控無人機外,另處多少新臺幣之罰鍰? [cite: 236, 237]",
+      "options": {
+        [cite_start]"A": "30萬元以上150萬元以下。 [cite: 238]",
+        [cite_start]"B": "1萬元以上10萬元以下。 [cite: 239]",
+        [cite_start]"C": "20萬元以上50萬元以下。 [cite: 240]",
+        [cite_start]"D": "5萬元以上30萬元以下。 [cite: 241]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q45",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 45,
+      [cite_start]"text": "遙控無人機之所有人或操作人違反「未領有操作證而操作遙控無人機」之規定者,除禁止其活動,情節重大者並得沒入遙控無人機外,另處多少新臺幣之罰鍰? [cite: 242, 243]",
+      "options": {
+        [cite_start]"A": "1萬元以上8萬元以下。 [cite: 244]",
+        [cite_start]"B": "3萬元以上18萬元以下。 [cite: 245]",
+        [cite_start]"C": "6萬元以上30萬元以下。 [cite: 246]",
+        [cite_start]"D": "8萬元以上38萬元以下。 [cite: 247]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q46",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 46,
+      [cite_start]"text": "遙控無人機之所有人或操作人違反「未投保或未足額投保責任保險而從事遙控無人機活動」之規定者,除禁止其活動,情節重大者並得沒入遙控無人機外,另處多少新臺幣之罰鍰? [cite: 248]",
+      "options": {
+        [cite_start]"A": "6萬元以上30萬元以下。 [cite: 249]",
+        [cite_start]"B": "3萬元以上20萬元以下。 [cite: 250]",
+        [cite_start]"C": "1萬元以上8萬元以下。 [cite: 252]",
+        [cite_start]"D": "8萬元以上50萬元以下。 [cite: 253]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q47",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 47,
+      [cite_start]"text": "遙控無人機之所有人或操作人違反「遙控無人機註冊或標明註冊號碼」之相關規定者,除禁止其活動,情節重大者並得沒入遙控無人機外,另處多少新臺幣之罰鍰? [cite: 254, 255]",
+      "options": {
+        [cite_start]"A": "10萬元以上48萬元以下。 [cite: 256]",
+        [cite_start]"B": "8萬元以上38萬元以下。 [cite: 257]",
+        [cite_start]"C": "5萬元以上28萬元以下。 [cite: 258]",
+        [cite_start]"D": "3萬元以上15萬元以下。 [cite: 259]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q48",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 48,
+      [cite_start]"text": "遙控無人機之所有人或操作人違反「直轄市、縣(市)政府公告之區域、時間及其他管理事項」之相關規定者,除禁止其活動,情節重大者並得沒入遙控無人機外,另處多少新臺幣之罰鍰? [cite: 260, 261]",
+      "options": {
+        [cite_start]"A": "3萬元以上15萬元以下。 [cite: 261]",
+        [cite_start]"B": "5萬元以上28萬元以下。 [cite: 262]",
+        [cite_start]"C": "8萬元以上38萬元以下。 [cite: 263]",
+        [cite_start]"D": "15萬元以上30萬元以下。 [cite: 264]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q49",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 49,
+      [cite_start]"text": "遙控無人機之所有人或操作人違反「遙控無人機飛航活動應遵守之規定」者,除禁止其活動,情節重大者並得沒入遙控無人機外,另處多少新臺幣之罰鍰? [cite: 265, 266]",
+      "options": {
+        [cite_start]"A": "10萬元以上48萬元以下。 [cite: 267]",
+        [cite_start]"B": "8萬元以上38萬元以下。 [cite: 268]",
+        [cite_start]"C": "5萬元以上28萬元以下。 [cite: 269]",
+        [cite_start]"D": "3萬元以上15萬元以下。 [cite: 270]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q50",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 50,
+      [cite_start]"text": "違反「射頻識別、檢驗、認可、維修與檢查、飛航活動之活動許可及內容、製造者與進口者之登錄及責任、飛航安全相關事件之通報等事項」規定者,除禁止其活動,情節重大者並得沒入遙控無人機外,另處多少新臺幣之罰鍰? [cite: 271, 272]",
+      "options": {
+        [cite_start]"A": "1萬元以上150萬元以下。 [cite: 273]",
+        [cite_start]"B": "5萬元以上498萬元以下。 [cite: 274]",
+        [cite_start]"C": "8萬元以上798萬元以下。 [cite: 275]",
+        [cite_start]"D": "10萬元以上998萬元以下。 [cite: 276]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q51",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 51,
+      [cite_start]"text": "遙控無人機和遙控設備間為操作飛行管理目的之資料鏈接,稱之? [cite: 277]",
+      "options": {
+        [cite_start]"A": "網路鏈路。 [cite: 278]",
+        [cite_start]"B": "通訊及控制信號鏈路。 [cite: 279]",
+        [cite_start]"C": "電信鏈路。 [cite: 280]",
+        [cite_start]"D": "光纖鏈路。 [cite: 281]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q52",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 52,
+      [cite_start]"text": "計算遙控無人機之最大起飛重量(MTOW),應包含下列哪些重量? [cite: 283]",
+      "options": {
+        [cite_start]"A": "機體。 [cite: 284]",
+        [cite_start]"B": "燃料、電池。 [cite: 285]",
+        [cite_start]"C": "負載設備、酬載。 [cite: 286]",
+        [cite_start]"D": "以上皆是。 [cite: 287]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q53",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 53,
+      [cite_start]"text": "依據法規定義,於遙控無人機飛航活動期間,實際操控遙控無人機或指揮監督飛航活動之人員稱之? [cite: 288]",
+      "options": {
+        [cite_start]"A": "目視觀察員。 [cite: 290]",
+        [cite_start]"B": "遙控無人機操作人。 [cite: 291]",
+        [cite_start]"C": "任務協調員。 [cite: 292]",
+        [cite_start]"D": "以上皆非。 [cite: 293]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q54",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 54,
+      [cite_start]"text": "依據法規定義,持有遙控無人機操作證並於遙控無人機活動期間,提供實際操控遙控無人機操作人必要飛航資訊之人員稱之? [cite: 294]",
+      "options": {
+        [cite_start]"A": "設計者。 [cite: 295]",
+        [cite_start]"B": "目視觀察員。 [cite: 296]",
+        [cite_start]"C": "製造者。 [cite: 297]",
+        [cite_start]"D": "遙控無人機所有人。 [cite: 298]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q55",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 55,
+      [cite_start]"text": "遙控無人機依其構造可分為哪幾種? [cite: 299]",
+      "options": {
+        [cite_start]"A": "無人飛機。 [cite: 300]",
+        [cite_start]"B": "無人直昇機。 [cite: 301]",
+        [cite_start]"C": "無人多旋翼機。 [cite: 302]",
+        [cite_start]"D": "以上皆是。 [cite: 303]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q56",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 56,
+      [cite_start]"text": "無人多旋翼機具有幾個以上之垂直傳動軸? [cite: 304]",
+      "options": {
+        [cite_start]"A": "2個以上。 [cite: 305]",
+        [cite_start]"B": "3個以上。 [cite: 306]",
+        [cite_start]"C": "4個以上。 [cite: 307]",
+        [cite_start]"D": "6個以上。 [cite: 308]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q57",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 57,
+      [cite_start]"text": "何人應負飛航安全之責,對遙控無人機為妥善之維護,並從事安全飛航作業? [cite: 309]",
+      "options": {
+        [cite_start]"A": "遙控無人機所有人及操作人。 [cite: 310]",
+        [cite_start]"B": "遙控無人機設計者。 [cite: 311]",
+        [cite_start]"C": "遙控無人機製造者。 [cite: 312]",
+        [cite_start]"D": "遙控無人機改裝者。 [cite: 313]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q58",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 58,
+      [cite_start]"text": "若遙控無人機飛航活動涉及2位以上之操作者,下列敘述何者正確? [cite: 315]",
+      "options": {
+        [cite_start]"A": "應指定1人為決定權人,使得從事飛航活動。 [cite: 316]",
+        [cite_start]"B": "不須指定決定權人即可從事飛航活動。 [cite: 317]",
+        [cite_start]"C": "是否指定決定權人視任務性質而定。 [cite: 318]",
+        [cite_start]"D": "以上皆非。 [cite: 319]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q59",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 59,
+      [cite_start]"text": "下列何者較適合做為遙控無人機註冊號碼之標明處所? [cite: 320]",
+      "options": {
+        [cite_start]"A": "起落架上。 [cite: 321]",
+        [cite_start]"B": "螺旋槳面上。 [cite: 322]",
+        [cite_start]"C": "機身未遮蔽之平整面上。 [cite: 323]",
+        [cite_start]"D": "電池蓋上。 [cite: 324]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q60",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 60,
+      [cite_start]"text": "註冊號碼應以標籤、鐫刻、噴漆或其他能辨識之方式標明,並於每次飛航時符合下列何項要求? [cite: 325]",
+      "options": {
+        [cite_start]"A": "確保不至脫落。 [cite: 326]",
+        [cite_start]"B": "保持清潔。 [cite: 327]",
+        [cite_start]"C": "能明顯辨識。 [cite: 328]",
+        [cite_start]"D": "以上皆是。 [cite: 329]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q61",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 61,
+      [cite_start]"text": "遙控無人機註冊號碼之標漆位置依法應位於何處? [cite: 330]",
+      "options": {
+        [cite_start]"A": "固定結構內部。 [cite: 331]",
+        [cite_start]"B": "固定結構外部。 [cite: 332]",
+        [cite_start]"C": "轉動機構外部。 [cite: 333]",
+        [cite_start]"D": "轉動機構內部。 [cite: 334]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q62",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 62,
+      [cite_start]"text": "註冊號碼之顏色應以肉眼即能辨識,並應符合下列何項要求? [cite: 335]",
+      "options": {
+        [cite_start]"A": "融入背景顏色。 [cite: 336]",
+        [cite_start]"B": "與背景顏色相近。 [cite: 337]",
+        [cite_start]"C": "與背景明顯反襯。 [cite: 338]",
+        [cite_start]"D": "無特別規定。 [cite: 339]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q63",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 63,
+      [cite_start]"text": "有關遙控無人機註冊號碼之使用,下列何者正確? [cite: 340]",
+      "options": {
+        [cite_start]"A": "不得偽造。 [cite: 341]",
+        [cite_start]"B": "不得變造。 [cite: 342]",
+        [cite_start]"C": "不得矇領。 [cite: 343]",
+        [cite_start]"D": "以上皆是。 [cite: 344]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q64",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 64,
+      [cite_start]"text": "有關遙控無人機註冊號碼之使用,下列何者正確? [cite: 346]",
+      "options": {
+        [cite_start]"A": "不得於任何未註冊之遙控無人機上使用。 [cite: 347]",
+        [cite_start]"B": "可於他人未註冊之遙控無人機上使用。 [cite: 348]",
+        [cite_start]"C": "可於自己所有未註冊之遙控無人機上使用。 [cite: 349]",
+        [cite_start]"D": "使用狀況視遙控無人機型式而定。 [cite: 350]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q65",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 65,
+      [cite_start]"text": "最大起飛重量超過一定重量之遙控無人機應具有射頻識別功能,其一定重量,係由下列哪個機關公告之? [cite: 351]",
+      "options": {
+        [cite_start]"A": "衛福部。 [cite: 353]",
+        [cite_start]"B": "內政部。 [cite: 354]",
+        [cite_start]"C": "科技部。 [cite: 355]",
+        [cite_start]"D": "民航局。 [cite: 356]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q66",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 66,
+      [cite_start]"text": "遙控無人機之設計、製造、改裝,可由何者提出型式檢驗申請? [cite: 357]",
+      "options": {
+        [cite_start]"A": "設計者。 [cite: 358]",
+        [cite_start]"B": "製造者。 [cite: 359]",
+        [cite_start]"C": "改裝者。 [cite: 360]",
+        [cite_start]"D": "以上皆可。 [cite: 361]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q67",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 67,
+      [cite_start]"text": "遙控無人機之設計、製造、改裝,應檢附申請書向哪個機關申請型式檢驗? [cite: 362]",
+      "options": {
+        [cite_start]"A": "民航局。 [cite: 363]",
+        [cite_start]"B": "衛福部。 [cite: 364]",
+        [cite_start]"C": "內政部。 [cite: 365]",
+        [cite_start]"D": "科技部。 [cite: 366]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q68",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 68,
+      [cite_start]"text": "自國外進口之遙控無人機,應由何者依規定向民航局申請型式檢驗? [cite: 367]",
+      "options": {
+        [cite_start]"A": "操作人。 [cite: 368]",
+        [cite_start]"B": "所有人。 [cite: 369]",
+        [cite_start]"C": "進口者。 [cite: 370]",
+        [cite_start]"D": "設計者。 [cite: 371]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q69",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 69,
+      [cite_start]"text": "遙控無人機於設計、製造、改裝階段為驗證性能諸元所需之試飛,應檢附文件向哪個機關申請試飛活動? [cite: 372]",
+      "options": {
+        [cite_start]"A": "衛福部。 [cite: 374]",
+        [cite_start]"B": "內政部。 [cite: 375]",
+        [cite_start]"C": "科技部。 [cite: 376]",
+        [cite_start]"D": "民航局。 [cite: 377]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q70",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 70,
+      [cite_start]"text": "最大起飛重量25公斤以上之遙控無人機,為確保其符合設計、製造、改裝之性能諸元,應由何者提出實體檢驗申請? [cite: 379]",
+      "options": {
+        [cite_start]"A": "操作人。 [cite: 380]",
+        [cite_start]"B": "所有人。 [cite: 381]",
+        [cite_start]"C": "設計者。 [cite: 382]",
+        [cite_start]"D": "製造者。 [cite: 383]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q71",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 71,
+      [cite_start]"text": "最大起飛重量25公斤以上之遙控無人機,為確保其符合設計、製造、改裝之性能諸元,應向哪個機關申請實體檢驗? [cite: 384]",
+      "options": {
+        [cite_start]"A": "民航局。 [cite: 385]",
+        [cite_start]"B": "衛福部。 [cite: 386]",
+        [cite_start]"C": "內政部。 [cite: 387]",
+        [cite_start]"D": "科技部。 [cite: 388]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q72",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 72,
+      [cite_start]"text": "自行製造、使用之最大起飛重量25公斤以上遙控無人機,何人可提出合併型式檢驗及實體檢驗之申請? [cite: 389]",
+      "options": {
+        [cite_start]"A": "製造者。 [cite: 391]",
+        [cite_start]"B": "操作人。 [cite: 392]",
+        [cite_start]"C": "所有人。 [cite: 393]",
+        [cite_start]"D": "設計者。 [cite: 394]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q73",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 73,
+      [cite_start]"text": "自行製造、使用之最大起飛重量25公斤以上遙控無人機,可向哪個機關提出合併型式檢驗及實體檢驗之申請? [cite: 395]",
+      "options": {
+        [cite_start]"A": "內政部。 [cite: 396]",
+        [cite_start]"B": "民航局。 [cite: 397]",
+        [cite_start]"C": "科技部。 [cite: 398]",
+        [cite_start]"D": "衛福部。 [cite: 399]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q74",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 74,
+      [cite_start]"text": "實體檢驗合格證或特種實體檢驗合格證之記載事項如有變更時,下列敘述何者正確? [cite: 400]",
+      "options": {
+        [cite_start]"A": "製造者應於事實發生日起15日內申請換發。 [cite: 401]",
+        [cite_start]"B": "設計者應於事實發生日起10日內申請換發。 [cite: 402]",
+        [cite_start]"C": "操作人應於事實發生日起7日內申請換發。 [cite: 403]",
+        [cite_start]"D": "所有人應於事實發生日起15日內申請換發。 [cite: 404]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q75",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 75,
+      [cite_start]"text": "有關遙控無人機製造者與進口者申請產品資訊登錄時機,下列敘述何者正確? [cite: 405]",
+      "options": {
+        [cite_start]"A": "販售或進口前。 [cite: 406]",
+        [cite_start]"B": "販售或進口時。 [cite: 407]",
+        [cite_start]"C": "販售或進口後。 [cite: 408]",
+        [cite_start]"D": "以上皆可。 [cite: 410]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q76",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 76,
+      [cite_start]"text": "遙控無人機製造者與進口者應向哪個機關申請產品資訊登錄? [cite: 411]",
+      "options": {
+        [cite_start]"A": "內政部。 [cite: 412]",
+        [cite_start]"B": "科技部。 [cite: 413]",
+        [cite_start]"C": "民航局。 [cite: 414]",
+        [cite_start]"D": "經濟部。 [cite: 415]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q77",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 77,
+      [cite_start]"text": "最大起飛重量25公斤以上之遙控無人機因系統設計、製造或改裝缺失而致有不安全情況時,下列何者為非? [cite: 416]",
+      "options": {
+        [cite_start]"A": "設計者應針對該缺失採取補正措施。 [cite: 418]",
+        [cite_start]"B": "製造者應針對該缺失採取補正措施。 [cite: 419]",
+        [cite_start]"C": "改裝者應針對該缺失採取補正措施。 [cite: 420]",
+        [cite_start]"D": "無須採取任何補正措施。 [cite: 421]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q78",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 78,
+      [cite_start]"text": "操作政府機關(構)、學校或法人所有遙控無人機之操作人應持有民航局發給之何種證照,始得操作? [cite: 422]",
+      "options": {
+        [cite_start]"A": "機師檢定證。 [cite: 424]",
+        [cite_start]"B": "操作證。 [cite: 425]",
+        [cite_start]"C": "維修檢定證。 [cite: 426]",
+        [cite_start]"D": "鑑定合格證。 [cite: 427]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q79",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 79,
+      [cite_start]"text": "有關遙控無人機操作證之分類,下列何者為非? [cite: 428]",
+      "options": {
+        [cite_start]"A": "暫時操作證。 [cite: 429]",
+        [cite_start]"B": "普通操作證。 [cite: 430]",
+        [cite_start]"C": "專業操作證。 [cite: 431]",
+        [cite_start]"D": "學習操作證。 [cite: 432]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q80",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 80,
+      [cite_start]"text": "自然人欲以遙控無人機從事休閒娛樂用途,下列有關考照需求敘述何者正確? [cite: 433]",
+      "options": {
+        [cite_start]"A": "操作10公斤且裝置導航設備之遙控無人機不需考照。 [cite: 434]",
+        [cite_start]"B": "操作未達2公斤之遙控無人機不須考照。 [cite: 435]",
+        [cite_start]"C": "操作15公斤以上之遙控無人機僅需通過學科測驗。 [cite: 436]",
+        [cite_start]"D": "操作未達2公斤之遙控無人機須通過學科測驗。 [cite: 437]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q81",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 81,
+      [cite_start]"text": "申請遙控無人機專業操作證者,其術科測驗應於學科測驗通過日起多久內完成,否則應重新申請學科測驗? [cite: 438]",
+      "options": {
+        [cite_start]"A": "3個月內。 [cite: 440]",
+        [cite_start]"B": "6個月內。 [cite: 441]",
+        [cite_start]"C": "9個月內。 [cite: 443]",
+        [cite_start]"D": "1年內。 [cite: 444]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q82",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 82,
+      [cite_start]"text": "操作人從事遙控無人機活動,應於何時依製造者所提供之維修指引對遙控無人機系統進行檢查,以符合安全飛航條件後始得活動? [cite: 445]",
+      "options": {
+        [cite_start]"A": "應於飛航活動前執行。 [cite: 447]",
+        [cite_start]"B": "應於飛航活動後執行。 [cite: 448]",
+        [cite_start]"C": "應於飛航活動中執行。 [cite: 449]",
+        [cite_start]"D": "任何時間均可執行。 [cite: 450]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q83",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 83,
+      [cite_start]"text": "操作人從事遙控無人機飛航活動前,下列何者非為主要考量因素? [cite: 451]",
+      "options": {
+        [cite_start]"A": "氣象條件。 [cite: 452]",
+        [cite_start]"B": "空域、飛航限制。 [cite: 453]",
+        [cite_start]"C": "其他空中或地面之危害因素。 [cite: 454]",
+        [cite_start]"D": "操作者家庭狀況。 [cite: 455]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q84",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 84,
+      [cite_start]"text": "有關操作人欲於載具上操作遙控無人機以進行飛航活動,下列敘述何者錯誤? [cite: 456]",
+      "options": {
+        [cite_start]"A": "可於固定之導控站上操作。 [cite: 457]",
+        [cite_start]"B": "可於固定之車輛上操作。 [cite: 458]",
+        [cite_start]"C": "可於移動中之航空器上操作。 [cite: 459]",
+        [cite_start]"D": "可於固定之船艦上操作。 [cite: 460]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q85",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 85,
+      [cite_start]"text": "哪些單位應檢附文件向民航局申請核准後,始得從事遙控無人機飛航活動? [cite: 461]",
+      "options": {
+        [cite_start]"A": "政府機關(構)。 [cite: 462]",
+        [cite_start]"B": "學校。 [cite: 463]",
+        [cite_start]"C": "法人。 [cite: 464]",
+        [cite_start]"D": "以上皆是。 [cite: 465]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q86",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 86,
+      [cite_start]"text": "政府機關(構)、學校或法人欲於直轄市、縣(市)政府公告之禁止、限制區域內從事遙控無人機飛航活動者,應至少於活動日前多久檢附計畫書提出申請? [cite: 466]",
+      "options": {
+        [cite_start]"A": "30日前。 [cite: 468]",
+        [cite_start]"B": "20日前。 [cite: 469]",
+        [cite_start]"C": "15日前。 [cite: 470]",
+        [cite_start]"D": "10日前。 [cite: 471]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q87",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 87,
+      [cite_start]"text": "最大起飛重量2公斤以上且裝置導航設備之遙控無人機遭受實質損害或失蹤時,所有人或操作人應於發生或得知消息後多久內填具飛航安全相關事件報告表通報民航局? [cite: 472]",
+      "options": {
+        "A": "6小時內。",
+        [cite_start]"B": "12小時內。 [cite: 475]",
+        [cite_start]"C": "24小時內。 [cite: 476]",
+        [cite_start]"D": "48小時內。 [cite: 477]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q88",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 88,
+      [cite_start]"text": "當遙控無人機發生與其他航空器或障礙物接近或碰撞之事故時,所有人或操作人應於發生或得知消息後多久內填具飛航安全相關事件報告表通報民航局? [cite: 478]",
+      "options": {
+        [cite_start]"A": "6小時內。 [cite: 480]",
+        [cite_start]"B": "12小時內。 [cite: 481]",
+        [cite_start]"C": "24小時內。 [cite: 482]",
+        [cite_start]"D": "48小時內。 [cite: 483]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q89",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 89,
+      [cite_start]"text": "當發生遙控無人機飛航安全相關事件時,民航局針對操作人可採取哪項措施? [cite: 484]",
+      "options": {
+        [cite_start]"A": "得逕為暫停其操作或飛航活動。 [cite: 485]",
+        [cite_start]"B": "經操作人同意後,得暫停其操作或飛航活動。 [cite: 486]",
+        [cite_start]"C": "經所在地方政府同意後,得暫停其操作或飛航活動。 [cite: 487]",
+        [cite_start]"D": "需待調查結束後並經操作人同意,使得暫停其操作或飛航活動。 [cite: 488]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q90",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 90,
+      [cite_start]"text": "根據「遙控無人機管理規則」內容,各項申請及通報作業可透過何處以電子化方式為之? [cite: 489]",
+      "options": {
+        [cite_start]"A": "地方政府所建置之資訊系統。 [cite: 490]",
+        [cite_start]"B": "民航局所指定之資訊系統。 [cite: 491]",
+        [cite_start]"C": "財政部所建置資訊系統。 [cite: 492]",
+        [cite_start]"D": "經濟部所建置資訊系統。 [cite: 493]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q91",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 91,
+      [cite_start]"text": "遙控無人機經型式檢驗合格後,除因改裝需重新辦理檢驗及註冊異動外,是否需再辦理定期檢驗? [cite: 494]",
+      "options": {
+        [cite_start]"A": "仍需再辦理定期檢驗。 [cite: 496]",
+        [cite_start]"B": "無需再辦理定期檢驗。 [cite: 497]",
+        [cite_start]"C": "操作人認為有需要則應再辦理定期檢驗。 [cite: 498]",
+        [cite_start]"D": "所有人認為有需要則應再辦理定期檢驗。 [cite: 499]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q92",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 92,
+      [cite_start]"text": "遙控無人機於發生飛航安全相關事件後,何人應負責進行通報? [cite: 500]",
+      "options": {
+        [cite_start]"A": "僅有所有人。 [cite: 501]",
+        [cite_start]"B": "僅有操作人。 [cite: 502]",
+        [cite_start]"C": "所有人或操作人。 [cite: 503]",
+        [cite_start]"D": "操作人之親屬。 [cite: 504]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q93",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 93,
+      [cite_start]"text": "操作人未經獲准從事視距外之遙控無人機飛航活動,除不得使用矯正鏡片外之任何工具做延伸視距飛航外,另須遵守哪項飛航範圍限制? [cite: 505, 506]",
+      "options": {
+        [cite_start]"A": "須於信號鏈路有效範圍內操作。 [cite: 508]",
+        [cite_start]"B": "須於目視範圍內操作。 [cite: 509]",
+        [cite_start]"C": "須於自動駕駛有效範圍內操作。 [cite: 510]",
+        [cite_start]"D": "須於安全油量範圍內操作。 [cite: 511]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q94",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 94,
+      [cite_start]"text": "有關政府機關(構)、學校或法人欲執行獲民航局許可之遙控無人機飛航任務,下列敘述何者正確? [cite: 512]",
+      "options": {
+        [cite_start]"A": "飛航任務後應向民航局申請該次活動許可。 [cite: 513]",
+        [cite_start]"B": "飛航任務時應向民航局申請該次活動許可。 [cite: 514]",
+        [cite_start]"C": "飛航任務前應向民航局申請該次活動許可。 [cite: 515]",
+        [cite_start]"D": "不須向民航局申請該次活動許可。 [cite: 516]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q95",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 95,
+      [cite_start]"text": "遙控無人機管理規則針對「延伸視距飛航」之定義,下列何者為非? [cite: 517]",
+      "options": {
+        [cite_start]"A": "操作人須於視距外操作。 [cite: 518]",
+        [cite_start]"B": "目視觀察員須距遙控無人機半徑三百公尺範圍內。 [cite: 519]",
+        [cite_start]"C": "操作人應自目視觀察員獲取必要飛航資訊。 [cite: 520]",
+        [cite_start]"D": "目視觀察員不須與遙控無人機保持直接目視接觸。 [cite: 521]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q96",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 96,
+      [cite_start]"text": "遙控無人機管理規則如何定義「延伸視距最大範圍」? [cite: 522]",
+      "options": {
+        [cite_start]"A": "以遙控無人機操作人為中心,半徑900公尺、相對地面或水面高度低於400呎內之區域。 [cite: 523]",
+        [cite_start]"B": "以遙控無人機操作人為中心,半徑600公尺、相對地面或水面高度低於300呎內之區域。 [cite: 524]",
+        [cite_start]"C": "以遙控無人機操作人為中心,半徑500公尺、相對地面或水面高度低於200呎內之區域。 [cite: 525]",
+        [cite_start]"D": "以遙控無人機操作人為中心,半徑1,200公尺、相對地面或水面高度低於200呎內之區域。 [cite: 526]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q97",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 97,
+      [cite_start]"text": "針對自然人所有之遙控無人機,法規明訂其最大起飛重量達多少以上,即應辦理註冊? [cite: 527]",
+      "options": {
+        [cite_start]"A": "250公克以上。 [cite: 528]",
+        [cite_start]"B": "1公斤以上。 [cite: 529]",
+        [cite_start]"C": "2公斤以上。 [cite: 530]",
+        [cite_start]"D": "15公斤以上。 [cite: 531]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q98",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 98,
+      [cite_start]"text": "遙控無人機發生滅失情形者,其所有人申請註銷註冊之程序為何? [cite: 532]",
+      "options": {
+        [cite_start]"A": "事實發生日起15日內向民航局申請。 [cite: 533]",
+        [cite_start]"B": "事實發生日起20日內向民航局申請。 [cite: 534]",
+        [cite_start]"C": "事實發生日起15日內向所在地方政府申請。 [cite: 536]",
+        [cite_start]"D": "事實發生日起20日內向所在地方政府申請。 [cite: 537]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q99",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 99,
+      [cite_start]"text": "遙控無人機註冊號碼之有效期限為幾年? [cite: 538]",
+      "options": {
+        [cite_start]"A": "1年。 [cite: 539]",
+        [cite_start]"B": "2年。 [cite: 540]",
+        [cite_start]"C": "3年。 [cite: 541]",
+        [cite_start]"D": "4年。 [cite: 542]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q100",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 100,
+      [cite_start]"text": "法規規定最大起飛重量達多少以上且裝置導航設備之遙控無人機,應具備防止其進入禁、限航區及航空站或飛行場四周一定距離範圍內之圖資軟體系統? [cite: 543, 544]",
+      "options": {
+        [cite_start]"A": "250公克以上。 [cite: 545]",
+        [cite_start]"B": "1公斤以上。 [cite: 546]",
+        [cite_start]"C": "2公斤以上。 [cite: 547]",
+        [cite_start]"D": "15公斤以上。 [cite: 548]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q101",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 101,
+      [cite_start]"text": "遙控無人機實體檢驗合格證之有效期限為幾年? [cite: 549]",
+      "options": {
+        [cite_start]"A": "1年。 [cite: 550]",
+        [cite_start]"B": "2年。 [cite: 551]",
+        [cite_start]"C": "3年。 [cite: 552]",
+        [cite_start]"D": "4年。 [cite: 553]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q102",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 102,
+      [cite_start]"text": "持有普通操作證之自然人,依規定得操作下列哪個重量級距之遙控無人機? [cite: 554]",
+      "options": {
+        [cite_start]"A": "15公斤以上之遙控無人機。 [cite: 555]",
+        [cite_start]"B": "25公斤以上之遙控無人機。 [cite: 556]",
+        [cite_start]"C": "未達15公斤且裝置導航設備之遙控無人機。 [cite: 557]",
+        [cite_start]"D": "30公斤以上之遙控無人機。 [cite: 558]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q103",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 103,
+      [cite_start]"text": "持有普通操作證及專業操作證對於可操控之遙控無人機重量界線為何? [cite: 559]",
+      "options": {
+        [cite_start]"A": "1公斤。 [cite: 560]",
+        [cite_start]"B": "2公斤。 [cite: 561]",
+        [cite_start]"C": "15公斤。 [cite: 562]",
+        [cite_start]"D": "25公斤。 [cite: 563]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q104",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 104,
+      [cite_start]"text": "針對學習操作證之敘述,下列何者為非? [cite: 564]",
+      "options": {
+        [cite_start]"A": "申請者應年滿16歲。 [cite: 565]",
+        [cite_start]"B": "持有者須於具備普通或專業操作證之操作人在旁指導監護下,使得操作。 [cite: 566]",
+        [cite_start]"C": "持有者所操作遙控無人機構型不受限制。 [cite: 567]",
+        [cite_start]"D": "持有者所操作遙控無人機重量不得逾15公斤。 [cite: 569]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q105",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 105,
+      [cite_start]"text": "針對專業操作證之敘述,下列何者正確? [cite: 570]",
+      "options": {
+        [cite_start]"A": "分為初、中、高等3級。 [cite: 571]",
+        [cite_start]"B": "持有者僅須通過學科測驗。 [cite: 572]",
+        [cite_start]"C": "持有者得執行獲核准之法人委託業務。 [cite: 573]",
+        [cite_start]"D": "持有者無須經過體格檢查。 [cite: 574]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q106",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 106,
+      [cite_start]"text": "申請遙控無人機專業操作證者,其術科測驗應於學科測驗通過日起多久內完成? [cite: 575]",
+      "options": {
+        [cite_start]"A": "3個月內。 [cite: 576]",
+        [cite_start]"B": "6個月內。 [cite: 577]",
+        [cite_start]"C": "9個月內。 [cite: 578]",
+        [cite_start]"D": "1年內。 [cite: 579]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q107",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 107,
+      [cite_start]"text": "操作人操作遙控無人機時,血液中酒精濃度依法不得超過多少? [cite: 580]",
+      "options": {
+        [cite_start]"A": "0.01%。 [cite: 581]",
+        [cite_start]"B": "0.02%。 [cite: 582]",
+        [cite_start]"C": "0.04%。 [cite: 583]",
+        [cite_start]"D": "0.06%。 [cite: 584]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q108",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 108,
+      [cite_start]"text": "最大起飛重量未達25公斤且裝置導航設備之遙控無人機,其最大飛行速度不得超過多少? [cite: 585]",
+      "options": {
+        [cite_start]"A": "70海浬/小時。 [cite: 586]",
+        [cite_start]"B": "87海浬/小時。 [cite: 587]",
+        [cite_start]"C": "100海浬/小時。 [cite: 588]",
+        [cite_start]"D": "150海浬/小時。 [cite: 589]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q109",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 109,
+      [cite_start]"text": "政府機關(構)、學校或法人欲於禁、限航區及航空站或飛行場四周一定距離範圍內從事遙控無人機飛航活動者,應於活動日前多久提出申請? [cite: 590, 591]",
+      "options": {
+        [cite_start]"A": "15日前。 [cite: 592]",
+        [cite_start]"B": "10日前。 [cite: 593]",
+        [cite_start]"C": "5日前。 [cite: 594]",
+        [cite_start]"D": "3日前。 [cite: 595]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q110",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 110,
+      [cite_start]"text": "政府機關(構)、學校或法人於涉及軍事航空管理機關(構)管理之禁、限航區及航空站或飛行場四周一定距離範圍內從事遙控無人機飛航活動者,應於活動日前多久提出申請? [cite: 596]",
+      "options": {
+        [cite_start]"A": "30日前。 [cite: 597]",
+        [cite_start]"B": "20日前。 [cite: 599]",
+        [cite_start]"C": "15日前。 [cite: 600]",
+        [cite_start]"D": "10日前。 [cite: 601]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q111",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 111,
+      [cite_start]"text": "政府機關(構)、學校或法人於直轄市、縣(市)政府公告之禁止、限制區域內從事遙控無人機飛航活動時,如有跨縣市飛航情形,應向哪個機關提出申請? [cite: 602, 603]",
+      "options": {
+        [cite_start]"A": "飛經之直轄市、縣(市)政府。 [cite: 604]",
+        [cite_start]"B": "起飛地點所在直轄市、縣(市)政府提出申請,經所在地及跨縣市政府同意。 [cite: 605]",
+        [cite_start]"C": "降落地點所在直轄市、縣(市)政府。 [cite: 606]",
+        [cite_start]"D": "降落地點所鄰近直轄市、縣(市)政府。 [cite: 607]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q112",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 112,
+      [cite_start]"text": "當災害發生時,欲於各級政府依災害防救法劃定之警戒區域或指定區域內從事遙控無人機飛航活動者,應聽從何者之統一指揮調度? [cite: 608]",
+      "options": {
+        [cite_start]"A": "民航局局長。 [cite: 609]",
+        [cite_start]"B": "當地警察局局長。 [cite: 610]",
+        [cite_start]"C": "當地消防局局長。 [cite: 611]",
+        [cite_start]"D": "各級政府災害應變中心指揮官。 [cite: 612]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q113",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 113,
+      [cite_start]"text": "政府機關(構)、學校或法人依法應保存遙控無人機之註冊號碼、活動日期、活動區域、飛航時間、飛航性質、操作人員姓名、維護或修理、改裝等紀錄,並應保存多久? [cite: 613, 614]",
+      "options": {
+        [cite_start]"A": "1年。 [cite: 615]",
+        [cite_start]"B": "2年。 [cite: 616]",
+        [cite_start]"C": "3年。 [cite: 617]",
+        [cite_start]"D": "5年。 [cite: 618]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q114",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 114,
+      [cite_start]"text": "有關外國人領有外國政府所核發遙控無人機相關證照者,應向民航局申請認可後使得於本區從事遙控無人機飛航活動之規定,是否亦適用於領有外國政府核發證照之本國人? [cite: 619, 620]",
+      "options": {
+        [cite_start]"A": "是,本國人亦適用。 [cite: 621]",
+        [cite_start]"B": "否,本國人不適用。 [cite: 622]",
+        [cite_start]"C": "視活動時間決定適用與否。 [cite: 623]",
+        [cite_start]"D": "視活動性質決定適用與否。 [cite: 624]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q115",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 115,
+      [cite_start]"text": "某合格無人機業務團隊受委託以遙控無人機執行山區電纜線路查檢工作。惟因路況不佳,該團隊無法抵達預訂工作區域,為不影響任務進行,成員臨時決定仍將無人機飛至工作區,並以望遠鏡保持與其間之視線接觸。請問該團隊之決定是否違反無人機相關規範? [cite: 625, 626]",
+      "options": {
+        [cite_start]"A": "並無違反遙控無人機相關規範。 [cite: 627]",
+        [cite_start]"B": "已違反遙控無人機相關規範。 [cite: 628]",
+        [cite_start]"C": "有無違反規範視任務執行結果而定。 [cite: 630]",
+        [cite_start]"D": "資訊不足,無法判斷。 [cite: 631]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q116",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 116,
+      [cite_start]"text": "某無人機團隊獲准於機場跑道上空測試某項酬載功能,有人建議飛得越高越能展現測試成果,請問操作人對於該建議應有哪項認知? [cite: 632, 633]",
+      "options": {
+        [cite_start]"A": "活動既經核准,即無飛航高度限制,想飛多高就多高。 [cite: 634]",
+        [cite_start]"B": "飛航高度未經核准,仍應遵守距地表面不得逾400呎之規定。 [cite: 635]",
+        [cite_start]"C": "飛航高度聽從現場指揮人員視任務執行狀況決定。 [cite: 636]",
+        [cite_start]"D": "飛航高度視能見度好壞決定。 [cite: 637]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q117",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 117,
+      [cite_start]"text": "某無人機團隊正擬定拍攝一大型廟會活動之飛航計畫,請問該團隊對於其執行之任務,應有下列何種正確認知? [cite: 638]",
+      "options": {
+        [cite_start]"A": "團隊技術高超,拍攝時無須特別防護工作。 [cite: 639]",
+        [cite_start]"B": "為達拍攝效果,於任務中任意變換無人機飛航高度甚至接近人群是可以接受的。 [cite: 640]",
+        [cite_start]"C": "重量較輕的無人機相對危害較小,故可隨意飛近目標物進行拍攝。 [cite: 641]",
+        [cite_start]"D": "操作人應領有相應專業操作證,且於執行任務前應申請活動許可。 [cite: 642]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q118",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 118,
+      [cite_start]"text": "無人機團隊正在作飛行前準備,臨時被告知因緊急狀況,無人機於飛航時必須裝載由民航局公告之危險物品,請問操作人該有下列哪項正確認知? [cite: 643]",
+      "options": {
+        [cite_start]"A": "僅要能確保無人機飛航時之平衡及控制穩定,即同意該要求,否則拒絕該要求。 [cite: 644]",
+        [cite_start]"B": "未經核准前,依規定不得以無人機裝載危險物品,應直接拒絕該要求。 [cite: 645]",
+        [cite_start]"C": "如該危險物品之包裝完好且易固定,即同意該要求,否則就拒絕該要求。 [cite: 646]",
+        [cite_start]"D": "因為緊急狀況,應無條件同意該要求。 [cite: 647]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q119",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 119,
+      [cite_start]"text": "某款遙控無人機搭載攝影機及GPS等裝備,可利用圖傳系統於螢幕上即時傳輸圖像,請問操作人於操作該款無人機時,對於即時傳輸圖像功能應具有下列哪項正確認知? [cite: 648, 649]",
+      "options": {
+        [cite_start]"A": "可完全信賴,操作時不必再監視無人機飛航及其周遭狀況。 [cite: 649]",
+        [cite_start]"B": "只要搭載攝影裝備解析度夠好,即不必再監視無人機飛航及其周遭狀況。 [cite: 650]",
+        [cite_start]"C": "只要操作人技術夠純熟,即不必再監視無人機飛航及其周遭狀況。 [cite: 651]",
+        [cite_start]"D": "無論是否搭載圖傳裝備,操作人仍應隨時監視無人機之飛航及其周遭狀況。 [cite: 652]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q120",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 120,
+      [cite_start]"text": "遙控無人機飛航活動對於其他航空器活動、地面人群及建築物所帶來之影響顯而易見,請問就操作人而言,應有下列哪項正確觀念? [cite: 653]",
+      "options": {
+        [cite_start]"A": "反正其他目標物均很明顯,發現時再緊急避讓即可。 [cite: 654]",
+        [cite_start]"B": "應於可操作區域進行飛航、遵守相關規定,隨時注意並防止無人機接近任何其他目標物。 [cite: 655]",
+        [cite_start]"C": "只要於可操作區域內飛航,無人機是否接近其他目標物非操作者的責任。 [cite: 656]",
+        [cite_start]"D": "進行無人機飛航活動時,若有目視觀察員在側,由目視觀察員全權負責無人機與其他目標物之隔離工作。 [cite: 657, 658]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q121",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 121,
+      [cite_start]"text": "某明星正在室外舉行音樂發表會,主辦單位看到現場人山人海,為擴大宣傳效果,臨時打算請某無人機團隊利用無人機於現場人群上空進行投擲紀念版T恤及CD活動,請問下列敘述何者正確? [cite: 660]",
+      "options": {
+        [cite_start]"A": "法規已明訂未取得相應專業操作證及事前活動申請許可,不得以遙控無人機進行投擲作業。 [cite: 661]",
+        [cite_start]"B": "主辦單位只要事先向現場人群說明活動進行方式,即可進行投擲作業。 [cite: 662]",
+        [cite_start]"C": "只要主辦單位提供之T恤及CD數量能符合無人機酬載需求,即可進行投擲作業。 [cite: 663]",
+        [cite_start]"D": "使用無人機投擲物件稀鬆平常,毫無安全疑慮,可以直接進行投擲作業。 [cite: 664]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q122",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 122,
+      [cite_start]"text": "某電影拍攝作業因取景需求,導演指示團隊將無人機飛入民用航空法所規範之限航區內執行空拍任務,請問下列敘述何者正確? [cite: 665]",
+      "options": {
+        [cite_start]"A": "只要在限航區內不要待太久,趕緊拍攝完畢就好。 [cite: 666]",
+        [cite_start]"B": "非經核准,限航區內不得從事遙控無人機飛航活動。 [cite: 667]",
+        [cite_start]"C": "若限航區位處人煙罕至處,飛進去拍攝無妨。 [cite: 668]",
+        [cite_start]"D": "只要有助手協助觀察限航區內狀況,即可飛入拍攝。 [cite: 669]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q123",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 123,
+      [cite_start]"text": "國內某無人機團隊有名外籍成員,雖領有該國政府所核發之合格無人機操作證,惟尚未獲得本國民航局認可。針對該名外籍成員欲參與團隊於本國境內之無人機飛航活動之敘述,下列何者正確? [cite: 670]",
+      "options": {
+        [cite_start]"A": "該員已領有外國政府核發證照,理當可於本國境內從事飛航活動。 [cite: 671]",
+        [cite_start]"B": "如該員已具備無人機操作經歷滿3年以上,即可直接於本國境內從事飛航活動。 [cite: 672]",
+        [cite_start]"C": "該員必須獲得本國民航局認可,使得於本國境內從事飛航活動。 [cite: 673]",
+        [cite_start]"D": "只要無人機團隊有人願簽切結書擔保活動之安全,該員即可於本國境內從事飛航活動。 [cite: 674]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q124",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 124,
+      [cite_start]"text": "王大華從某購物商場購買一台最大起飛重量950公克的無人多旋翼機,欲作為假日出遊紀錄小孩玩樂過程的利器,有關王大華應注意事項,下列哪項正確? [cite: 675]",
+      "options": {
+        [cite_start]"A": "王大華不須為該台無人多旋翼機辦理註冊。 [cite: 676]",
+        [cite_start]"B": "王大華須取得高級專業操作證後,才能操作該台無人多旋翼機。 [cite: 677]",
+        [cite_start]"C": "王大華不得任意於機場周邊進行飛航操作。 [cite: 678]",
+        [cite_start]"D": "王大華須為該台無人多旋翼機辦理實體檢驗。 [cite: 679]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q125",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 125,
+      [cite_start]"text": "某大學校慶活動,預計於該校室內體育館舉行一場無人機競技比賽,請問有關該比賽之適法性問題,下列何者為非? [cite: 680]",
+      "options": {
+        [cite_start]"A": "該比賽舉辦地點於室內,非屬民航法無人機專章規範範圍。 [cite: 681]",
+        [cite_start]"B": "該比賽舉辦地點雖於室內,仍屬民航法無人機專章規範範圍。 [cite: 682]",
+        [cite_start]"C": "操作人於比賽過程中仍須注意在場人員之安全。 [cite: 684]",
+        [cite_start]"D": "比賽過程中如因操作人操作不當而傷及他人者,操作人仍可能須負相關法律責任。 [cite: 685]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q126",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 126,
+      [cite_start]"text": "某無人機團隊受知名電視台委託,要利用無人機進行即時新聞事件之空拍作業,惟團隊經評估後認為該空拍作業可能存在安全顧慮,請問該團隊面對電視台之委託,採取下列何項作法較為恰當? [cite: 686]",
+      "options": {
+        [cite_start]"A": "僅須視操作人經驗決定是否接受該任務。 [cite: 687]",
+        [cite_start]"B": "視電視台給予酬勞多寡決定是否接受該任務。 [cite: 688]",
+        [cite_start]"C": "評估有安全顧慮即應婉拒該任務,並詳細解釋其原因。 [cite: 689]",
+        [cite_start]"D": "視任務活動投保額度高低決定是否接受該任務。 [cite: 690]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q127",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 127,
+      [cite_start]"text": "小陳為某新成立無人機業務公司負責人,目前除積極招兵買馬外,亦準備購入20台不同構型、重量之業務用無人機。請問小陳對於該公司所購入無人機之註冊相關規定,下列敘述何者正確? [cite: 691]",
+      "options": {
+        [cite_start]"A": "所有無人機均須辦理註冊。 [cite: 692]",
+        [cite_start]"B": "最大起飛重量超過250公克之無人機才須辦理註冊。 [cite: 693]",
+        [cite_start]"C": "僅須為所採購無人機之半數辦理註冊即可。 [cite: 694]",
+        [cite_start]"D": "由主管機關決定應辦理註冊之無人機數量。 [cite: 695]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q128",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 128,
+      [cite_start]"text": "某公司因業務需求所購入之一批無人機剛完成向民航局申請之註冊程序,請問該公司對於註冊號碼之標註規定所應有認知,下列何者為非? [cite: 696]",
+      "options": {
+        [cite_start]"A": "註冊號碼標註位置須能清楚辨識。 [cite: 697]",
+        [cite_start]"B": "註冊號碼得以噴漆方式標註。 [cite: 698]",
+        [cite_start]"C": "須確保註冊號碼不會於每次飛航活動中脫落。 [cite: 699]",
+        [cite_start]"D": "無人機之移動結構外部最適合作為註冊號碼標註之處。 [cite: 700]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q129",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 129,
+      [cite_start]"text": "某無人機團隊因特殊任務需求所新購之一架無人機尚未完成註冊程序,惟因任務在即,有成員建議先借用另一架已註冊無人機之註冊號碼,再向民航局報備即可。請問針對該成員之主張,下列何者為正確? [cite: 701, 702]",
+      "options": {
+        [cite_start]"A": "註冊號碼本來就可以互相借用,並無違反相關規定。 [cite: 703]",
+        [cite_start]"B": "只要所借用註冊號碼同屬該團隊其他無人機所有,即無違反相關規定。 [cite: 704]",
+        [cite_start]"C": "只要先向民航局報備獲准借用,即無違反相關規範。 [cite: 705]",
+        [cite_start]"D": "註冊號碼不得借供於未註冊之無人機上使用,該成員之主張已明顯違反相關規範。 [cite: 706]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q130",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 130,
+      [cite_start]"text": "無人機團隊因任務需要,為其所有之一架已取得型式檢驗合格證之無人機進行改裝行為,請問該團隊針對無人機改裝後之應有認知,下列何者正確? [cite: 707]",
+      "options": {
+        [cite_start]"A": "改裝者應檢附申請書向民航局再次申請型式檢驗。 [cite: 708]",
+        [cite_start]"B": "改裝行為並不影響型式檢驗之效力,無須再進行任何檢驗。 [cite: 709]",
+        [cite_start]"C": "該團隊能擔保改裝行為不影響無人機飛航性能及安全,即不須再進行任何檢驗。 [cite: 711]",
+        "D": "由主管機關自由判定改裝行為是否須進行重新檢驗。"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q131",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 131,
+      [cite_start]"text": "某團隊擁有一架最大起飛重量達30公斤之無人飛機逾半年之久,經過幾次任務後發現該機因某項設計缺失而恐致操作安全疑慮,請問該團隊應有下列何項認知及作為? [cite: 712]",
+      "options": {
+        [cite_start]"A": "只要加強操作人技術及應付緊急狀況之能力即可,不須採取其他作為。 [cite: 713]",
+        [cite_start]"B": "團隊應儘速詢求該無人機設計者,以針對設計缺失進行補正作為。 [cite: 714]",
+        [cite_start]"C": "於往後每次活動區域內設置安全防護網即可,不須採取其他作為。 [cite: 715]",
+        [cite_start]"D": "於往後活動前只要記得投保較高額度之保險即可,不須採取其他作為。 [cite: 716]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q132",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 132,
+      [cite_start]"text": "某電影公司欲拍攝高速公路警匪追逐場景,為求逼真效果,電影公司要求無人機團隊操作無人機近距離拍攝疾駛於高速公路上之車輛,請問操作人應有哪項正確認知? [cite: 717]",
+      "options": {
+        [cite_start]"A": "這是訓練自己技術的好機會,應大膽接受任務。 [cite: 718]",
+        [cite_start]"B": "看在電影公司給予高額酬勞的份上,理應接受該任務。 [cite: 719]",
+        [cite_start]"C": "只要團隊多數人認為可以執行,即應接受該任務。 [cite: 720]",
+        [cite_start]"D": "未經核准飛航前,無人機飛航活動應遠離高速公路至少30公尺以上,該任務顯違反規定,應予以拒絕。 [cite: 721]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q133",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 133,
+      [cite_start]"text": "某區域發生強烈地震,造成人員傷亡及財產損害嚴重,某新聞機構要求無人機團隊不待申請,立即趕赴當地執行空拍任務,以便進行獨家即時新聞報導,請問該團隊應有何種正確認知? [cite: 722]",
+      "options": {
+        [cite_start]"A": "緊急情況時,應遵守災害防救法之規定,統一聽從政府災害應變中心指揮及調度,不可擅自進行拍攝。 [cite: 723]",
+        [cite_start]"B": "因屬災害危難事件、人命關天,應不顧一切答應其要求,並立即前往進行拍攝。 [cite: 724]",
+        [cite_start]"C": "只要取得欲拍攝區域之里長口頭同意後,即可進行拍攝任務。 [cite: 725]",
+        [cite_start]"D": "只要取得欲拍攝區域之消防主管機關口頭同意後,即可進行拍攝任務。 [cite: 726]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q134",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 134,
+      [cite_start]"text": "某大學順應潮流成立無人機社團,其成員亦將成為該校未來無人機業務執行主力。學校為擴大宣傳,臨時決定某日下午於校園空曠處進行無人機飛航展示活動,請問下列認知何者正確? [cite: 727]",
+      "options": {
+        [cite_start]"A": "校園內飛航無受法規限制,可盡情執行飛航展示活動。 [cite: 728]",
+        [cite_start]"B": "只要經學校同意,並於活動現場派員口頭宣導注意事項,即可任意進行飛航展示活動。 [cite: 729]",
+        [cite_start]"C": "該校仍應於完成飛航活動許可申請後,始得依申請內容進行飛航操作展示。 [cite: 730]",
+        [cite_start]"D": "為展示無人機性能,刻意將無人機飛越人群、教室或辦公區域是可允許的。 [cite: 731]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q135",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 135,
+      [cite_start]"text": "小華為某公司無人機業務部門主管兼資深飛手,請問有關每趟飛航任務之操作紀錄、無人機維護紀錄及相關修理紀錄等處置事宜,小華應有哪項正確認知? [cite: 732, 733]",
+      "options": {
+        [cite_start]"A": "法規針對相關紀錄之處置並無明確規範,隨公司高層想怎麼處理都可以。 [cite: 735]",
+        [cite_start]"B": "相關紀錄內容隨便寫寫就好,反正任務完成、機器能正常運作即可。 [cite: 736]",
+        [cite_start]"C": "明知飛航任務中發生異常現象,為利團隊績效,自行研判若不嚴重,即不須特別紀錄。 [cite: 737]",
+        [cite_start]"D": "公司應妥善保存每趟任務之相關紀錄,法規針對紀錄事項及保存期限等亦有相關規定。 [cite: 738]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q136",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 136,
+      [cite_start]"text": "一架最大起飛重量5公斤且裝置導航設備之遙控無人機於海岸邊執行空拍任務時,因操作不當而致失控墜海,目視機體已明顯損壞無法繼續使用。請問操作人應採取下列哪項正確作為? [cite: 739]",
+      "options": {
+        [cite_start]"A": "只要無造成人員傷亡,即不須作任何處置。 [cite: 740]",
+        [cite_start]"B": "只要無造成人員傷亡,只需要把墜海的無人機拾回即可。 [cite: 741]",
+        [cite_start]"C": "無論有無造成人員傷亡,應於事件發生後24小時內依規定通報當地消防單位。 [cite: 742]",
+        [cite_start]"D": "無論有無造成人員傷亡,應於事件發生後24小時內依規定通報民航局。 [cite: 743]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q137",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 137,
+      [cite_start]"text": "某無人機團隊正規劃一場沙灘音樂饗宴任務,其內容包括:「日落後利用無人機於參與民眾上空噴灑彩色粉末,以製造繽紛效果」。請問下列何者為該團隊執行任務前最重要之考量因素? [cite: 744]",
+      "options": {
+        [cite_start]"A": "操作者之飛航技術及膽識是否足夠。 [cite: 745]",
+        [cite_start]"B": "彩色粉末之數量是否足夠活動需求。 [cite: 746]",
+        [cite_start]"C": "該任務是否已經申請核准,操作者是否領有相應操作證。 [cite: 747]",
+        [cite_start]"D": "現場燈光及音效設備是否良好,以營造絢麗歡樂效果。 [cite: 748]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q138",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 138,
+      [cite_start]"text": "某公司無人機團隊正執行飛航任務,突接獲上層電話指示須臨時將無人機飛至前方人群密集之住宅區拍攝所需影像,並表示公司先前已獲得民航局相關安全能力審查通過,可放心飛入執行拍攝。」請問該團隊應有下列何種正確認知? [cite: 749, 750, 751]",
+      "options": {
+        [cite_start]"A": "當然是聽從上層的要求,直接飛入住宅區進行拍攝。 [cite: 752]",
+        [cite_start]"B": "活動前仍應依規定向民航局申請執行許可後,使得進行拍攝。 [cite: 753]",
+        [cite_start]"C": "只要臨時通知所在地轄區派出所後,即可進行拍攝。 [cite: 754]",
+        [cite_start]"D": "只要臨時通知所在地轄區里長辦公室後,即可進行拍攝。 [cite: 755]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q139",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 139,
+      [cite_start]"text": "某業餘玩家利用假日至一處未被劃設禁飛區域內進行無人機試飛活動,並預劃完成數項操作科目,此時已接近日落,尚有幾個科目未完成,請問有關下列該玩家應注意事項,何者正確? [cite: 756]",
+      "options": {
+        [cite_start]"A": "該區域非為禁飛區,故該玩家於日落後仍可持續進行科目操作。 [cite: 757]",
+        [cite_start]"B": "該玩家於日落前即應終止其飛航科目操作。 [cite: 758]",
+        [cite_start]"C": "如果天氣良好即可於日落後持續進行飛航科目操作。 [cite: 759]",
+        [cite_start]"D": "只要觀察四周無人,即可於日落後持續進行飛航科目操作。 [cite: 760]"
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c1q140",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 140,
+      [cite_start]"text": "假設現有以下資訊: 1.日落時間為本地時間18點46分。2.民用暮光時間為19點12分。3.航海暮光時間為19點43分。4.天文暮光時間為20點16分。請問無人機操作人應於何時終止飛航活動? [cite: 762]",
+      "options": {
+        [cite_start]"A": "18點46分。 [cite: 763]",
+        [cite_start]"B": "19點12分。 [cite: 764]",
+        [cite_start]"C": "19點43分。 [cite: 765]",
+        [cite_start]"D": "20點16分。 [cite: 766]"
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c1q141",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 141,
+      [cite_start]"text": "無人機團隊正評估釣客欲於近海海域使用無人機至離岸數公里處進行投放釣餌之操作需求,請問下列哪項說明為該團隊最重要之考量因素? [cite: 767]",
+      "options": {
+        [cite_start]"A": "無人機裝載釣餌前後之重量與重心變化是否於其操作限制內。 [cite: 768]",
+        [cite_start]"B": "無人機之動力來源是否足以支撐該項投擲任務之完成。 [cite: 769]",
+        [cite_start]"C": "涉及利用無人機投擲物體之限制操作項目,應申請活動許可並應考取相關操作證。 [cite: 770]",
+        [cite_start]"D": "釣客是否投保相關保險並願意簽署任務執行切結書。 [cite: 771]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q142",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 142,
+      [cite_start]"text": "某雜誌社委託無人機團隊利用無人機執行一項具有相當危險性之飛航任務,負責人並保證:「於執行任務過程中若發生任何事件,導致人員死傷或財物毀損,均由雜誌社全權負責,請團隊安心進行任務。」請問有關該負責人之保證,下列敘述何者正確? [cite: 772]",
+      "options": {
+        [cite_start]"A": "雜誌社要能提供書面保證及繳交足額保證金,使得作為團隊免責之依據。 [cite: 773]",
+        [cite_start]"B": "只要不是故意造成人員死傷或財物毀損,任一方均不須負賠償責任。 [cite: 774]",
+        [cite_start]"C": "只要活動經申請核准執行,且已作有必要防護措施者,任一方均不須負賠償責任。 [cite: 775]",
+        [cite_start]"D": "操作無人機造成人員死傷或財物毀損,不論故意或過失,應由所有人及操作人負連帶賠償責任。 [cite: 776]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q143",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 143,
+      [cite_start]"text": "無人機團隊自行設計並組裝一架無人機,以因應越趨多元之任務型態,因某次任務時程緊迫,團隊雖然知道該無人機尚未通過檢驗核可,仍決議先進行任務使用,等任務結束後再趕緊完成檢驗程序。請問有關該團隊之決議,下列敘述何整正確? [cite: 777]",
+      "options": {
+        [cite_start]"A": "只要於任務前先以口頭知會民航局,並於任務後儘快送檢即可。 [cite: 778]",
+        [cite_start]"B": "只要於任務後以口頭知會民航局,並儘快送檢即可。 [cite: 779]",
+        [cite_start]"C": "未經向民航局申請檢驗取得檢驗合格證者,不得從事飛航活動。 [cite: 780]",
+        [cite_start]"D": "於任務前先以口頭知會民航局,並由民航局決定是否准予先執行任務,後續再完成檢驗程序。 [cite: 781]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q144",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 144,
+      [cite_start]"text": "某無人機團隊所有之一架無人機,於一次任務中因動力失效而墜落地面,機身經檢視受損嚴重,並經評估恐難以再修復使用。請問團隊針對該無人機應有之後續處置作為,下列敘述何者正確? [cite: 782]",
+      "options": {
+        [cite_start]"A": "該無人機既已損毀,直接丟棄即可,惟應保留其註冊號碼及檢驗合格證。 [cite: 783]",
+        [cite_start]"B": "再購買一架新無人機,並得直接使用原損壞無人機之註冊號碼,惟不能使用其檢驗合格證。 [cite: 785]",
+        [cite_start]"C": "再購買一架新無人機,並得直接使用原損壞無人機之檢驗合格證,惟不能使用其註冊號碼。 [cite: 786]",
+        [cite_start]"D": "所有人應於事實發生日起15日內向民航局申請註銷註冊。其註冊號碼及檢驗合格證均不得使用於其他無人機。 [cite: 787]"
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c1q145",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 145,
+      [cite_start]"text": "某無人機團隊已獲得民航局安全能力審查核可,得於人群聚集處進行空拍任務。於某次任務執行前,團隊依規定向民航局申請活動許可,惟對於是否應向當地地方政府申請一事意見相左,請問下列敘述何者正確? [cite: 788]",
+      "options": {
+        [cite_start]"A": "法律為民航局訂定的,當然只要向民航局申請即可。 [cite: 789]",
+        [cite_start]"B": "一般而言,經民航局核准後,地方政府通常不會有意見,故不須再做申請。 [cite: 790]",
+        [cite_start]"C": "除獲民航局許可外,仍應取得地方政府之同意,故還是得做申請。 [cite: 791]",
+        [cite_start]"D": "是否要向地方政府申請,依執行任務之危險度或複雜度而定。 [cite: 792]"
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c1q146",
+      "chapter_number": 1,
+      "chapter_name": "民用航空法及相關法規",
+      "question_number": 146,
+      [cite_start]"text": "有關操作人從事遙控無人機飛航活動時應注意之距離限制,下列何者為正確? [cite: 793]",
+      "options": {
+        [cite_start]"A": "應至少距高速公路範圍10公尺以上。 [cite: 794]",
+        [cite_start]"B": "應至少距高架鐵路範圍20公尺以上。 [cite: 795]",
+        [cite_start]"C": "應至少距建築物及障礙物範圍30公尺以上。 [cite: 796]",
+        [cite_start]"D": "以上均正確。 [cite: 797]"
+      },
+      "correct_answer": "C"
+    }
+  ]
