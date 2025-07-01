@@ -1,0 +1,3278 @@
+[
+    {
+      "unique_id": "c2q1",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 1,
+      "text": "遙控無人機系統包含下列哪項主要次系統? ",
+      "options": {
+        "A": "遙控無人機體。 ",
+        "B": "遙控設備。 ",
+        "C": "通訊及控制信號鏈路。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q2",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 2,
+      "text": "遙控無人機系統之飛行載具,包括下列哪些項目? ",
+      "options": {
+        "A": "機體、負載設備及酬載。 ",
+        "B": "機體、燃料或電池。 ",
+        "C": "機體、燃料或電池、負載設備及酬載。 ",
+        "D": "機體、燃料或電池、負載設備及酬載、遙控設備。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q3",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 3,
+      "text": "遙控無人機系統之地面控制站的硬體設備,包括下列哪個項目? ",
+      "options": {
+        "A": "訊號傳輸設備。 ",
+        "B": "指令傳輸設備。 ",
+        "C": "資訊接收分析設備。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q4",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 4,
+      "text": "遙控無人飛機起飛時,除跑道起飛外,還可運用下列哪項裝置? ",
+      "options": {
+        "A": "火箭助推。 ",
+        "B": "彈射軌道發射。 ",
+        "C": "人力拋擲。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q5",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 5,
+      "text": "遙控無人飛機降落時,除跑道降落外,也可運用下列哪項方式? ",
+      "options": {
+        "A": "攔截網。 ",
+        "B": "纜線勾鎖。 ",
+        "C": "降落傘。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q6",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 6,
+      "text": "遙控無人機許多層面都還是要由人員來掌握及操控,所以下列哪個因素在整體飛行過程中佔了很重要的一部分? ",
+      "options": {
+        "A": "人為因素。 ",
+        "B": "運氣因素。 ",
+        "C": "社會因素。 ",
+        "D": "歷史因素。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q7",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 7,
+      "text": "完整之飛控系統包括下列哪個部分? ",
+      "options": {
+        "A": "感測器。 ",
+        "B": "機載計算機。 ",
+        "C": "伺服器。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q8",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 8,
+      "text": "完整之飛控系統可實現遙控無人機下列哪項功能? ",
+      "options": {
+        "A": "姿態穩定和控制。 ",
+        "B": "任務管理。 ",
+        "C": "緊急控制模式。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q9",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 9,
+      "text": "下列哪個是飛行控制系統的輸入裝置,用以保持控制精度? ",
+      "options": {
+        "A": "機載計算機。 ",
+        "B": "感測器。 ",
+        "C": "伺服器。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q10",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 10,
+      "text": "導航系統提供遙控無人機哪項資訊? ",
+      "options": {
+        "A": "位置。 ",
+        "B": "速度。 ",
+        "C": "飛行姿態。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q11",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 11,
+      "text": "遙控無人機導航系統主要分為下列哪兩種? ",
+      "options": {
+        "A": "非自主(如GPS)和自主(慣性導航)。 ",
+        "B": "高精度和一般精度。 ",
+        "C": "高抗干擾和低抗干擾。 ",
+        "D": "全自動和半自動。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q12",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 12,
+      "text": "遙控無人機非自主(如GPS)導航系統有下列哪個缺點? ",
+      "options": {
+        "A": "操作困難。 ",
+        "B": "易受干擾。 ",
+        "C": "誤差積累增大。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q13",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 13,
+      "text": "遙控無人機自主(慣性導航)導航系統有下列哪個缺點? ",
+      "options": {
+        "A": "操作困難。 ",
+        "B": "易受干擾。 ",
+        "C": "誤差積累增大。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q14",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 14,
+      "text": "遙控無人機將朝向下列哪個方向繼續發展? ",
+      "options": {
+        "A": "高精度。 ",
+        "B": "高可靠度。 ",
+        "C": "高抗干擾。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q15",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 15,
+      "text": "遙控無人機導航與自動避讓系統的發展,包括下列哪項重點? ",
+      "options": {
+        "A": "慣性導航。 ",
+        "B": "多感應器融合、GPS。 ",
+        "C": "光電系統技術整合。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q16",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 16,
+      "text": "遙控無人機的動力系統,都朝向下列哪個方向發展? ",
+      "options": {
+        "A": "體積小、重量輕。 ",
+        "B": "成本低。 ",
+        "C": "可靠度高。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q17",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 17,
+      "text": "遙控無人機的能量來源可以包括下列哪項? ",
+      "options": {
+        "A": "太陽能。 ",
+        "B": "氫能。 ",
+        "C": "鋰電池。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q18",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 18,
+      "text": "負責對遙控無人機之命令與控制、資料鏈路等工作的,是下列哪個系統? ",
+      "options": {
+        "A": "動力系統。 ",
+        "B": "無線通訊系統。 ",
+        "C": "導航系統。 ",
+        "D": "飛行控制系統。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q19",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 19,
+      "text": "遙控無人機控制鏈路為保密與抗干擾基本上已全面採行下列哪種方式? ",
+      "options": {
+        "A": "類比化。 ",
+        "B": "模組化。 ",
+        "C": "數位化。 ",
+        "D": "離散化。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q20",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 20,
+      "text": "遙控無人機的圖傳主要資料傳輸形態有下列哪幾種方式? ",
+      "options": {
+        "A": "高速、寬頻。 ",
+        "B": "類比、數位。 ",
+        "C": "單工、衛星。 ",
+        "D": "雙工、衛星。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q21",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 21,
+      "text": "遙控無人機的通訊技術朝向下列哪個方向發展? ",
+      "options": {
+        "A": "高速、寬頻。 ",
+        "B": "保密。 ",
+        "C": "抗干擾。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q22",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 22,
+      "text": "隨著機載感測器精度和任務複雜度的上升,機載處理器的下列哪項需求也將隨之提高? ",
+      "options": {
+        "A": "運算需求。 ",
+        "B": "保密需求。 ",
+        "C": "抗干擾需求。 ",
+        "D": "重量需求。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q23",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 23,
+      "text": "所謂航空器,係指任何藉空氣之下列哪種力,得以飛航於大氣中之器物? ",
+      "options": {
+        "A": "摩擦力。 ",
+        "B": "靜電力。 ",
+        "C": "反作用力。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q24",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 24,
+      "text": "遙控無人機比空氣重,無法只藉由空氣的浮力而上升,需要相對應的下列哪個項目在空中飛行? ",
+      "options": {
+        "A": "能量。 ",
+        "B": "機身外表顏色。 ",
+        "C": "起落架材質。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q25",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 25,
+      "text": "航空器利用噴射推力或是螺旋槳的拉力,使航空器產生下列哪種力而在空中飛行? ",
+      "options": {
+        "A": "內力。 ",
+        "B": "升力。 ",
+        "C": "彈力。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q26",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 26,
+      "text": "飛行速度快、酬載大、飛行效率高,不需太複雜控制,就可自行抵抗氣流而自行保持穩定的飛行的遙控無人機,是下列哪種遙控無人機? ",
+      "options": {
+        "A": "遙控無人直昇機。 ",
+        "B": "遙控無人飛機。 ",
+        "C": "遙控無人多旋翼機。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q27",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 27,
+      "text": "遙控無人飛機缺點是需要有下列哪個項目供起降之用? ",
+      "options": {
+        "A": "相當的跑道高度。 ",
+        "B": "相當的跑道溫度。 ",
+        "C": "相當的跑道長度。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q28",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 28,
+      "text": "透過旋翼槳葉產生升力,同時也能產生推力的遙控無人機,是下列哪種遙控無人機? ",
+      "options": {
+        "A": "遙控無人直昇機。 ",
+        "B": "遙控無人飛機。 ",
+        "C": "遙控無人多旋翼機。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q29",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 29,
+      "text": "無人直昇機可以執行下列哪個動作? ",
+      "options": {
+        "A": "自由調整姿態。 ",
+        "B": "定點盤旋。 ",
+        "C": "起飛與落地。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q30",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 30,
+      "text": "透過三個以上垂直旋翼間協調來控制姿態,同樣不需跑道,可垂直起降、空中懸停等的遙控無人機,是下列哪種遙控無人機? ",
+      "options": {
+        "A": "無人多旋翼機。 ",
+        "B": "無人直昇機。 ",
+        "C": "無人飛機。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q31",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 31,
+      "text": "操作人只要在遙控設備上施加桿力,就可改變遙控無人機的下列哪些性能? ",
+      "options": {
+        "A": "重量或重心。 ",
+        "B": "外形或顏色。 ",
+        "C": "方向或速度。 ",
+        "D": "翼展與翼弦。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q32",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 32,
+      "text": "若無人飛機在地面上靜止,依牛頓運動定律,下列哪個特性會使得飛機保持靜止? ",
+      "options": {
+        "A": "慣性。 ",
+        "B": "磁性。 ",
+        "C": "氣壓。 ",
+        "D": "空氣濕度。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q33",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 33,
+      "text": "若無人飛機保持固定的空速以直線行進,依牛頓運動定律,下列哪個特性會使得飛機持續保持穩定的直線飛行? ",
+      "options": {
+        "A": "磁性。 ",
+        "B": "氣壓。 ",
+        "C": "慣性。 ",
+        "D": "空氣濕度。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q34",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 34,
+      "text": "無人飛機於頂風飛行時,地面速度就會有下列哪種變化? ",
+      "options": {
+        "A": "變快。 ",
+        "B": "不變。 ",
+        "C": "變慢。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q35",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 35,
+      "text": "若風從無人飛機前方的任一方向吹來,倘若飛行員沒有隨之修正,那下列哪個特性就會受到風所施加的力而改變? ",
+      "options": {
+        "A": "重量。 ",
+        "B": "重心。 ",
+        "C": "航向。 ",
+        "D": "推力。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q36",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 36,
+      "text": "噴射機將燃燒的熱氣體往後推送以施加作用力,相對的有相等且相反的下列哪種力,將飛機往前推進? ",
+      "options": {
+        "A": "反作用力。 ",
+        "B": "摩擦力。 ",
+        "C": "靜電力。 ",
+        "D": "磁力。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q37",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 37,
+      "text": "遙控無人機在空中飛行時,會受到下列哪些力相互作用的影響? ",
+      "options": {
+        "A": "升力、推力。 ",
+        "B": "推力、阻力。 ",
+        "C": "阻力、重力。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q38",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 38,
+      "text": "無人飛機推力由下列哪個組件提供? ",
+      "options": {
+        "A": "發動機。 ",
+        "B": "起落架。 ",
+        "C": "機翼。 ",
+        "D": "機身。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q39",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 39,
+      "text": "無人飛機阻力由下列哪個項目產生? ",
+      "options": {
+        "A": "地心引力。 ",
+        "B": "重心。 ",
+        "C": "空氣。 ",
+        "D": "發動機。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q40",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 40,
+      "text": "無人飛機升力由下列哪個項目提供? ",
+      "options": {
+        "A": "起落架。 ",
+        "B": "機翼。 ",
+        "C": "重心。 ",
+        "D": "地心引力。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q41",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 41,
+      "text": "重力由下列哪個項目產生? ",
+      "options": {
+        "A": "空氣。 ",
+        "B": "地心引力。 ",
+        "C": "發動機。 ",
+        "D": "機翼。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q42",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 42,
+      "text": "飛機等速直線飛行時,縱軸(X軸)方向阻力與推力大小相同方向相反,所以有下列哪種情況? ",
+      "options": {
+        "A": "橫軸(Y軸)方向合力為零,飛機無升降起伏。 ",
+        "B": "垂直軸(Z軸)方向合力為零,飛機無偏航的姿態。 ",
+        "C": "縱軸(X軸)方向合力為零,飛機速度不變。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q43",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 43,
+      "text": "飛機高度保持時,垂直軸(Z軸)方向升力與重力大小相同方向相反,所以有下列哪種情況? ",
+      "options": {
+        "A": "橫軸(Y軸)方向合力為零,飛機無偏航的姿態。 ",
+        "B": "垂直軸(Z軸)方向合力為零,飛機無升降起伏。 ",
+        "C": "縱軸(X軸)方向合力為零,飛機速度不變。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q44",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 44,
+      "text": "連續性定理闡述了流體在流動中,下列哪些項目之間的關係? ",
+      "options": {
+        "A": "流速和管道切面。 ",
+        "B": "流速和溫度。 ",
+        "C": "管道切面和溫度。 ",
+        "D": "溫度和壓力。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q45",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 45,
+      "text": "連續性定理闡述了流體在流動中,流速和管道切面相關,而且下列哪些項目也相關? ",
+      "options": {
+        "A": "流速和壓力。 ",
+        "B": "流速和溫度。 ",
+        "C": "管道切面和溫度。 ",
+        "D": "溫度和壓力。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q46",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 46,
+      "text": "柏努利定律說明流體在一個管道中流動時,有下列哪種現象? ",
+      "options": {
+        "A": "流速大的地方壓力大,流速小的地方壓力小。 ",
+        "B": "流速大的地方壓力大,流速小的地方壓力也大。 ",
+        "C": "流速大的地方壓力小,流速小的地方壓力大。 ",
+        "D": "流速大的地方壓力小,流速小的地方壓力也小。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q47",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 47,
+      "text": "柏努利定律目的是要闡述流體在流動中時,下列哪些項目間的關係? ",
+      "options": {
+        "A": "流速和溫度。 ",
+        "B": "流速和壓力。 ",
+        "C": "溫度和壓力。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q48",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 48,
+      "text": "柏努利定律中提到,如果流體的速度越快,流體中的壓力就會有下列哪種現象? ",
+      "options": {
+        "A": "越小。 ",
+        "B": "越大。 ",
+        "C": "不變。 ",
+        "D": "有時越小有時越大。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q49",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 49,
+      "text": "遙控無人機的機翼或旋翼是下列哪種外力主要產生的地方? ",
+      "options": {
+        "A": "阻力。 ",
+        "B": "升力。 ",
+        "C": "推力。 ",
+        "D": "重力。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q50",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 50,
+      "text": "基於連續性定理、柏努利定律兩個理論,我們可以知道機翼上、下表面會出現下列哪種現象? ",
+      "options": {
+        "A": "溫度差。 ",
+        "B": "壓力差。 ",
+        "C": "濕度差。 ",
+        "D": "比熱差。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q51",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 51,
+      "text": "垂直於相對氣流方向的壓力差之總和就是下列哪種外力? ",
+      "options": {
+        "A": "槳葉本身的攻角設計。 ",
+        "B": "空氣的阻力。 ",
+        "C": "機翼的升力。 ",
+        "D": "地心引力。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q52",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 52,
+      "text": "螺旋槳產生的推力是藉由下列哪個項目而成? ",
+      "options": {
+        "A": "槳葉本身的攻角設計。 ",
+        "B": "螺旋槳轉速。 ",
+        "C": "以上皆是。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q53",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 53,
+      "text": "螺旋槳轉速通常以下列哪個項目來表示? ",
+      "options": {
+        "A": "每秒徑度 $(rad/s)$。 ",
+        "B": "每分鐘轉數(RPM)。 ",
+        "C": "赫茲(Hz)。 ",
+        "D": "每分鐘徑度(rad/min)。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q54",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 54,
+      "text": "一般螺旋槳攻角最大的位置在槳葉的下列哪個位置? ",
+      "options": {
+        "A": "槳葉根部。 ",
+        "B": "槳葉葉尖。 ",
+        "C": "槳葉中尖。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q55",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 55,
+      "text": "飛機螺旋槳在原廠設計時,為了設計出高效率的槳葉角度,係依據發動機及飛機的下列哪些特性做為基礎? ",
+      "options": {
+        "A": "銷量和價格。 ",
+        "B": "耗油量和扭力。 ",
+        "C": "壓縮比和衝程。 ",
+        "D": "轉速和空速。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q56",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 56,
+      "text": "航空器於飛行中,在空氣裡會有下列哪種外力? ",
+      "options": {
+        "A": "各種彈力。 ",
+        "B": "各種阻力。 ",
+        "C": "各種磁力。 ",
+        "D": "各種正向力。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q57",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 57,
+      "text": "某外力係與飛機運動方向相反的空氣動力,會阻礙飛機的前進,它是下列哪種外力? ",
+      "options": {
+        "A": "阻力。 ",
+        "B": "升力。 ",
+        "C": "重力。 ",
+        "D": "推力。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q58",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 58,
+      "text": "寄生阻力可分為下列哪幾種? ",
+      "options": {
+        "A": "摩擦阻力。 ",
+        "B": "形狀阻力。 ",
+        "C": "干擾阻力。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q59",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 59,
+      "text": "對於高速遙控無人機而言,除了摩擦阻力、形狀阻力、誘導阻力和干擾阻力外,還會另外產生下列哪種阻力? ",
+      "options": {
+        "A": "震波阻力。 ",
+        "B": "布斯曼阻力。 ",
+        "C": "達倫伯特阻力。 ",
+        "D": "雷諾阻力。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q60",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 60,
+      "text": "下列哪個項目是空氣產生摩擦力的主要物理特性? ",
+      "options": {
+        "A": "粘性。 ",
+        "B": "低汙染。 ",
+        "C": "PM2.5 ",
+        "D": "高揮發性。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q61",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 61,
+      "text": "空氣流經飛機表面發生摩擦,產生一個阻止飛機前進的力,這個力就是下列哪種阻力? ",
+      "options": {
+        "A": "形狀阻力。 ",
+        "B": "誘導阻力。 ",
+        "C": "摩擦阻力。 ",
+        "D": "干擾阻力。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q62",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 62,
+      "text": "摩擦阻力的大小,決定於下列哪個特性? ",
+      "options": {
+        "A": "空氣的粘性。 ",
+        "B": "飛機的表面狀況。 ",
+        "C": "同空氣相接觸的飛機表面積。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q63",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 63,
+      "text": "空氣粘性越大,摩擦阻力就會有下列哪種變化? ",
+      "options": {
+        "A": "越小。 ",
+        "B": "越大。 ",
+        "C": "不變。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q64",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 64,
+      "text": "飛機表面越粗糙,摩擦阻力就會有下列哪種變化? ",
+      "options": {
+        "A": "越小。 ",
+        "B": "不變。 ",
+        "C": "越大。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q65",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 65,
+      "text": "飛機表面積越大,摩擦阻力就會有下列哪種變化? ",
+      "options": {
+        "A": "越大。 ",
+        "B": "越小。 ",
+        "C": "不變。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q66",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 66,
+      "text": "由前後壓力差形成的阻力叫下列哪種阻力? ",
+      "options": {
+        "A": "摩擦阻力。 ",
+        "B": "形狀阻力。 ",
+        "C": "誘導阻力。 ",
+        "D": "干擾阻力。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q67",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 67,
+      "text": "人在逆風中行走,會感到阻力的作用,這就是下列哪種阻力? ",
+      "options": {
+        "A": "摩擦阻力。 ",
+        "B": "誘導阻力。 ",
+        "C": "形狀阻力。 ",
+        "D": "干擾阻力。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q68",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 68,
+      "text": "遙控無人飛機的機身與尾翼接合部分因氣流相互干擾,都會產生下列哪種阻力? ",
+      "options": {
+        "A": "摩擦阻力。 ",
+        "B": "形狀阻力。 ",
+        "C": "誘導阻力。 ",
+        "D": "干擾阻力。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q69",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 69,
+      "text": "因升力產生渦流而發生的阻力稱為下列哪種阻力? ",
+      "options": {
+        "A": "摩擦阻力。 ",
+        "B": "誘導阻力。 ",
+        "C": "形狀阻力。 ",
+        "D": "干擾阻力。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q70",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 70,
+      "text": "誘導阻力是遙控無人機為產生下列哪種外力而須付出的一種代價? ",
+      "options": {
+        "A": "磁力。 ",
+        "B": "推力。 ",
+        "C": "升力。 ",
+        "D": "重力。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q71",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 71,
+      "text": "干擾阻力是遙控無人機各部分之間因下列哪種因素而產生的一種額外阻力? ",
+      "options": {
+        "A": "氣流相互干擾。 ",
+        "B": "熱流相互作用。 ",
+        "C": "濕度相互作用。 ",
+        "D": "磁力相互作用。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q72",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 72,
+      "text": "干擾阻力容易產生在下列哪些組件之間? ",
+      "options": {
+        "A": "機身和機翼、機身和尾翼。 ",
+        "B": "機翼和外掛載。 ",
+        "C": "機翼、發動機短艙。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q73",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 73,
+      "text": "重力是航空器本身之質量所受的下列哪種外力? ",
+      "options": {
+        "A": "磁力。 ",
+        "B": "地心引力。 ",
+        "C": "摩擦力。 ",
+        "D": "靜電力。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q74",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 74,
+      "text": "過重的重力對飛行有負面影響,故無人機機身的設計都是採用下列哪種材質? ",
+      "options": {
+        "A": "較輕。 ",
+        "B": "較重。 ",
+        "C": "時重時輕。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q75",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 75,
+      "text": "升力和阻力是飛機在空氣之間的下列哪種行為中產生? ",
+      "options": {
+        "A": "分子光譜。 ",
+        "B": "動量守恆。 ",
+        "C": "相對運動(相對氣流)。 ",
+        "D": "雷諾傳輸。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q76",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 76,
+      "text": "影響升力和阻力的基本因素除了飛機本身的特點,還有下列哪個因素? ",
+      "options": {
+        "A": "機翼在氣流中的相對位置(攻角)。 ",
+        "B": "氣流的速度。 ",
+        "C": "空氣密度。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q77",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 77,
+      "text": "相對氣流方向與翼弦所夾的角度叫下列哪個角? ",
+      "options": {
+        "A": "俯仰角。 ",
+        "B": "滾轉角。 ",
+        "C": "攻角。 ",
+        "D": "偏航角。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q78",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 78,
+      "text": "在飛行速度等其它條件相同的情況下,得到最大升力的攻角,叫做下列哪個項目? ",
+      "options": {
+        "A": "理想攻角。 ",
+        "B": "臨界攻角。 ",
+        "C": "牛頓攻角。 ",
+        "D": "萊布尼茲攻角。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q79",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 79,
+      "text": "在小於臨界攻角範圍內增大攻角,會有下列哪種結果? ",
+      "options": {
+        "A": "升力增大。 ",
+        "B": "升力減少。 ",
+        "C": "升力不變。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q80",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 80,
+      "text": "空氣密度大,相對氣流速度快,升力和阻力會有下列哪種變化? ",
+      "options": {
+        "A": "升力越大、阻力越小。 ",
+        "B": "升力越小、阻力越大。 ",
+        "C": "升力和阻力越大。 ",
+        "D": "升力和阻力越小。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q81",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 81,
+      "text": "機翼面積大,升力和阻力會有下列哪種變化? ",
+      "options": {
+        "A": "升力越大、阻力越小。 ",
+        "B": "升力越小、阻力越大。 ",
+        "C": "升力和阻力越小。 ",
+        "D": "升力和阻力越大。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q82",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 82,
+      "text": "升力和阻力與機翼面積大小的關係是下列哪種? ",
+      "options": {
+        "A": "都與機翼面積大小成正比。 ",
+        "B": "都與機翼面積大小成反比。 ",
+        "C": "都與機翼面積大小的平方成正比。 ",
+        "D": "都與機翼面積大小的平方成反比。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q83",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 83,
+      "text": "機翼形狀對下列哪個項目有很大影響? ",
+      "options": {
+        "A": "磁力。 ",
+        "B": "升力、阻力。 ",
+        "C": "重力。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q84",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 84,
+      "text": "下列哪個項目對升力、阻力有影響? ",
+      "options": {
+        "A": "機翼切面形狀的相對厚度、最大厚度位置。 ",
+        "B": "機翼平面形狀、襟翼和前緣翼縫的位置。 ",
+        "C": "機翼表面光滑狀況。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q85",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 85,
+      "text": "遙控無人機表面光滑狀況會影響下列哪種阻力? ",
+      "options": {
+        "A": "形狀阻力。 ",
+        "B": "誘導阻力。 ",
+        "C": "摩擦阻力。 ",
+        "D": "干擾阻力。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q86",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 86,
+      "text": "遙控無人機表面相對光滑,則阻力為下列哪種變化? ",
+      "options": {
+        "A": "相對較小。 ",
+        "B": "相對較大。 ",
+        "C": "時大時小。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q87",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 87,
+      "text": "大多數遙控無人機都由下列哪個主要部分組成? ",
+      "options": {
+        "A": "機翼、機身、尾翼。 ",
+        "B": "起降裝置。 ",
+        "C": "動力系統。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q88",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 88,
+      "text": "無人飛機機翼的主要功用是產生下列哪種外力? ",
+      "options": {
+        "A": "阻力。 ",
+        "B": "升力。 ",
+        "C": "推力。 ",
+        "D": "重力。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q89",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 89,
+      "text": "無人飛機機翼除提供升力外,也有下列哪些作用? ",
+      "options": {
+        "A": "美觀和舒適。 ",
+        "B": "潤滑和保濕。 ",
+        "C": "穩定和操作。 ",
+        "D": "觀測和定位。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q90",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 90,
+      "text": "在無人飛機機翼上一般安裝下列哪個物件? ",
+      "options": {
+        "A": "光學酬載。 ",
+        "B": "副翼和襟翼。 ",
+        "C": "通訊設備。 ",
+        "D": "導航設備。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q91",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 91,
+      "text": "操縱無人飛機副翼可使飛機產生下列哪種結果? ",
+      "options": {
+        "A": "滾轉。 ",
+        "B": "爬升。 ",
+        "C": "下降。 ",
+        "D": "偏航。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q92",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 92,
+      "text": "無人飛機機翼還可安裝下列哪個物件? ",
+      "options": {
+        "A": "發動機。 ",
+        "B": "起落架。 ",
+        "C": "外掛載。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q93",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 93,
+      "text": "無人飛機機身的主要功用是裝載下列哪個物件? ",
+      "options": {
+        "A": "油箱。 ",
+        "B": "酬載。 ",
+        "C": "各種設備。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q94",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 94,
+      "text": "無人飛機尾翼包括下列哪些物件? ",
+      "options": {
+        "A": "大尾翼和小尾翼。 ",
+        "B": "高速尾翼和低速尾翼。 ",
+        "C": "水平尾翼和垂直尾翼。 ",
+        "D": "旋轉尾翼和固定尾翼。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q95",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 95,
+      "text": "無人飛機水平尾翼包括下列哪些物件? ",
+      "options": {
+        "A": "固定的升降舵和可動的水平安定面。 ",
+        "B": "固定的水平安定面和可動的升降舵。 ",
+        "C": "固定的升降舵和水平安定面。 ",
+        "D": "可動的升降舵和水平安定面。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q96",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 96,
+      "text": "無人飛機垂直尾翼包括下列哪些物件? ",
+      "options": {
+        "A": "固定的方向舵和可動的垂直安定面。 ",
+        "B": "固定的垂直安定面和可動的方向舵。 ",
+        "C": "固定的方向舵和垂直安定面。 ",
+        "D": "可動的方向舵和垂直安定面。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q97",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 97,
+      "text": "無人飛機的起落架大都由下列哪些物件組成? ",
+      "options": {
+        "A": "減震支柱和機輪。 ",
+        "B": "蒙皮和鉚釘。 ",
+        "C": "坡頂桁架和平行弦桁架。 ",
+        "D": "拉力元件和扭力元件。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q98",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 98,
+      "text": "起落架的作用是在下列哪個時機支撐無人飛機? ",
+      "options": {
+        "A": "起飛時。 ",
+        "B": "著陸滑跑時。 ",
+        "C": "地面滑行和停放時。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q99",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 99,
+      "text": "動力系統主要用來產生使遙控無人機前進的下列哪些力? ",
+      "options": {
+        "A": "重力與升力。 ",
+        "B": "重力與阻力。 ",
+        "C": "拉力和推力。 ",
+        "D": "升力與阻力。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q100",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 100,
+      "text": "無人飛機常見的動力系統有下列哪個項目? ",
+      "options": {
+        "A": "航空活塞式發動機加螺旋槳推進器。 ",
+        "B": "渦輪噴氣發動機。 ",
+        "C": "渦輪螺旋槳發動機和渦輪扇或導風扇發動機。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q101",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 101,
+      "text": "無人飛機上通常不會安裝下列哪種設備? ",
+      "options": {
+        "A": "飛行儀表。 ",
+        "B": "通訊設備、導航設備。 ",
+        "C": "安全設備。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q102",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 102,
+      "text": "操作人操作油門和操縱桿,控制無人機的操縱面,來達到所想要的下列哪個目的? ",
+      "options": {
+        "A": "飛行姿態。 ",
+        "B": "發動機溫度。 ",
+        "C": "環境濕度。 ",
+        "D": "酬載功能。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q103",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 103,
+      "text": "想像為一條由前往後穿過航空器的軸,稱之為下列哪個軸? ",
+      "options": {
+        "A": "航空器縱軸(X軸)。 ",
+        "B": "航空器橫軸(Y軸)。 ",
+        "C": "航空器垂直軸(Z軸)。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q104",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 104,
+      "text": "除了副翼,航空器的下列哪個組件對於航空器的滾轉也會有影響? ",
+      "options": {
+        "A": "升降舵。 ",
+        "B": "襟翼。 ",
+        "C": "方向舵。 ",
+        "D": "小翼。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q105",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 105,
+      "text": "想像為一條上下兩面垂直地穿過航空器的軸,稱之為下列哪個軸? ",
+      "options": {
+        "A": "航空器垂直軸(Z軸)。 ",
+        "B": "航空器縱軸(X軸)。 ",
+        "C": "航空器橫軸(Y軸)。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q106",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 106,
+      "text": "關於遙控無人機的的操作原理,我們首要了解遙控無人飛機的下列哪種特性? ",
+      "options": {
+        "A": "平衡性。 ",
+        "B": "穩定性。 ",
+        "C": "操縱性。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q107",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 107,
+      "text": "遙控無人機處於平衡狀態時,是表示下列哪種狀況? ",
+      "options": {
+        "A": "其速度的大小和方向都保持不變。 ",
+        "B": "其發動機的轉速和馬力都保持不變。 ",
+        "C": "其所有翼面的角度和方向都保持不變。 ",
+        "D": "其酬載的方向和功能都保持不變。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q108",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 108,
+      "text": "遙控無人機穩定性的強弱,一般由下列哪個現象來衡量? ",
+      "options": {
+        "A": "擺動衰減時間。 ",
+        "B": "擺動幅度。 ",
+        "C": "擺動次數。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q109",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 109,
+      "text": "遙控無人機的穩定性強,表示下列哪個現象? ",
+      "options": {
+        "A": "擺動衰減時間短。 ",
+        "B": "擺動幅度小。 ",
+        "C": "擺動次數少。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q110",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 110,
+      "text": "遙控無人機穩定性的強弱,主要取決於遙控無人機的下列哪個特性? ",
+      "options": {
+        "A": "重心位置。 ",
+        "B": "飛行速度和高度。 ",
+        "C": "攻角的變化。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q111",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 111,
+      "text": "遙控無人機在操作人操縱升降舵、方向舵和副翼下改變其飛行狀態的俯仰、方向和橫向之特性,是指遙控無人機的下列哪種特性? ",
+      "options": {
+        "A": "操縱性。 ",
+        "B": "平衡性。 ",
+        "C": "穩定性。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q112",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 112,
+      "text": "遙控無人機操縱性好,表示下列哪個現象? ",
+      "options": {
+        "A": "操縱動作簡單。 ",
+        "B": "操縱省力。 ",
+        "C": "操縱反應快。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q113",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 113,
+      "text": "遙控無人機操作有哪四大基本動作? ",
+      "options": {
+        "A": "平直飛行、側滑、爬升、下降。 ",
+        "B": "平直飛行、轉彎、爬升、倒飛。 ",
+        "C": "平直飛行、轉彎、爬升、下降。 ",
+        "D": "平直飛行、側滑、懸停、倒飛。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q114",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 114,
+      "text": "操作遙控無人飛機時,當副翼控制右上左下,機體相對於「機體中心」作下列哪種動作? ",
+      "options": {
+        "A": "向上俯仰。 ",
+        "B": "右偏航。 ",
+        "C": "右滾。 ",
+        "D": "左滾。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q115",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 115,
+      "text": "操作遙控無人飛機時,當副翼控制右下左上,機體相對於「機體中心」作下列哪種動作? ",
+      "options": {
+        "A": "向上俯仰。 ",
+        "B": "右偏航。 ",
+        "C": "左滾。 ",
+        "D": "右滾。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q116",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 116,
+      "text": "操作遙控無人飛機時,當方向舵控制往右,機體相對於「機體中心」作下列哪種動作? ",
+      "options": {
+        "A": "向上俯仰。 ",
+        "B": "右偏航。 ",
+        "C": "左偏航。 ",
+        "D": "右滾。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q117",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 117,
+      "text": "操作遙控無人飛機時,當方向舵控制往左,機體相對於「機體中心」作下列哪種動作? ",
+      "options": {
+        "A": "右滾。 ",
+        "B": "左偏航。 ",
+        "C": "右偏航。 ",
+        "D": "左滾。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q118",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 118,
+      "text": "控制遙控無人機時,操作人應以相對於下列哪個項目來思考「上」、「下」、「左」、「右」? ",
+      "options": {
+        "A": "機體中心。 ",
+        "B": "地平面。 ",
+        "C": "操作人自己的虛擬座標。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q119",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 119,
+      "text": "無人直昇機,其主旋翼在旋轉時主要產生下列哪種力? ",
+      "options": {
+        "A": "向上的升力。 ",
+        "B": "向下的升力。 ",
+        "C": "向前的升力。 ",
+        "D": "向後的升力。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q120",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 120,
+      "text": "無人直昇機主旋翼產生升力的原理,類似於下列哪個原理? ",
+      "options": {
+        "A": "無人飛機機翼產生升力的原理。 ",
+        "B": "螺旋槳產生推力的原理。 ",
+        "C": "以上皆是。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q121",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 121,
+      "text": "若無人直昇機主旋翼的旋轉面保持在水平位置,則所產生的力是下列哪個方向? ",
+      "options": {
+        "A": "垂直向下。 ",
+        "B": "垂直向上。 ",
+        "C": "傾斜向下。 ",
+        "D": "傾斜向上。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q122",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 122,
+      "text": "無人直昇機利用主旋翼產生升力的原理執行下列哪些動作? ",
+      "options": {
+        "A": "起飛離地。 ",
+        "B": "爬升。 ",
+        "C": "懸停。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q123",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 123,
+      "text": "如果升力與推力大於重力與阻力,遙控無人機的運動方向是下列哪個方向? ",
+      "options": {
+        "A": "垂直向上。 ",
+        "B": "垂直向下。 ",
+        "C": "傾斜向上。 ",
+        "D": "傾斜向下。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q124",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 124,
+      "text": "無人直昇機主旋翼的槳葉片的俯仰角愈大,就會有下列哪種情形? ",
+      "options": {
+        "A": "升力愈大,扭力愈小。 ",
+        "B": "升力愈大,扭力也愈大。 ",
+        "C": "升力愈小,也扭力愈小。 ",
+        "D": "升力愈小,扭力愈大。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q125",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 125,
+      "text": "無人直昇機的尾旋翼主要功能為何? ",
+      "options": {
+        "A": "抵消升力,控制機頭方向。 ",
+        "B": "抵消阻力,控制機頭方向。 ",
+        "C": "抵消扭力,控制機頭方向。 ",
+        "D": "抵消重力,控制機頭方向。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q126",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 126,
+      "text": "無人直昇機有下列哪些基本飛行動作? ",
+      "options": {
+        "A": "平直飛行。 ",
+        "B": "轉彎。 ",
+        "C": "爬升及下降。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q127",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 127,
+      "text": "無人直昇機「垂直起飛到懸停」,係指垂直飛離地面約2~3呎,並保持下列哪種狀態? ",
+      "options": {
+        "A": "航向不變。 ",
+        "B": "向左的傾斜狀態。 ",
+        "C": "向右的傾斜狀態。 ",
+        "D": "主旋翼轉速不變。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q128",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 128,
+      "text": "無人直昇機「懸停轉彎」,係指在懸停高度執行機鼻向左轉或向右轉,並保持下列哪種狀態不變? ",
+      "options": {
+        "A": "相對於其他遙控無人直昇機的位置。 ",
+        "B": "相對於地面的位置。 ",
+        "C": "相對於最低雲層的位置。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q129",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 129,
+      "text": "無人直昇機「懸停轉彎」,係指保持不變的下列哪種狀態? ",
+      "options": {
+        "A": "高度。 ",
+        "B": "轉彎率。 ",
+        "C": "轉速。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q130",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 130,
+      "text": "無人直昇機向前移動到另一特定位置,稱之為無人直昇機的下列哪種動作? ",
+      "options": {
+        "A": "懸停。 ",
+        "B": "側向懸停飛行。 ",
+        "C": "向前懸停飛行。 ",
+        "D": "向後懸停飛行。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q131",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 131,
+      "text": "無人直昇機「向前懸停飛行」,係指保持不變的下列哪種狀態? ",
+      "options": {
+        "A": "地面速度。 ",
+        "B": "高度。 ",
+        "C": "航向。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q132",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 132,
+      "text": "當必須移動無人直昇機到另一特定位置,但當時狀況不可能執行向前飛行時,就要使用下列哪種動作? ",
+      "options": {
+        "A": "側向懸停飛行或向後懸停飛行。 ",
+        "B": "懸停轉彎。 ",
+        "C": "平直飛行。 ",
+        "D": "懸停。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q133",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 133,
+      "text": "無人直昇機「側向懸停飛行」,係指保持不變的下列哪種狀態? ",
+      "options": {
+        "A": "地面速度。 ",
+        "B": "高度。 ",
+        "C": "航向。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q134",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 134,
+      "text": "當必須移動無人直昇機到另一特定位置,但當時狀況不可能執行向前或側向懸停飛行時,就要使用下列哪種動作? ",
+      "options": {
+        "A": "平直飛行。 ",
+        "B": "向後懸停飛行。 ",
+        "C": "懸停轉彎。 ",
+        "D": "傾斜轉彎。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q135",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 135,
+      "text": "無人直昇機「向後懸停飛行」,係指保持不變的下列哪種狀態? ",
+      "options": {
+        "A": "地面速度。 ",
+        "B": "高度。 ",
+        "C": "航向。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q136",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 136,
+      "text": "無人直昇機「平直飛行」,係指保持下列哪種狀態? ",
+      "options": {
+        "A": "高度不變和航向不變。 ",
+        "B": "高度不變和地面速度不變。 ",
+        "C": "地面速度不變和航向不變。 ",
+        "D": "主旋翼轉速不變和航向不變。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q137",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 137,
+      "text": "無人直昇機「傾斜轉彎」,係指保持在向左或向右的傾斜狀態,保持下列哪種狀態之飛行? ",
+      "options": {
+        "A": "高度不變和航向不變。 ",
+        "B": "高度改變,但航向不變。 ",
+        "C": "高度不變,但航向改變。 ",
+        "D": "高度改變和航向改變。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q138",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 138,
+      "text": "無人直昇機「偏航」,係指利用尾旋翼推力執行下列哪種操縱? ",
+      "options": {
+        "A": "改變高度。 ",
+        "B": "改變航向。 ",
+        "C": "改變地面速度。 ",
+        "D": "改變升力。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q139",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 139,
+      "text": "無人多旋翼機可以下列哪種方式來做區分? ",
+      "options": {
+        "A": "旋翼數量。 ",
+        "B": "旋翼分布位置。 ",
+        "C": "旋翼是否能夠傾斜。 ",
+        "D": "以上皆可。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q140",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 140,
+      "text": "無人多旋翼機能夠垂直且穩定的執行下列哪種動作? ",
+      "options": {
+        "A": "滾轉及水平平移。 ",
+        "B": "升降及偏航。 ",
+        "C": "偏航及水平平移。 ",
+        "D": "俯仰及水平平移。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q141",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 141,
+      "text": "無人多旋翼機具備優秀的下列哪種能力是一般無人飛機望塵莫及的? ",
+      "options": {
+        "A": "垂直起降能力。 ",
+        "B": "定點懸停能力。 ",
+        "C": "穩定升降及偏航。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q142",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 142,
+      "text": "無人多旋翼機的下列哪種旋翼設計使得操控簡單且直接? ",
+      "options": {
+        "A": "參差配置的。 ",
+        "B": "對稱的。 ",
+        "C": "不對稱的。 ",
+        "D": "偏一邊的。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q143",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 143,
+      "text": "定距槳無人多旋翼機與無人直昇機相比,在下列哪個方面有很大提升? ",
+      "options": {
+        "A": "機械設計結構。 ",
+        "B": "控制難度。 ",
+        "C": "姿態平穩。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q144",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 144,
+      "text": "無人多旋翼機對飛行的影響是下列哪項? ",
+      "options": {
+        "A": "沒有影響。 ",
+        "B": "變得複雜。 ",
+        "C": "變得簡單。 ",
+        "D": "有時變得複雜,有時變得簡單。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q145",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 145,
+      "text": "無人多旋翼機同時增加或減少每個旋翼的升力,來實現下列哪種飛行狀態? ",
+      "options": {
+        "A": "垂直的升降姿態。 ",
+        "B": "俯仰的姿態。 ",
+        "C": "偏航的姿態。 ",
+        "D": "滾轉的姿態。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q146",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 146,
+      "text": "同時影響遙控無人機飛行性能與飛航安全的重要因素是下列哪些項目? ",
+      "options": {
+        "A": "機體大小。 ",
+        "B": "電池容量。 ",
+        "C": "重量和重心位置。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q147",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 147,
+      "text": "操作人在飛行前應確認下列何者在合理範圍內? ",
+      "options": {
+        "A": "重量。 ",
+        "B": "重心。 ",
+        "C": "酬載。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q148",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 148,
+      "text": "遙控無人機操作人在飛行前應詳細考量在下列哪種情況下可能降低飛行性能的載重因素? ",
+      "options": {
+        "A": "高海拔。 ",
+        "B": "高溫。 ",
+        "C": "高濕度。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q149",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 149,
+      "text": "遙控無人機重力的著力點稱為下列哪個項目? ",
+      "options": {
+        "A": "形心。 ",
+        "B": "氣動力中心。 ",
+        "C": "重心。 ",
+        "D": "升力中心。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q150",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 150,
+      "text": "遙控無人機的下列哪個項目與穩定性有很大的關聯? ",
+      "options": {
+        "A": "外觀。 ",
+        "B": "重心。 ",
+        "C": "大小。 ",
+        "D": "顏色。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q151",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 151,
+      "text": "當遙控無人機重心位置超出允許範圍時,可能導致遙控無人機發生下列哪種情形? ",
+      "options": {
+        "A": "無法穩定起飛。 ",
+        "B": "無法穩定落地。 ",
+        "C": "失速。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q152",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 152,
+      "text": "遙控無人機飛行時,為產生各種姿態,作用於機身上的力為下列哪種情形? ",
+      "options": {
+        "A": "升力通常較重量為大。 ",
+        "B": "升力通常較重量為小。 ",
+        "C": "有時升力較大,有時重量較大。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q153",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 153,
+      "text": "遙控無人機的轉彎率因不同的速度而隨之不同,這是為了要抵銷所增加的下列哪種力,以保持負載係數不變? ",
+      "options": {
+        "A": "向心力。 ",
+        "B": "離心力。 ",
+        "C": "正向力。 ",
+        "D": "扭力。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q154",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 154,
+      "text": "遙控無人機轉彎時,需執行下列哪個動作以補償升力的不足? ",
+      "options": {
+        "A": "增加正向力。 ",
+        "B": "增加攻角。 ",
+        "C": "增加扭力。 ",
+        "D": "增加離心力。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q155",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 155,
+      "text": "無人飛機重心位置靠前時,為維持遙控無人機的俯仰平衡,需要尾翼提供下列哪種力? ",
+      "options": {
+        "A": "更大的向前的推力。 ",
+        "B": "更大的向上的升力。 ",
+        "C": "更大的向下的升力。 ",
+        "D": "更大的向外的離心力。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q156",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 156,
+      "text": "遙控無人機重心位置靠前時,機頭較為沉重,起飛離地時有下列哪種情形? ",
+      "options": {
+        "A": "較為困難。 ",
+        "B": "較為容易。 ",
+        "C": "有時容易有時困難。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q157",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 157,
+      "text": "無人飛機重心位置靠前時,會有下列哪種情形? ",
+      "options": {
+        "A": "減少誘導阻力。 ",
+        "B": "增大誘導阻力。 ",
+        "C": "誘導阻力不變。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q158",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 158,
+      "text": "無人飛機重心位置靠前時,會有下列哪種情形? ",
+      "options": {
+        "A": "油耗增加。 ",
+        "B": "航程距離降低。 ",
+        "C": "以上皆是。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q159",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 159,
+      "text": "無人飛機重心位置靠前時,提高了下列哪種風險? ",
+      "options": {
+        "A": "不穩定進場的風險。 ",
+        "B": "穩定進場的風險。 ",
+        "C": "非精確進場的風險。 ",
+        "D": "精確進場的風險。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q160",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 160,
+      "text": "無人飛機重心後移時,由於機頭較輕,可能會使得起飛時發生下列哪種情形? ",
+      "options": {
+        "A": "偏離跑道。 ",
+        "B": "左右搖擺。 ",
+        "C": "提前仰轉。 ",
+        "D": "延後離地。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q161",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 161,
+      "text": "無人飛機重心後移時,起飛爬升時可能會因仰角過大,而造成下列哪種情形? ",
+      "options": {
+        "A": "起飛速度增加。 ",
+        "B": "起飛重量降低。 ",
+        "C": "失速與機尾擦地。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q162",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 162,
+      "text": "無人飛機重心後移時,配平及總阻力減小,也進而導致下列哪種情形? ",
+      "options": {
+        "A": "油耗減少。 ",
+        "B": "續航能力增加。 ",
+        "C": "失速速度減小。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q163",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 163,
+      "text": "無人直昇機重心太靠後,會影響下列哪種性能? ",
+      "options": {
+        "A": "高速前飛性能及穩定。 ",
+        "B": "從地面到正常起飛。 ",
+        "C": "平直飛行。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q164",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 164,
+      "text": "無人多旋翼機重心移動可能造成下列哪種結果? ",
+      "options": {
+        "A": "升力增加。 ",
+        "B": "操控較為困難。 ",
+        "C": "阻力減少。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q165",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 165,
+      "text": "遙控無人機重量增加可能對起飛速度造成下列哪種結果? ",
+      "options": {
+        "A": "降低起飛速度。 ",
+        "B": "起飛速度不變。 ",
+        "C": "提高起飛速度。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q166",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 166,
+      "text": "遙控無人機重量增加可能對滑行距離造成下列哪種結果? ",
+      "options": {
+        "A": "縮短起飛滑行距離。 ",
+        "B": "加長起飛滑行距離。 ",
+        "C": "起飛滑行距離不變。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q167",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 167,
+      "text": "遙控無人機重量增加可能對爬升率及爬升角造成下列哪種結果? ",
+      "options": {
+        "A": "降低爬升率和爬升角度。 ",
+        "B": "增加爬升率和爬升角度。 ",
+        "C": "爬升率和爬升角度不變。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q168",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 168,
+      "text": "遙控無人機重量增加可能對飛航最高高度造成下列哪種結果? ",
+      "options": {
+        "A": "降低飛航最高高度。 ",
+        "B": "增加飛航最高高度。 ",
+        "C": "飛航最高高度不變。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q169",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 169,
+      "text": "遙控無人機重量增加可能對操作性能造成下列哪種結果? ",
+      "options": {
+        "A": "操作性能不變。 ",
+        "B": "增加操作性能。 ",
+        "C": "降低操作性能。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q170",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 170,
+      "text": "遙控無人機重量增加可能對進場及降落速度造成下列哪種結果? ",
+      "options": {
+        "A": "降低進場和降落速度。 ",
+        "B": "提高進場和降落速度。 ",
+        "C": "進場和降落速度不變。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q171",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 171,
+      "text": "遙控無人機重量增加可能對降落滾行距離造成下列哪種結果? ",
+      "options": {
+        "A": "加長降落滾行距離。 ",
+        "B": "縮短降落滾行距離。 ",
+        "C": "降落滾行距離不變。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q172",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 172,
+      "text": "為確保飛行安全,操作人須審慎確認遙控無人機的下列哪個特性? ",
+      "options": {
+        "A": "外觀。 ",
+        "B": "重量與載重平衡。 ",
+        "C": "價格。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q173",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 173,
+      "text": "低速、低空的中型無人機的動力裝置,使用下列哪種發動機? ",
+      "options": {
+        "A": "往復式(活塞)發動機。 ",
+        "B": "無刷電動馬達。 ",
+        "C": "渦輪螺旋槳發動機。 ",
+        "D": "渦輪發動機。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q174",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 174,
+      "text": "使用於高速無人機上,推重比高但壽命短的動力裝置是下列哪種發動機? ",
+      "options": {
+        "A": "渦輪發動機。 ",
+        "B": "無刷電動馬達。 ",
+        "C": "渦輪螺旋槳發動機。 ",
+        "D": "往復式(活塞)發動機。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q175",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 175,
+      "text": "高空或長滯空的大型無人機的動力裝置,使用下列哪種發動機? ",
+      "options": {
+        "A": "渦輪發動機。 ",
+        "B": "無刷電動馬達。 ",
+        "C": "渦輪風扇或渦輪螺旋槳發動機。 ",
+        "D": "往復式(活塞)發動機。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q176",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 176,
+      "text": "娛樂/運動級航空模型或小型無人機的動力裝置,一般使用下列哪種發動機? ",
+      "options": {
+        "A": "渦輪發動機。 ",
+        "B": "無刷電動馬達。 ",
+        "C": "渦輪風扇或渦輪螺旋槳發動機。 ",
+        "D": "往復式(活塞)發動機。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q177",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 177,
+      "text": "隨著渦輪發動機推重比、壽命不斷提高、油耗降低,未來渦輪發動機可能取代下列哪種發動機成為25公斤至150公斤級的無人機之主要動力? ",
+      "options": {
+        "A": "無刷電動馬達。 ",
+        "B": "渦輪風扇發動機。 ",
+        "C": "渦輪螺旋槳發動機。 ",
+        "D": "活塞發動機。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q178",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 178,
+      "text": "一般遙控無人機目前多以下列哪些頻段進行控制與圖傳? ",
+      "options": {
+        "A": "300MHz或500MHz。 ",
+        "B": "500MHz或600MHz。 ",
+        "C": "2.4GHz或5.8GHz。 ",
+        "D": "100GHz或220GHz。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q179",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 179,
+      "text": "頻段2.4GHz主要為下列哪種鏈路實現對遙控無人機控制? ",
+      "options": {
+        "A": "下行鏈路。 ",
+        "B": "上行控制鏈路。 ",
+        "C": "加密鏈路。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q180",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 180,
+      "text": "頻段 5.8GHz主要為下列哪種鏈路執行圖像或數據傳輸等遙測功能? ",
+      "options": {
+        "A": "下行鏈路。 ",
+        "B": "上行控制鏈路。 ",
+        "C": "加密鏈路。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q181",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 181,
+      "text": "若無外力的影響,靜止的物體會保持靜止,行進的物體會保持直線運動,這就是下列哪個定律? ",
+      "options": {
+        "A": "牛頓第二定律又稱「加速度定律」。 ",
+        "B": "牛頓第三定律。 ",
+        "C": "牛頓第一定律又稱「慣性定律」。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q182",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 182,
+      "text": "當物體受到所施加的力等於每次的動量變化,這就是下列哪個定律? ",
+      "options": {
+        "A": "牛頓第一定律又稱「慣性定律」。 ",
+        "B": "牛頓第二定律又稱「加速度定律」。 ",
+        "C": "牛頓第三定律。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q183",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 183,
+      "text": "牛頓第二定律說明加速度與物體的質量為下列哪種關係? ",
+      "options": {
+        "A": "成反比。 ",
+        "B": "成正比。 ",
+        "C": "沒有關係。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q184",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 184,
+      "text": "牛頓第二定律說明加速度與所施加的力為下列哪種關係? ",
+      "options": {
+        "A": "成反比。 ",
+        "B": "成正比。 ",
+        "C": "沒有關係。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q185",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 185,
+      "text": "對於每一個作用力,都有一個相等且相反的反作用力,這就是下列哪個定律? ",
+      "options": {
+        "A": "牛頓第一定律又稱「慣性定律」。 ",
+        "B": "牛頓第三定律。 ",
+        "C": "牛頓第二定律又稱「加速度定律」。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q186",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 186,
+      "text": "下列哪些理論可以說明一個重於空氣的航空器如何產生升力飛行於空中? ",
+      "options": {
+        "A": "流體的連續性和柏努利定律。 ",
+        "B": "氣候學和大氣化學。 ",
+        "C": "大氣動力學和大氣物理學。 ",
+        "D": "材料力學和運動學。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q187",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 187,
+      "text": "流體的連續性說明在同一時間內,流進任一切面和從另一切面流出的下列哪個項目是相等的? ",
+      "options": {
+        "A": "流體溫度。 ",
+        "B": "流體壓力。 ",
+        "C": "流體質量。 ",
+        "D": "流體速度。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q188",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 188,
+      "text": "由螺旋槳所產生的拉力或噴射發動機所產生的推力,使航空器前進飛行,是依據下列哪個定律? ",
+      "options": {
+        "A": "牛頓第三定律。 ",
+        "B": "牛頓第一定律。 ",
+        "C": "牛頓第二定律。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q189",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 189,
+      "text": "若螺旋槳整片槳葉的攻角都一樣,將使得槳葉的效率有下列哪種變化? ",
+      "options": {
+        "A": "變得很好。 ",
+        "B": "保持不變。 ",
+        "C": "變得很差。 ",
+        "D": "機時好時差。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q190",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 190,
+      "text": "超過臨界攻角後,再增大攻角,會有下列哪種結果? ",
+      "options": {
+        "A": "升力反而減小,阻力急劇增大。 ",
+        "B": "升力持續增大,阻力急劇減小。 ",
+        "C": "升力、阻力持續增大。 ",
+        "D": "升力、阻力急劇減小。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q191",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 191,
+      "text": "升力和阻力兩者與飛行速度的關係是下列哪種? ",
+      "options": {
+        "A": "均與飛行速度成正比。 ",
+        "B": "均與飛行速度成反比。 ",
+        "C": "均與飛行速度的平方成正比。 ",
+        "D": "均與飛行速度的平方成反比。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q192",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 192,
+      "text": "放下遙控無人飛機襟翼可產生下列哪種結果? ",
+      "options": {
+        "A": "使升力增大。 ",
+        "B": "使升力減少。 ",
+        "C": "使升力不變。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q193",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 193,
+      "text": "尾翼的作用是操縱無人飛機的下列哪些動作? ",
+      "options": {
+        "A": "俯仰和滾轉。 ",
+        "B": "滾轉和偏航。 ",
+        "C": "俯仰和偏航。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q194",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 194,
+      "text": "航空器主要係利用副翼改變下列哪種姿態? ",
+      "options": {
+        "A": "俯仰。 ",
+        "B": "左右滾轉。 ",
+        "C": "偏航。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q195",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 195,
+      "text": "想像為一條左右兩側穿過航空器的軸,稱之為下列哪個軸? ",
+      "options": {
+        "A": "航空器縱軸(X軸)。 ",
+        "B": "航空器垂直軸(Z軸)。 ",
+        "C": "航空器橫軸(Y軸)。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q196",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 196,
+      "text": "航空器利用升降舵改變下列哪種姿態? ",
+      "options": {
+        "A": "左右滾轉。 ",
+        "B": "俯仰。 ",
+        "C": "偏航。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q197",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 197,
+      "text": "航空器利用方向舵改變下列哪種姿態? ",
+      "options": {
+        "A": "俯仰。 ",
+        "B": "偏航。 ",
+        "C": "左右滾轉。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q198",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 198,
+      "text": "作用於遙控無人機的各外力之和、各力矩之和都為零,是指遙控無人機的下列哪種特性? ",
+      "options": {
+        "A": "穩定性。 ",
+        "B": "操縱性。 ",
+        "C": "平衡性。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q199",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 199,
+      "text": "當遙控無人機受到微小擾動而偏離原來的平衡狀態時,在擾動消失後,不經操作人操縱,自動恢復原來平衡狀態的特性,是指遙控無人機的下列哪種特性? ",
+      "options": {
+        "A": "平衡性。 ",
+        "B": "穩定性。 ",
+        "C": "操縱性。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q200",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 200,
+      "text": "操作無人飛機時,當升降舵控制往上,相對於「機體中心」作下列哪種動作? ",
+      "options": {
+        "A": "向下俯仰。 ",
+        "B": "向上俯仰。 ",
+        "C": "右滾。 ",
+        "D": "左滾。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q201",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 201,
+      "text": "操作無人飛機時,當升降舵控制往下,飛機相對於「機體中心」作下列哪種動作? ",
+      "options": {
+        "A": "向下俯仰。 ",
+        "B": "向上俯仰。 ",
+        "C": "右滾。 ",
+        "D": "左滾。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q202",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 202,
+      "text": "當無人直昇機的發動機讓主旋翼以逆時針方向旋轉時,無人直昇機本身將以下列哪個方向旋轉? ",
+      "options": {
+        "A": "以順時針方向旋轉。 ",
+        "B": "以逆時針方向旋轉。 ",
+        "C": "先以順時針方向旋轉,再以逆時針方向旋轉。 ",
+        "D": "先以逆時針方向旋轉,再以順時針方向旋轉。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q203",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 203,
+      "text": "無人直昇機為了抵銷扭力,在設計上使用尾旋翼在機尾產生一個向右的力,稱為下列哪種力? ",
+      "options": {
+        "A": "尾旋翼升力。 ",
+        "B": "尾旋翼阻力。 ",
+        "C": "尾旋翼推力。 ",
+        "D": "尾旋翼壓力。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q204",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 204,
+      "text": "無人直昇機「懸停」,係指保持幾乎不動的飛行,並保持下列哪種狀態? ",
+      "options": {
+        "A": "主旋翼轉速不變和航向不變。 ",
+        "B": "高度不變和航向不變。 ",
+        "C": "主旋翼轉速不變和高度不變。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q205",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 205,
+      "text": "無人直昇機「從懸停到正常起飛」,係指有順序的轉換到向前飛行,執行時應安全且迅速的採取下列哪種動作? ",
+      "options": {
+        "A": "改變航向。 ",
+        "B": "增加地面速度。 ",
+        "C": "增加高度。 ",
+        "D": "增加主旋翼轉速。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q206",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 206,
+      "text": "無人直昇機「從地面到正常起飛」,係指使用下列哪個動作,將直昇機從地面移動到有效轉換升力及正常爬升? ",
+      "options": {
+        "A": "最小的所需動力。 ",
+        "B": "最大的所需動力。 ",
+        "C": "最小的地面速度。 ",
+        "D": "最大的地面速度。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q207",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 207,
+      "text": "無人多旋翼機是一種經由多個定距槳的正反旋轉與轉速控制,提供下列哪些性能調整? ",
+      "options": {
+        "A": "阻力與推力調整。 ",
+        "B": "重心與阻力調整。 ",
+        "C": "升力與姿態調整。 ",
+        "D": "升力與重心調整。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q208",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 208,
+      "text": "無人多旋翼機旋翼以不同方向旋轉,抵消反作用力,使產生下列哪項結果? ",
+      "options": {
+        "A": "使總力矩為零。 ",
+        "B": "使總推力為零。 ",
+        "C": "使總升力為零。 ",
+        "D": "使總阻力為零。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q209",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 209,
+      "text": "無人多旋翼機可以直接採用下列哪種螺旋槳? ",
+      "options": {
+        "A": "定距槳。 ",
+        "B": "變距槳。 ",
+        "C": "恆速槳。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q210",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 210,
+      "text": "無人多旋翼機改變前後兩端旋翼的升力,使之不平衡,來實現下列哪種姿態? ",
+      "options": {
+        "A": "垂直的升降姿態。 ",
+        "B": "俯仰的姿態。 ",
+        "C": "偏航的姿態。 ",
+        "D": "滾轉的姿態。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q211",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 211,
+      "text": "無人多旋翼機同時減少或增加斜對角兩對旋翼轉速與升力,來實現下列哪種姿態? ",
+      "options": {
+        "A": "垂直的升降姿態。 ",
+        "B": "俯仰的姿態。 ",
+        "C": "偏航的姿態。 ",
+        "D": "滾轉的姿態。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q212",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 212,
+      "text": "無人多旋翼機改變橫向兩端旋翼的升力,使之不平衡,來實現下列哪種姿態? ",
+      "options": {
+        "A": "垂直的升降姿態。 ",
+        "B": "偏航的姿態。 ",
+        "C": "俯仰的姿態。 ",
+        "D": "滾轉的姿態。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q213",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 213,
+      "text": "在空氣動力學裡,負載係數定義為下列哪個比值? ",
+      "options": {
+        "A": "升力與重力之比值。 ",
+        "B": "阻力與重力之比值。 ",
+        "C": "推力與重力之比值。 ",
+        "D": "升力與阻力之比值。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q214",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 214,
+      "text": "遙控無人機飛行時會產生各種姿態,負載係數即能表達下列哪個項目? ",
+      "options": {
+        "A": "巡航速度。 ",
+        "B": "姿態動作的大小。 ",
+        "C": "飛行距離。 ",
+        "D": "續航時間。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q215",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 215,
+      "text": "遙控無人機在進行協調轉彎時,負載係數是基於下列哪些力的結果? ",
+      "options": {
+        "A": "升力和重力。 ",
+        "B": "推力和重力。 ",
+        "C": "離心力和重力。 ",
+        "D": "阻力和重力。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q216",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 216,
+      "text": "遙控無人機轉彎時,機翼必須產生足以與負載係數相等的升力,以達到下列哪個目的? ",
+      "options": {
+        "A": "維持高度。 ",
+        "B": "維持速度。 ",
+        "C": "維持航向。 ",
+        "D": "維持發動機轉速。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q217",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 217,
+      "text": "無人飛機重心位置靠前時,受到配平以及總阻力的增加的影響,為了保持飛行速度不變,必須採取下列哪種手段? ",
+      "options": {
+        "A": "增加發動機推力。 ",
+        "B": "減少發動機推力。 ",
+        "C": "先增加然後減少發動機推力。 ",
+        "D": "先減少然後增加發動機推力。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q218",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 218,
+      "text": "無人飛機重心位置靠前時,低速飛行時,為了穩定較強的俯仰姿態,可能會有下列哪種情形導致提高不穩定進場的風險? ",
+      "options": {
+        "A": "配平可能不足。 ",
+        "B": "配平可能過大。 ",
+        "C": "滾轉可能不足。 ",
+        "D": "滾轉可能過大。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q219",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 219,
+      "text": "無人飛機重心後移時,若進入到下列哪種情形時,會較難改正? ",
+      "options": {
+        "A": "滾轉角變小。 ",
+        "B": "螺旋失速。 ",
+        "C": "偏航角變小。 ",
+        "D": "攻角變小。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q220",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 220,
+      "text": "無人直昇機重心太前,會抑制下列哪種性能? ",
+      "options": {
+        "A": "平直飛行。 ",
+        "B": "向後飛及懸停低速。 ",
+        "C": "從地面到正常起飛。 ",
+        "D": "以上皆是。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q221",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 221,
+      "text": "無人飛機重量增加可能造成下列哪種結果? ",
+      "options": {
+        "A": "降低失速速度。 ",
+        "B": "提高失速速度。 ",
+        "C": "失速速度不變。 ",
+        "D": "以上皆非。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q222",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 222,
+      "text": "遙控無人機保持平飛,飛行速度越大則升力與阻力會有下列哪種結果? ",
+      "options": {
+        "A": "升力、誘導阻力越小。 ",
+        "B": "升力不變、寄生阻力越大。 ",
+        "C": "升力越大、誘導阻力越小。 ",
+        "D": "升力不變、誘導阻力越大。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q223",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 223,
+      "text": "無人機正以航向90接近機場,請問此無人機目前在機場的下列哪一個方向? ",
+      "options": {
+        "A": "北方。 ",
+        "B": "西方。 ",
+        "C": "東方。 ",
+        "D": "南方。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q224",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 224,
+      "text": "在作飛行規畫或操作無人機時,操作人手上有多項重量和平衡的資訊,依日期先後排列,包括a. 2016/8/15(無人機出廠時),b. 2016/10/18,c. 2016/12/27,d. 2017/2/8,e. 2017/6/19(無人機上次飛行時),f. 2017/9/20,操作人應使用下列哪一項? ",
+      "options": {
+        "A": ")2017/9/20 重量和平衡的資訊。 ",
+        "B": "2016/8/15(無人機出廠時)重量和平衡資訊。 ",
+        "C": "2017/6/19(無人機上次飛行時)重量和平衡資訊。 ",
+        "D": "任一項的重量和平衡資訊。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q225",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 225,
+      "text": "請問下列哪一種情況,可以視為上傳鏈路失效? ",
+      "options": {
+        "A": "操作人無法目視到無人機。 ",
+        "B": "無人機不執行地面控制站上傳的控制命令。 ",
+        "C": "操作人與塔台間的通訊斷訊。 ",
+        "D": "無人機無法將自身狀態(速度、高度、位置、設備狀態等)以及相關任務數據發回地面控制站。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q226",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 226,
+      "text": "請問上傳鏈路失效通常是下列哪一種原因? ",
+      "options": {
+        "A": "GPS失效。 ",
+        "B": "地面控制站天線附近站了太多人。 ",
+        "C": "無人機飛出操作人目視範圍以外。 ",
+        "D": "頻率干擾。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q227",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 227,
+      "text": "慣性導航系統(Inertial Navigation System,INS)是一種不依賴於外部資訊、也不向外部輻射能量(如無線電導航那樣)的自主式導航系統。慣性導航的基本工作原理是下列哪一項? ",
+      "options": {
+        "A": "以天體力學定律為基礎,以星座獲得位置,經幾何運算得到速度、加速度等資訊。",
+        "B": "以幾何力學定律為基礎,以磁場獲得位置,經三角運算得到速度、加速度等資訊。",
+        "C": "以牛頓力學定律為基礎,以GPS獲得位置,微分得到速度,再微分得到加速度等資訊。 ",
+        "D": "以牛頓力學定律為基礎,以加速度計獲得加速度,積分得到速度,再積分得到位置等資訊。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q228",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 228,
+      "text": "下列何者為遙控無人機運作之核心,主要執行起飛、航行、返場降落及回收等動作? ",
+      "options": {
+        "A": "導航系統。 ",
+        "B": "動力系統。 ",
+        "C": "飛行控制系統。 ",
+        "D": "無線遙控系統。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q229",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 229,
+      "text": "航空模型上沒有GPS,也沒有高度計,請問操作人應如何判斷400英呎飛行高度? ",
+      "options": {
+        "A": "在飛行前獲得地面上離無人機400英呎的目測概念作飛行高度參考。 ",
+        "B": "該無人機飛行時,操作另一架有高度計的無人機到400英呎作飛行高度參考。 ",
+        "C": "操作該無人機到400英呎高塔旁邊作飛行高度參考。 ",
+        "D": "操作該無人機到兩座已知高度建築物中間作飛行高度參考。 "
+      },
+      "correct_answer": "A"
+    },
+    {
+      "unique_id": "c2q230",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 230,
+      "text": "當準備在無人機上安裝攝影機或其他酬載時,操作人應有如何的認知? ",
+      "options": {
+        "A": "超出無人機重量限制和重心範圍一點點,不影響安全。 ",
+        "B": "先測試看看,只要飛的起來就沒問題。 ",
+        "C": "即使超出重心範圍,但只要在重量限制內,透過高超的操作技巧一樣能夠飛行。 ",
+        "D": "不超出無人機重量限制和重心範圍。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q231",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 231,
+      "text": "假設無人飛機最大起飛重量102磅,重心範圍(參考面在機鼻)25~27英吋。某次飛行前稱重,空重(含燃油)50磅、力臂20英吋,前艙酬載20磅、力臂10英吋,後艙酬載30磅、力臂40英吋,總重100磅,重心24英吋,請問操作人應採取下列哪一項動作? ",
+      "options": {
+        "A": "前艙酬載往前移動2.6英吋。 ",
+        "B": "後艙酬載往後移動3.4英吋。 ",
+        "C": "後艙酬載配重增加2.5磅。 ",
+        "D": "前艙酬載配重增加1.2磅。 "
+      },
+      "correct_answer": "B"
+    },
+    {
+      "unique_id": "c2q232",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 232,
+      "text": "無人機正以空速保持(40kts)及姿態保持在往東飛行,無人機經緯度為E121°10′00\",N22°20′30 ,此時為靜風,無人機要飛到E121°30′00″N 22°20′30 執行任務,請問無人機還要約多少時間才會抵達? ",
+      "options": {
+        "A": "10分鐘。 ",
+        "B": "20分鐘。 ",
+        "C": "30分鐘。 ",
+        "D": "40分鐘。 "
+      },
+      "correct_answer": "C"
+    },
+    {
+      "unique_id": "c2q233",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 233,
+      "text": "無人機正在平直飛行時,因任務需要必須快速增加高度,請問操作人應採取下列哪一項動作? ",
+      "options": {
+        "A": "將動力加到最大,攻角越大越好,以得到最大爬升率。 ",
+        "B": "保持動力,快速增大攻角,注意不超過臨界攻角。 ",
+        "C": "將動力加到最大,以最佳爬升角空速執行爬升,在一定距離產生最大高度增加。 ",
+        "D": "將動力加到最大,以最佳爬升率空速執行爬升,注意不超過臨界攻角。 "
+      },
+      "correct_answer": "D"
+    },
+    {
+      "unique_id": "c2q234",
+      "chapter_number": 2,
+      "chapter_name": "基礎飛行原理",
+      "question_number": 234,
+      "text": "機場跑道地面風約為正南風,使用跑道為南北向,請問一般航空器在操作時應選擇哪一方向的跑道? ",
+      "options": {
+        "A": "18跑道。 ",
+        "B": "27跑道。 ",
+        "C": "09跑道。 ",
+        "D": "36跑道。 "
+      },
+      "correct_answer": "A"
+    }
+  ]
