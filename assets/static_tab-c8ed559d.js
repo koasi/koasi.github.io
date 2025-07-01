@@ -1,1 +1,0 @@
-import{G as i,$ as a,c as s,T as e}from"./DarkTheme-59411532.js";const n={};n.initialize=function(t,c){i.active_tab!=t&&(i.active_tab=t);const o=`./tabs/${t}.html`;a("#content").html('<div id="tab-static"><div id="tab-static-contents"></div>'),a("#tab-static-contents").load(o,function(){s.localizePage(),i.content_ready(c)})};e.staticTab=n;export{n as staticTab};
