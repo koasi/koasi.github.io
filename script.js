@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // =========================================================================
     let currentExamQuestions = [];
     let chapterWeights = { 1: 1, 2: 1, 3: 1, 4: 1 };
-    let isWeightingEnabled = false;
+    let isWeightingEnabled ;
     const chapters = {};
 
 
