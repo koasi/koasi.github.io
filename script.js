@@ -1,4 +1,79 @@
-let questionBank
+let questionBank;
+let scoreChart;
+
+function saveScoreHistory(score, totalQuestions) {
+    const now = new Date();
+    const scoreRecord = {
+        timestamp: now.toISOString(),
+        score: ((score / totalQuestions) * 100).toFixed(2),
+        date: now.toLocaleString('zh-TW', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        })
+    };
+
+    let history = JSON.parse(localStorage.getItem('random_exam_score_history') || '[]');
+    history.push(scoreRecord);
+    localStorage.setItem('random_exam_score_history', JSON.stringify(history));
+}
+
+function updateScoreChart() {
+    const history = JSON.parse(localStorage.getItem('random_exam_score_history') || '[]');
+    const recentScores = history.slice(-20);
+    
+    if (scoreChart) {
+        scoreChart.destroy();
+    }
+
+    const ctx = document.getElementById('scoreChart').getContext('2d');
+    scoreChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: recentScores.map((_, index) => `第${index + 1}次`),
+            datasets: [{
+                label: '測驗成績',
+                data: recentScores.map(record => record.score),
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1,
+                pointBackgroundColor: 'rgb(75, 192, 192)',
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    title: {
+                        display: true,
+                        text: '分數'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: '測驗次數'
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const record = recentScores[context.dataIndex];
+                            return [`分數: ${record.score}`, `時間: ${record.date}`];
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
 document.addEventListener('DOMContentLoaded', async function() {
     // =========================================================================
     // 題庫資料 (已整合您提供的 PDF 內容)
@@ -53,6 +128,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     // =========================================================================
     // DOM 元素獲取
     // =========================================================================
+    const clearScoresBtn = document.getElementById('clear-scores-btn');
+    const resetWeightsBtn = document.getElementById('reset-weights-btn');
     const mainMenu = document.getElementById('main-menu');
     const chapterOptions = document.getElementById('chapter-options');
     const randomOptions = document.getElementById('random-options');
@@ -219,6 +296,10 @@ function loadWeightsFromStorage() {
         if (isWeightingEnabled) {
             updateWeights(results);
         }
+        // 儲存隨機測驗的成績
+        if (currentExamQuestions.length === parseInt(randomQuestionCountInput.value, 10)) {
+            saveScoreHistory(score, currentExamQuestions.length);
+        }
         showScreen(resultArea);
     }
     
@@ -329,13 +410,30 @@ function loadWeightsFromStorage() {
     backButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             showScreen(mainMenu);
+            updateScoreChart();
         });
+    });
+
+    clearScoresBtn.addEventListener('click', () => {
+        if (confirm('確定要清除所有成績記錄嗎？此操作無法復原。')) {
+            localStorage.removeItem('random_exam_score_history');
+            updateScoreChart();
+        }
+    });
+
+    resetWeightsBtn.addEventListener('click', () => {
+        if (confirm('確定要重置所有章節權重嗎？')) {
+            chapterWeights = { 1: 1, 2: 1, 3: 1, 4: 1 };
+            localStorage.removeItem('chapterWeights');
+            updateWeightStatus();
+        }
     });
 
     // =========================================================================
     // 初始設定
     // =========================================================================
     updateWeightStatus();
+    updateScoreChart();
     showScreen(mainMenu);
 
 });

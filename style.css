@@ -1,3 +1,17 @@
+#score-history-chart-container {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    height: 300px;
+}
+
+#scoreChart {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-color: #f0f2f5;
@@ -41,7 +55,7 @@ h1 {
     margin: 20px 0;
 }
 
-.mode-btn, .start-btn, .back-btn, #submit-exam-btn {
+.mode-btn, .start-btn, .back-btn, #submit-exam-btn, .control-btn {
     padding: 12px 25px;
     font-size: 1em;
     border: none;
@@ -53,7 +67,7 @@ h1 {
     font-weight: bold;
 }
 
-.mode-btn:hover, .start-btn:hover, .back-btn:hover, #submit-exam-btn:hover {
+.mode-btn:hover, .start-btn:hover, .back-btn:hover, #submit-exam-btn:hover, .control-btn:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
@@ -61,6 +75,22 @@ h1 {
 .weight-mode-toggle {
     margin-top: 20px;
     font-size: 0.9em;
+}
+
+.control-btn {
+    margin: 10px;
+    background-color: #dc3545;
+    font-size: 0.9em;
+    padding: 8px 15px;
+}
+
+.score-controls {
+    margin-top: 15px;
+}
+
+#reset-weights-btn {
+    background-color: #ffc107;
+    color: #000;
 }
 
 #weight-status {
