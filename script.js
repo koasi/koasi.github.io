@@ -76,28 +76,89 @@ function updateScoreChart() {
 }
 document.addEventListener('DOMContentLoaded', async function() {
     // =========================================================================
-    // 題庫資料 (已整合您提供的 PDF 內容)
-    // 請注意：為節省篇幅，這裡只列出部分題目作為範例。
-    // 實際使用時，應將所有 588 題填入此陣列。
-    // =========================================================================
-    // const questionBank =  data;
-    await fetch('./exam.json').then(response => response.json()).then(data => {
-        // 將原本的 questionBank 賦值移到這裡
-    questionBank = JSON.parse(JSON.stringify(data));
-        // 其餘代碼保持不變...
-
-    })
-    .catch(error => {
-        console.error('載入題庫失敗:', error);
-    });
-    // =========================================================================
     // 系統狀態變數
     // =========================================================================
+    let exam_source = './exam.json';
+    let exam_selected = '1'; // 預設選擇第一個題庫
     let currentExamQuestions = [];
     let chapterWeights = { 1: 1, 2: 1, 3: 1, 4: 1 };
-    let isWeightingEnabled ;
+    let isWeightingEnabled;
     const chapters = {};
+    let originalQuestionBank = null;
 
+    // =========================================================================
+    // DOM 元素獲取
+    // =========================================================================
+    const examSelect = document.getElementById('question-bank-select');
+    const clearScoresBtn = document.getElementById('clear-scores-btn');
+    const resetWeightsBtn = document.getElementById('reset-weights-btn');
+    const mainMenu = document.getElementById('main-menu');
+    const chapterOptions = document.getElementById('chapter-options');
+    const randomOptions = document.getElementById('random-options');
+    const examArea = document.getElementById('exam-area');
+    const resultArea = document.getElementById('result-area');
+    const backButtons = document.querySelectorAll('.back-btn');
+    const chapterModeBtn = document.getElementById('chapter-mode-btn');
+    const randomModeBtn = document.getElementById('random-mode-btn');
+    const startChapterExamBtn = document.getElementById('start-chapter-exam');
+    const startRandomExamBtn = document.getElementById('start-random-exam');
+    const submitExamBtn = document.getElementById('submit-exam-btn');
+    const chapterSelect = document.getElementById('chapter-select');
+    const blockSelect = document.getElementById('block-select');
+    const randomQuestionCountInput = document.getElementById('random-question-count');
+    const weightModeSwitch = document.getElementById('weight-mode-switch');
+    const weightStatus = document.getElementById('weight-status');
+    const randomOptionSwitch = document.getElementById('random-option-switch');
+    const questionContainer = document.getElementById('question-container');
+    const resultDetails = document.getElementById('result-details');
+    const scoreDisplay = document.getElementById('score');
+    const progressBar = document.getElementById('progress-bar');
+
+    // 初始化題庫載入函數
+    async function loadQuestionBank(source) {
+        try {
+            const response = await fetch(source);
+            const data = await response.json();
+            questionBank = JSON.parse(JSON.stringify(data));
+            
+            // 重新初始化章節資訊
+            Object.keys(chapters).forEach(key => delete chapters[key]);
+            questionBank.forEach(q => {
+                if (!chapters[q.chapter_number]) {
+                    chapters[q.chapter_number] = {
+                        name: q.chapter_name,
+                        questions: []
+                    };
+                }
+                chapters[q.chapter_number].questions.push(q);
+            });
+
+            // 如果在章節模式，重新填充章節選單
+            if (chapterOptions.style.display === 'block') {
+                chapterSelect.innerHTML = '';
+                for (const num in chapters) {
+                    const option = document.createElement('option');
+                    option.value = num;
+                    option.textContent = `第${num}章 ${chapters[num].name}`;
+                    chapterSelect.appendChild(option);
+                }
+                chapterSelect.dispatchEvent(new Event('change'));
+            }
+        } catch (error) {
+            console.error('載入題庫失敗:', error);
+        }
+    }
+
+    // 監聽題庫選擇變更
+    examSelect.addEventListener('change', async function() {
+        exam_selected = this.value;
+        exam_source = exam_selected === '1' ? './exam.json' : './exam_renew_licanse.json';
+        console.log('選擇的題庫:', exam_source);
+        await loadQuestionBank(exam_source);
+    });
+
+    // 初始載入題庫
+    await loadQuestionBank(exam_source);
 
     // 檢查 localStorage 中的權重
     const storedWeights = localStorage.getItem('chapterWeights');
@@ -113,53 +174,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
 
-    questionBank.forEach(q => {
-        if (!chapters[q.chapter_number]) {
-            chapters[q.chapter_number] = {
-                name: q.chapter_name,
-                questions: []
-            };
-        }
-        chapters[q.chapter_number].questions.push(q);
-    });
-
-
-    
-
-    // =========================================================================
-    // DOM 元素獲取
-    // =========================================================================
-    const clearScoresBtn = document.getElementById('clear-scores-btn');
-    const resetWeightsBtn = document.getElementById('reset-weights-btn');
-    const mainMenu = document.getElementById('main-menu');
-    const chapterOptions = document.getElementById('chapter-options');
-    const randomOptions = document.getElementById('random-options');
-    const examArea = document.getElementById('exam-area');
-    const resultArea = document.getElementById('result-area');
-    const backButtons = document.querySelectorAll('.back-btn');
-    
-    // 按鈕
-    const chapterModeBtn = document.getElementById('chapter-mode-btn');
-    const randomModeBtn = document.getElementById('random-mode-btn');
-    const startChapterExamBtn = document.getElementById('start-chapter-exam');
-    const startRandomExamBtn = document.getElementById('start-random-exam');
-    const submitExamBtn = document.getElementById('submit-exam-btn');
-    
-
-    // 下拉選單和輸入框
-    const chapterSelect = document.getElementById('chapter-select');
-    const blockSelect = document.getElementById('block-select');
-    const randomQuestionCountInput = document.getElementById('random-question-count');
-
-    // 權重模式開關
-    const weightModeSwitch = document.getElementById('weight-mode-switch');
-    const weightStatus = document.getElementById('weight-status');
-    const randomOptionSwitch = document.getElementById('random-option-switch');
-    // 顯示區
-    const questionContainer = document.getElementById('question-container');
-    const resultDetails = document.getElementById('result-details');
-    const scoreDisplay = document.getElementById('score');
-    const progressBar = document.getElementById('progress-bar');
 
 //  =========================================================================
 // 權重儲存功能
@@ -399,8 +413,6 @@ function loadWeightsFromStorage() {
     });
 
 
-    // 保存原始題庫的副本
-    let originalQuestionBank = null;
 
     randomOptionSwitch.addEventListener('change', () => {
         if (randomOptionSwitch.checked) {
