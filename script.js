@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         // 將原本的 questionBank 賦值移到這裡
     questionBank = JSON.parse(JSON.stringify(data));
         // 其餘代碼保持不變...
+
     })
     .catch(error => {
         console.error('載入題庫失敗:', error);
@@ -143,6 +144,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const startChapterExamBtn = document.getElementById('start-chapter-exam');
     const startRandomExamBtn = document.getElementById('start-random-exam');
     const submitExamBtn = document.getElementById('submit-exam-btn');
+    
 
     // 下拉選單和輸入框
     const chapterSelect = document.getElementById('chapter-select');
@@ -152,7 +154,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // 權重模式開關
     const weightModeSwitch = document.getElementById('weight-mode-switch');
     const weightStatus = document.getElementById('weight-status');
-
+    const randomOptionSwitch = document.getElementById('random-option-switch');
     // 顯示區
     const questionContainer = document.getElementById('question-container');
     const resultDetails = document.getElementById('result-details');
@@ -396,6 +398,92 @@ function loadWeightsFromStorage() {
         }
     });
 
+
+    // 保存原始題庫的副本
+    let originalQuestionBank = null;
+
+    randomOptionSwitch.addEventListener('change', () => {
+        if (randomOptionSwitch.checked) {
+            // 第一次開啟時保存原始題庫
+            if (!originalQuestionBank) {
+                originalQuestionBank = JSON.parse(JSON.stringify(questionBank));
+            }
+
+            // 開啟選項亂數模式
+            questionBank.forEach(q => {
+                // 獲取選項內容和對應的鍵
+                const optionEntries = Object.entries(q.options);
+                const hasAllAbove = optionEntries.some(([_, value]) => 
+                    value.includes('以上皆是') || 
+                    value.includes('以上皆非') || 
+                    value.includes('以上皆可') ||
+                    value.includes('以上皆對') ||
+                    value.includes('以上皆錯')
+                );
+
+                if (hasAllAbove) {
+                    // 如果有"以上皆是"類選項,保持在D選項,只打亂其他選項
+                    const dOption = optionEntries.find(([_, value]) => 
+                        value.includes('以上皆是') || 
+                        value.includes('以上皆非') || 
+                        value.includes('以上皆可') ||
+                        value.includes('以上皆對') ||
+                        value.includes('以上皆錯')
+                    );
+                    const otherOptions = optionEntries.filter(([_, value]) => 
+                        !value.includes('以上皆是') && 
+                        !value.includes('以上皆非') && 
+                        !value.includes('以上皆可') &&
+                        !value.includes('以上皆對') &&
+                        !value.includes('以上皆錯')
+                    );
+                    
+                    // 打亂其他選項
+                    for (let i = otherOptions.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [otherOptions[i], otherOptions[j]] = [otherOptions[j], otherOptions[i]];
+                    }
+
+                    // 重新組合選項,保持"以上皆是"在D
+                    const newOptions = {};
+                    otherOptions.slice(0, 3).forEach(([_, value], index) => {
+                        newOptions[String.fromCharCode(65 + index)] = value;
+                    });
+                    newOptions['D'] = dOption[1];
+
+                    // 更新選項和答案
+                    q.options = newOptions;
+                    // 找到新的正確答案位置
+                    const originalCorrectValue = originalQuestionBank.find(oq => oq.unique_id === q.unique_id).options[originalQuestionBank.find(oq => oq.unique_id === q.unique_id).correct_answer];
+                    q.correct_answer = Object.entries(newOptions).find(([_, value]) => value === originalCorrectValue)[0];
+                } else {
+                    // 如果沒有"以上皆是"選項,則完全隨機打亂
+                    const shuffledOptions = {};
+                    const keys = ['A', 'B', 'C', 'D'];
+                    const values = Object.values(q.options);
+                    const shuffledIndices = Array.from({length: 4}, (_, i) => i)
+                        .sort(() => Math.random() - 0.5);
+                    
+                    shuffledIndices.forEach((index, i) => {
+                        shuffledOptions[keys[i]] = values[index];
+                    });
+
+                    // 更新選項和答案
+                    q.options = shuffledOptions;
+                    // 找到新的正確答案位置
+                    const originalCorrectValue = originalQuestionBank.find(oq => oq.unique_id === q.unique_id).options[originalQuestionBank.find(oq => oq.unique_id === q.unique_id).correct_answer];
+                    q.correct_answer = Object.entries(shuffledOptions).find(([_, value]) => value === originalCorrectValue)[0];
+                }
+            });
+        } else {
+            // 關閉選項亂數模式,恢復原本的選項順序
+            if (originalQuestionBank) {
+                questionBank = JSON.parse(JSON.stringify(originalQuestionBank));
+            }
+        }
+    });
+
+    
     weightModeSwitch.addEventListener('change', () => {
         isWeightingEnabled = weightModeSwitch.checked;
         if (!isWeightingEnabled) {
