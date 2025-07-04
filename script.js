@@ -169,6 +169,8 @@ document.addEventListener('DOMContentLoaded', async function() {
             isWeightingEnabled = true;
             weightModeSwitch.checked = true;
         } catch (e) {
+            isWeightingEnabled = false;
+            weightModeSwitch.checked = false;
             console.error('解析 localStorage 失敗:', e);
         }
     }
