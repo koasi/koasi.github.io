@@ -436,15 +436,15 @@ function loadWeightsFromStorage() {
                 );
 
                 if (hasAllAbove) {
-                    // 如果有"以上皆是"類選項,保持在D選項,只打亂其他選項
-                    const dOption = optionEntries.find(([_, value]) => 
+                    // 如果有"以上皆是"類選項，保持它們在原位，只打亂其他選項
+                    const specialOptions = optionEntries.filter(([_, value]) => 
                         value.includes('以上皆是') || 
                         value.includes('以上皆非') || 
                         value.includes('以上皆可') ||
                         value.includes('以上皆對') ||
                         value.includes('以上皆錯')
                     );
-                    const otherOptions = optionEntries.filter(([_, value]) => 
+                    const normalOptions = optionEntries.filter(([_, value]) => 
                         !value.includes('以上皆是') && 
                         !value.includes('以上皆非') && 
                         !value.includes('以上皆可') &&
@@ -452,18 +452,31 @@ function loadWeightsFromStorage() {
                         !value.includes('以上皆錯')
                     );
                     
-                    // 打亂其他選項
-                    for (let i = otherOptions.length - 1; i > 0; i--) {
+                    // 只打亂一般選項的內容，保持特殊選項位置不變
+                    const normalValues = normalOptions.map(([_, value]) => value);
+                    for (let i = normalValues.length - 1; i > 0; i--) {
                         const j = Math.floor(Math.random() * (i + 1));
-                        [otherOptions[i], otherOptions[j]] = [otherOptions[j], otherOptions[i]];
+                        [normalValues[i], normalValues[j]] = [normalValues[j], normalValues[i]];
                     }
 
-                    // 重新組合選項,保持"以上皆是"在D
+                    // 重新組合選項，特殊選項保持原位，一般選項使用打亂後的內容
                     const newOptions = {};
-                    otherOptions.slice(0, 3).forEach(([_, value], index) => {
-                        newOptions[String.fromCharCode(65 + index)] = value;
+                    let normalIndex = 0;
+                    
+                    optionEntries.forEach(([key, value]) => {
+                        const isSpecial = value.includes('以上皆是') || 
+                                        value.includes('以上皆非') || 
+                                        value.includes('以上皆可') ||
+                                        value.includes('以上皆對') ||
+                                        value.includes('以上皆錯');
+                        
+                        if (isSpecial) {
+                            newOptions[key] = value; // 保持原位
+                        } else {
+                            newOptions[key] = normalValues[normalIndex]; // 使用打亂後的內容
+                            normalIndex++;
+                        }
                     });
-                    newOptions['D'] = dOption[1];
 
                     // 更新選項和答案
                     q.options = newOptions;
