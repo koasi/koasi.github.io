@@ -9,6 +9,7 @@ import { TodoList } from '@/components/todo-list';
 import useLocalStorage from '@/hooks/use-local-storage';
 import { Play, Pause, RotateCcw } from 'lucide-react';
 import * as Tone from 'tone';
+import { IncenseTimer } from './incense-timer';
 
 const formatTime = (seconds: number) => {
   const mins = Math.floor(seconds / 60);
@@ -43,19 +44,32 @@ export default function PomodoroClient() {
     }
   }, [settings]);
 
+  const [breakTime, setBreakTime] = useState(getInitialTimeForMode(mode));
+
+  useEffect(() => {
+    if (mode !== 'pomodoro') {
+      setBreakTime(getInitialTimeForMode(mode));
+    }
+  }, [mode, getInitialTimeForMode]);
+
   const activeTask = tasks.find(task => task.id === activeTaskId);
-  const timeRemaining = mode === 'pomodoro' ? (activeTask?.timeRemaining ?? getInitialTimeForMode('pomodoro')) : getInitialTimeForMode(mode);
+  
+  const timeRemaining = mode === 'pomodoro' 
+    ? (activeTask?.timeRemaining ?? getInitialTimeForMode('pomodoro')) 
+    : breakTime;
 
   const setTimeRemaining = (newTime: number | ((t: number) => number)) => {
     if (mode === 'pomodoro' && activeTaskId) {
       setTasks(prevTasks => prevTasks.map(task => {
         if (task.id === activeTaskId) {
-          const oldTime = task.timeRemaining ?? getInitialTimeForMode('pomodoro');
+          const oldTime = task.timeRemaining;
           const updatedTime = typeof newTime === 'function' ? newTime(oldTime) : newTime;
           return { ...task, timeRemaining: updatedTime };
         }
         return task;
       }));
+    } else if (mode !== 'pomodoro') {
+        setBreakTime(newTime);
     }
   };
   
@@ -71,13 +85,10 @@ export default function PomodoroClient() {
       setTasks(prevTasks => prevTasks.map(t => 
         t.id === activeTaskId ? { ...t, timeRemaining: getInitialTimeForMode('pomodoro') } : t
       ));
+    } else if (mode !== 'pomodoro') {
+      setBreakTime(getInitialTimeForMode(mode));
     }
   }, [getInitialTimeForMode, mode, activeTaskId, setTasks]);
-
-  useEffect(() => {
-    // This effect only handles mode switching, not full resets
-    setIsActive(false);
-  }, [mode]);
   
   useEffect(() => {
     document.title = `${formatTime(timeRemaining)} - ${mode} | Pomodoro Flow`;
@@ -117,7 +128,7 @@ export default function PomodoroClient() {
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [isActive, timeRemaining, mode, settings.soundEnabled, completedPomodoros, setCompletedPomodoros, activeTaskId, setActiveTaskId, setTasks, getInitialTimeForMode]);
+  }, [isActive, timeRemaining, mode, settings.soundEnabled, completedPomodoros, setCompletedPomodoros, activeTaskId, setActiveTaskId, setTasks, getInitialTimeForMode, setTimeRemaining]);
 
 
   const handleStartPause = () => {
@@ -141,7 +152,7 @@ export default function PomodoroClient() {
       completed: false,
       timeRemaining: getInitialTimeForMode('pomodoro'),
     };
-    setTasks([...tasks, newTask]);
+    setTasks(prevTasks => [...prevTasks, newTask]);
   };
 
   const handleToggleTask = (id: number) => {
@@ -157,37 +168,24 @@ export default function PomodoroClient() {
   };
   
   const handleTaskTimerToggle = (id: number) => {
-    if (mode !== 'pomodoro') return;
+    if (mode !== 'pomodoro') {
+        setMode('pomodoro');
+    }
 
     if (activeTaskId === id) {
+      // If clicking the same task, just toggle play/pause
       setIsActive(!isActive);
     } else {
-      setActiveTaskId(id);
+      // If clicking a new task, make it active and start timer
       setIsActive(true);
+      setActiveTaskId(id);
     }
   };
   
-  const getTimerDisplay = () => {
-    if (mode === 'pomodoro') {
-      const task = tasks.find(t => t.id === activeTaskId);
-      return task ? task.timeRemaining : getInitialTimeForMode('pomodoro');
-    }
-    // This part is tricky because break timers aren't tied to tasks.
-    // For simplicity, let's use a separate state for break timers if we want them to be persistent.
-    // For now, they reset on mode change. Let's create a state for it.
-    return getInitialTimeForMode(mode);
-  };
-  
-  // This needs to be more complex if we want persistent break timers.
-  // For now, let's stick to the main logic. The original `timeRemaining` derived state should work.
-
   const totalDuration = mode === 'pomodoro' 
     ? settings.pomodoro * 60 
     : (mode === 'shortBreak' ? settings.shortBreak * 60 : settings.longBreak * 60);
 
-  const circumference = 2 * Math.PI * 140;
-  const strokeDashoffset = circumference - (timeRemaining / totalDuration) * circumference;
-  
   const isPomodoroModeWithNoTask = mode === 'pomodoro' && activeTaskId === null;
 
   return (
@@ -201,57 +199,24 @@ export default function PomodoroClient() {
           </TabsList>
         </Tabs>
         
-        <div className="relative w-80 h-80">
-          <svg className="w-full h-full" viewBox="0 0 300 300">
-            <circle
-              className="text-secondary"
-              strokeWidth="10"
-              stroke="currentColor"
-              fill="transparent"
-              r="140"
-              cx="150"
-              cy="150"
-            />
-            <circle
-              className="text-primary transition-all duration-1000 ease-linear"
-              strokeWidth="10"
-              strokeDasharray={circumference}
-              strokeDashoffset={strokeDashoffset}
-              strokeLinecap="round"
-              stroke="currentColor"
-              fill="transparent"
-              r="140"
-              cx="150"
-              cy="150"
-              transform="rotate(-90 150 150)"
-            />
-            <text
-              x="50%"
-              y="50%"
-              textAnchor="middle"
-              dy=".3em"
-              className="text-6xl font-bold font-headline fill-current text-foreground"
-            >
-              {formatTime(timeRemaining)}
-            </text>
-          </svg>
-        </div>
+        <IncenseTimer 
+            timeRemaining={timeRemaining} 
+            totalDuration={totalDuration} 
+            isBurning={isActive}
+        />
 
         <div className="flex space-x-4">
           <Button 
             onClick={handleStartPause} 
             size="lg" 
             className="w-32 text-lg font-bold shadow-md"
-            disabled={isPomodoroModeWithNoTask && mode === 'pomodoro'}
+            disabled={isPomodoroModeWithNoTask}
           >
             {isActive ? <Pause className="mr-2" /> : <Play className="mr-2" />}
             {isActive ? 'Pause' : 'Start'}
           </Button>
           <Button onClick={() => {
             resetTimer();
-            if(mode === 'pomodoro') {
-                setActiveTaskId(null);
-            }
           }} variant="secondary" size="lg" className="shadow-md">
             <RotateCcw />
           </Button>
@@ -277,3 +242,4 @@ export default function PomodoroClient() {
       </div>
     </div>
   );
+}

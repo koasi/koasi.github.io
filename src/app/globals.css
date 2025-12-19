@@ -82,3 +82,24 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  @keyframes smoke {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-20px) scale(1.2);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(-40px) scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  .animate-smoke {
+    animation: smoke 3s ease-out infinite;
+  }
+}
