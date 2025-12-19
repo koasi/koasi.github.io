@@ -44,13 +44,7 @@ export default function PomodoroClient() {
     }
   }, [settings]);
 
-  const [breakTime, setBreakTime] = useState(getInitialTimeForMode(mode));
-
-  useEffect(() => {
-    if (mode !== 'pomodoro') {
-      setBreakTime(getInitialTimeForMode(mode));
-    }
-  }, [mode, getInitialTimeForMode]);
+  const [breakTime, setBreakTime] = useState(getInitialTimeForMode('shortBreak'));
 
   const activeTask = tasks.find(task => task.id === activeTaskId);
   
@@ -69,7 +63,7 @@ export default function PomodoroClient() {
         return task;
       }));
     } else if (mode !== 'pomodoro') {
-        setBreakTime(newTime);
+        setBreakTime(prev => typeof newTime === 'function' ? newTime(prev) : newTime);
     }
   }, [mode, activeTaskId, setTasks]);
   
@@ -106,30 +100,27 @@ export default function PomodoroClient() {
       }
       
       if (mode === 'pomodoro') {
-        if (activeTaskId) {
-           setTasks(prevTasks => 
-              prevTasks.map(task => {
-                  if (task.id === activeTaskId) {
-                      return { ...task, completed: true, timeRemaining: getInitialTimeForMode('pomodoro') };
-                  }
-                  return task;
-              })
-           );
-        }
+        setTasks(prevTasks => 
+            prevTasks.map(task => {
+                if (task.id === activeTaskId) {
+                    return { ...task, completed: true, timeRemaining: getInitialTimeForMode('pomodoro') };
+                }
+                return task;
+            })
+        );
         setCompletedPomodoros(prev => prev + 1);
         const nextMode = (completedPomodoros + 1) % 4 === 0 ? 'longBreak' : 'shortBreak';
         setMode(nextMode);
-        setIsActive(false);
-        setActiveTaskId(null);
       } else {
         setMode('pomodoro');
-        setIsActive(false);
       }
+      setIsActive(false);
     }
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [isActive, timeRemaining, mode, settings.soundEnabled, completedPomodoros, setCompletedPomodoros, activeTaskId, setActiveTaskId, setTasks, getInitialTimeForMode, setTimeRemaining]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isActive, timeRemaining, mode, settings.soundEnabled, completedPomodoros, activeTaskId, getInitialTimeForMode, setTimeRemaining, setCompletedPomodoros]);
 
 
   const handleStartPause = () => {
@@ -143,6 +134,7 @@ export default function PomodoroClient() {
     setMode(newMode as Mode);
     if (newMode !== 'pomodoro') {
       setActiveTaskId(null);
+      setBreakTime(getInitialTimeForMode(newMode as Mode));
     }
   };
 
@@ -182,8 +174,8 @@ export default function PomodoroClient() {
   };
   
   const totalDuration = mode === 'pomodoro' 
-    ? settings.pomodoro * 60 
-    : (mode === 'shortBreak' ? settings.shortBreak * 60 : settings.longBreak * 60);
+    ? getInitialTimeForMode('pomodoro')
+    : getInitialTimeForMode(mode);
 
   const isPomodoroModeWithNoTask = mode === 'pomodoro' && activeTaskId === null;
 

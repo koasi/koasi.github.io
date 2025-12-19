@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useTheme } from '@/components/theme-provider';
 
 interface IncenseTimerProps {
@@ -34,6 +34,15 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
   const accumulatedAshHeight = useRef(0);
   const ashBreakTimeout = useRef<NodeJS.Timeout | null>(null);
   const lastProgress = useRef(1);
+
+  const resetAnimation = () => {
+      if (ashBreakTimeout.current) clearTimeout(ashBreakTimeout.current);
+      ashBreakTimeout.current = null;
+      ashChunks.current = [];
+      accumulatedAshHeight.current = 0;
+      smokeParticles.current = [];
+      lastProgress.current = 1;
+  };
 
   const scheduleNextAshBreak = () => {
     if (ashBreakTimeout.current) {
@@ -72,11 +81,9 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
   useEffect(() => {
     const progress = Math.max(0, timeRemaining / totalDuration);
     
-    // If timer is reset
-    if (!isBurning && progress === 1 && lastProgress.current < 1) {
-        if (ashBreakTimeout.current) clearTimeout(ashBreakTimeout.current);
-        ashChunks.current = [];
-        accumulatedAshHeight.current = 0;
+    // If timer is reset (progress goes to 1 from a lower value)
+    if (progress === 1 && lastProgress.current < 1) {
+        resetAnimation();
     } else if (isBurning && !ashBreakTimeout.current) {
         scheduleNextAshBreak();
     } else if (!isBurning && ashBreakTimeout.current) {
@@ -90,7 +97,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
         if(ashBreakTimeout.current) clearTimeout(ashBreakTimeout.current);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isBurning, timeRemaining, totalDuration]);
+  }, [isBurning]);
 
 
   useEffect(() => {
@@ -102,14 +109,21 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
     
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    ctx.scale(dpr, dpr);
+    if (canvas.width !== rect.width * dpr || canvas.height !== rect.height * dpr) {
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+    }
     
     const width = canvas.width / dpr;
     const height = canvas.height / dpr;
 
     let animationFrameId: number;
+
+    const currentProgress = Math.max(0, timeRemaining / totalDuration);
+    if(currentProgress === 1 && lastProgress.current < 1) {
+        resetAnimation();
+    }
     
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
@@ -167,12 +181,14 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
 
       // 3. Draw falling ash chunks
       ctx.fillStyle = isDark ? '#4a5568' : '#a0aec0';
-      ashChunks.current.forEach((chunk, index) => {
+      ashChunks.current = ashChunks.current.filter(chunk => {
         if (chunk.y < holderY - holderHeight * 0.2) {
             chunk.y += chunk.vy;
             chunk.vy += 0.05; // gravity
             ctx.fillRect(chunk.x - stickWidth / 2, chunk.y, stickWidth, chunk.height);
+            return true;
         }
+        return false; // Remove if it has "landed"
       });
 
 
