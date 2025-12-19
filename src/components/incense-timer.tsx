@@ -19,12 +19,10 @@ interface SmokeParticle {
   vy: number;
 }
 
-interface FallingEmbers {
+interface AshChunk {
     x: number;
     y: number;
-    size: number;
-    opacity: number;
-    vx: number;
+    height: number;
     vy: number;
 }
 
@@ -32,8 +30,67 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const { theme } = useTheme();
   const smokeParticles = useRef<SmokeParticle[]>([]);
-  const fallingEmbers = useRef<FallingEmbers[]>([]);
-  const [lastProgressSegment, setLastProgressSegment] = useState(1);
+  const ashChunks = useRef<AshChunk[]>([]);
+  const accumulatedAshHeight = useRef(0);
+  const ashBreakTimeout = useRef<NodeJS.Timeout | null>(null);
+  const lastProgress = useRef(1);
+
+  const scheduleNextAshBreak = () => {
+    if (ashBreakTimeout.current) {
+        clearTimeout(ashBreakTimeout.current);
+    }
+    const nextBreakTime = Math.random() * 8000 + 4000; // 4-12 seconds
+    ashBreakTimeout.current = setTimeout(() => {
+        const canvas = canvasRef.current;
+        if (!canvas || !isBurning) return;
+        const dpr = window.devicePixelRatio || 1;
+        const height = canvas.height / dpr;
+        
+        const progress = Math.max(0, timeRemaining / totalDuration);
+        const incenseTotalHeight = height * 0.6;
+        const incenseBurntHeight = incenseTotalHeight * (1 - progress);
+        const currentAshHeight = incenseBurntHeight - accumulatedAshHeight.current;
+
+        if (currentAshHeight > 5) {
+            const incenseTopY = height * 0.2 + accumulatedAshHeight.current;
+            ashChunks.current.push({
+                x: canvas.width / dpr / 2,
+                y: incenseTopY,
+                height: currentAshHeight,
+                vy: 0.5 + Math.random() * 0.5,
+            });
+            accumulatedAshHeight.current += currentAshHeight;
+        }
+
+        if (isBurning) {
+            scheduleNextAshBreak();
+        }
+
+    }, nextBreakTime);
+  };
+  
+  useEffect(() => {
+    const progress = Math.max(0, timeRemaining / totalDuration);
+    
+    // If timer is reset
+    if (!isBurning && progress === 1 && lastProgress.current < 1) {
+        if (ashBreakTimeout.current) clearTimeout(ashBreakTimeout.current);
+        ashChunks.current = [];
+        accumulatedAshHeight.current = 0;
+    } else if (isBurning && !ashBreakTimeout.current) {
+        scheduleNextAshBreak();
+    } else if (!isBurning && ashBreakTimeout.current) {
+        clearTimeout(ashBreakTimeout.current);
+        ashBreakTimeout.current = null;
+    }
+
+    lastProgress.current = progress;
+
+    return () => {
+        if(ashBreakTimeout.current) clearTimeout(ashBreakTimeout.current);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isBurning, timeRemaining, totalDuration]);
 
 
   useEffect(() => {
@@ -54,30 +111,6 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
 
     let animationFrameId: number;
     
-    const progress = Math.max(0, timeRemaining / totalDuration);
-    const currentProgressSegment = Math.floor(progress * 20); // Segment into 5% chunks
-
-    if (isBurning && currentProgressSegment < lastProgressSegment) {
-        const incenseTotalHeight = height * 0.6;
-        const incenseBurntHeight = incenseTotalHeight * (1 - progress);
-        const incenseTopY = height * 0.2 + incenseBurntHeight;
-
-        fallingEmbers.current.push({
-            x: width / 2,
-            y: incenseTopY,
-            size: Math.random() * 1.5 + 1,
-            opacity: 1,
-            vx: Math.random() * 0.2 - 0.1,
-            vy: 0.5 + Math.random() * 0.5,
-        });
-        setLastProgressSegment(currentProgressSegment);
-    }
-     if (!isBurning && progress === 1) { // Reset embers when timer is reset
-        fallingEmbers.current = [];
-        setLastProgressSegment(20);
-    }
-
-
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
       
@@ -88,6 +121,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
       const incenseBurntHeight = incenseTotalHeight * (1 - progress);
       const incenseUnburntHeight = incenseTotalHeight * progress;
       const incenseTopY = height * 0.2 + incenseBurntHeight;
+
       const holderY = height * 0.8;
       const holderWidth = width * 0.4;
       const holderHeight = height * 0.1;
@@ -120,35 +154,41 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
       ctx.strokeStyle = isDark ? 'hsla(210, 10%, 35%, 0.9)' : 'hsla(210, 15%, 98%, 0.9)';
       ctx.lineWidth = 1.5;
       ctx.stroke();
+      
+      const accumulatedAshOnHolder = ashChunks.current.filter(chunk => chunk.y >= holderY - holderHeight * 0.2).reduce((sum, chunk) => sum + chunk.height, 0);
 
-      // 2. Draw falling embers
-      ctx.fillStyle = isDark ? '#7f7f7f' : '#a0a0a0';
-      fallingEmbers.current.forEach((ember) => {
-        if (ember.y < holderY - holderHeight * 0.3) {
-            ember.x += ember.vx;
-            ember.y += ember.vy;
-            ember.vy += 0.02; // gravity
+      // 2. Draw accumulated ash on holder
+      if (accumulatedAshOnHolder > 0) {
+          ctx.fillStyle = isDark ? '#555' : '#b0b0b0';
+          ctx.beginPath();
+          ctx.ellipse(stickX, holderY - holderHeight * 0.2, stickWidth * 2, Math.min(accumulatedAshOnHolder / 2, holderHeight * 0.2));
+          ctx.fill();
+      }
+
+      // 3. Draw falling ash chunks
+      ctx.fillStyle = isDark ? '#4a5568' : '#a0aec0';
+      ashChunks.current.forEach((chunk, index) => {
+        if (chunk.y < holderY - holderHeight * 0.2) {
+            chunk.y += chunk.vy;
+            chunk.vy += 0.05; // gravity
+            ctx.fillRect(chunk.x - stickWidth / 2, chunk.y, stickWidth, chunk.height);
         }
-        ctx.globalAlpha = ember.opacity;
-        ctx.beginPath();
-        ctx.arc(ember.x, ember.y, ember.size, 0, Math.PI * 2);
-        ctx.fill();
       });
-      ctx.globalAlpha = 1.0;
 
 
-      // 3. Draw Incense Stick
-      // Ash part
-      if (progress < 1) {
+      // 4. Draw Incense Stick
+      // Attached Ash part
+      const attachedAshHeight = incenseBurntHeight - accumulatedAshHeight.current;
+      if (progress < 1 && attachedAshHeight > 0) {
         ctx.fillStyle = isDark ? '#4a5568' : '#a0aec0';
-        ctx.fillRect(stickX - stickWidth / 2, height * 0.2, stickWidth, incenseBurntHeight);
+        ctx.fillRect(stickX - stickWidth / 2, height * 0.2 + accumulatedAshHeight.current, stickWidth, attachedAshHeight);
       }
 
       // Unburnt part
       ctx.fillStyle = isDark ? '#78350f' : '#9a3412';
       ctx.fillRect(stickX - stickWidth / 2, incenseTopY, stickWidth, incenseUnburntHeight);
       
-      // 4. Draw Burning Tip & Smoke
+      // 5. Draw Burning Tip & Smoke
       if (isBurning && timeRemaining > 0) {
         // Glow
         const glowRadius = 7;
@@ -204,8 +244,11 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      if (ashBreakTimeout.current) {
+        clearTimeout(ashBreakTimeout.current);
+      }
     };
-  }, [timeRemaining, totalDuration, isBurning, theme, lastProgressSegment]);
+  }, [timeRemaining, totalDuration, isBurning, theme]);
 
   return (
     <div className="relative w-80 h-80 flex items-center justify-center">
