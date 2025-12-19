@@ -1,7 +1,7 @@
 'use client';
 
 import type { FC, FormEvent } from 'react';
-import { Plus, Trash2, Mic } from 'lucide-react';
+import { Plus, Trash2, Mic, Play, Pause } from 'lucide-react';
 import type { Task } from '@/lib/types';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
@@ -26,6 +26,11 @@ interface TodoListProps {
   onDeleteTask: (id: number) => void;
   settings: Settings;
   onSaveSettings: (newSettings: Settings) => void;
+  onTaskTimerToggle: (id: number) => void;
+  activeTaskId: number | null;
+  timeRemaining: number;
+  isTimerActive: boolean;
+  formatTime: (seconds: number) => string;
 }
 
 export const TodoList: FC<TodoListProps> = ({
@@ -35,6 +40,11 @@ export const TodoList: FC<TodoListProps> = ({
   onDeleteTask,
   settings,
   onSaveSettings,
+  onTaskTimerToggle,
+  activeTaskId,
+  timeRemaining,
+  isTimerActive,
+  formatTime,
 }) => {
   const [isListening, setIsListening] = useState(false);
   const [newTask, setNewTask] = useState('');
@@ -50,7 +60,7 @@ export const TodoList: FC<TodoListProps> = ({
         setIsSpeechRecognitionSupported(true);
         const recognition = new SpeechRecognition();
         recognition.continuous = false;
-        recognition.lang = 'zh-TW';
+        recognition.lang = 'en-US';
         recognition.interimResults = false;
         recognition.maxAlternatives = 1;
 
@@ -64,8 +74,8 @@ export const TodoList: FC<TodoListProps> = ({
           if (event.error === 'not-allowed') {
             toast({
               variant: 'destructive',
-              title: '語音權限被拒絕',
-              description: '請在瀏覽器設定中允許麥克風存取。',
+              title: 'Speech permission denied',
+              description: 'Please allow microphone access in your browser settings.',
             });
           } else {
             console.error('Speech recognition error', event.error);
@@ -95,27 +105,22 @@ export const TodoList: FC<TodoListProps> = ({
       if (isListening) {
         recognitionRef.current.stop();
       } else {
-        try {
           navigator.mediaDevices.getUserMedia({ audio: true }).then(() => {
             recognitionRef.current.start();
             setIsListening(true);
           }).catch(() => {
              toast({
               variant: 'destructive',
-              title: '無法取得麥克風權限',
-              description: '請確認您已允許瀏覽器存取麥克風。',
+              title: 'Cannot access microphone',
+              description: 'Please ensure you have allowed microphone access for this site.',
             });
             setIsListening(false);
           });
-        } catch (error) {
-          console.error("Speech recognition could not be started.", error);
-          setIsListening(false);
-        }
       }
     } else {
        toast({
-        title: '不支援語音辨識',
-        description: '您的瀏覽器不支援此功能。',
+        title: 'Speech recognition not supported',
+        description: 'Your browser does not support this feature.',
       });
     }
   };
@@ -137,7 +142,7 @@ export const TodoList: FC<TodoListProps> = ({
               value={newTask}
               onChange={(e) => setNewTask(e.target.value)}
               name="task-input" 
-              placeholder={isListening ? "正在聆聽..." : "Add a new task..."}
+              placeholder={isListening ? "Listening..." : "Add a new task..."}
               className={isSpeechRecognitionSupported ? "pr-10" : ""}
             />
             {isSpeechRecognitionSupported && (
@@ -175,9 +180,22 @@ export const TodoList: FC<TodoListProps> = ({
                     className={`flex-grow text-sm cursor-pointer ${
                       task.completed ? 'line-through text-muted-foreground' : ''
                     }`}
+                    onClick={() => onTaskTimerToggle(task.id)}
                   >
                     {task.text}
                   </label>
+                   <span className="text-sm font-mono text-muted-foreground w-14 text-right">
+                    {activeTaskId === task.id ? formatTime(timeRemaining) : ''}
+                  </span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => onTaskTimerToggle(task.id)}
+                    className="w-8 h-8"
+                    aria-label={`Start/Pause timer for task: ${task.text}`}
+                  >
+                    {isTimerActive && activeTaskId === task.id ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                  </Button>
                   <Button
                     variant="ghost"
                     size="icon"
