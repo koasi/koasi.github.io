@@ -30,7 +30,6 @@ interface TodoListProps {
   formatTime: (seconds: number) => string;
   activeTaskId: number | null;
   isTimerActive: boolean;
-  timeRemaining: number;
   isPomodoroMode: boolean;
 }
 
@@ -45,7 +44,6 @@ export const TodoList: FC<TodoListProps> = ({
   formatTime,
   activeTaskId,
   isTimerActive,
-  timeRemaining,
   isPomodoroMode,
 }) => {
   const [isListening, setIsListening] = useState(false);
@@ -69,10 +67,11 @@ export const TodoList: FC<TodoListProps> = ({
 
         recognition.onresult = (event) => {
           const transcript = event.results[0][0].transcript;
-          onAddTask(transcript);
+          setNewTask(transcript); // Set the task text in the input
+          formRef.current?.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
           setIsListening(false);
         };
-
+        
         recognition.onerror = (event) => {
             if (event.error === 'not-allowed') {
                 toast({
@@ -98,7 +97,8 @@ export const TodoList: FC<TodoListProps> = ({
         recognitionRef.current = recognition;
       }
     }
-  }, [onAddTask, toast]);
+  }, [toast]);
+
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -109,28 +109,29 @@ export const TodoList: FC<TodoListProps> = ({
   };
 
   const handleVoiceInput = () => {
-    if (recognitionRef.current) {
-      if (isListening) {
+    if (!isSpeechRecognitionSupported || !recognitionRef.current) {
+        toast({
+            title: 'Speech recognition not supported',
+            description: 'Your browser does not support this feature.',
+        });
+        return;
+    }
+
+    if (isListening) {
         recognitionRef.current.stop();
         setIsListening(false);
-      } else {
-          navigator.mediaDevices.getUserMedia({ audio: true }).then(() => {
+    } else {
+        navigator.mediaDevices.getUserMedia({ audio: true }).then(() => {
             recognitionRef.current.start();
             setIsListening(true);
-          }).catch(() => {
-             toast({
-              variant: 'destructive',
-              title: 'Cannot access microphone',
-              description: 'Please ensure you have allowed microphone access for this site.',
+        }).catch(() => {
+            toast({
+                variant: 'destructive',
+                title: 'Cannot access microphone',
+                description: 'Please ensure you have allowed microphone access for this site.',
             });
             setIsListening(false);
-          });
-      }
-    } else {
-       toast({
-        title: 'Speech recognition not supported',
-        description: 'Your browser does not support this feature.',
-      });
+        });
     }
   };
 
@@ -197,9 +198,7 @@ export const TodoList: FC<TodoListProps> = ({
                       {task.text}
                     </label>
                     <span className="text-sm font-mono text-muted-foreground w-14 text-right">
-                      {activeTaskId === task.id
-                        ? formatTime(timeRemaining)
-                        : formatTime(settings.pomodoro * 60)}
+                      {formatTime(task.timeRemaining)}
                     </span>
                     <Button
                       variant="ghost"

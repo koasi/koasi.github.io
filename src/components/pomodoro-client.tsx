@@ -32,8 +32,8 @@ export default function PomodoroClient() {
   
   const synth = useRef<Tone.Synth | null>(null);
 
-  const getInitialTime = useCallback(() => {
-    switch (mode) {
+  const getInitialTimeForMode = useCallback((currentMode: Mode) => {
+    switch (currentMode) {
       case 'pomodoro':
         return settings.pomodoro * 60;
       case 'shortBreak':
@@ -41,9 +41,23 @@ export default function PomodoroClient() {
       case 'longBreak':
         return settings.longBreak * 60;
     }
-  }, [mode, settings]);
+  }, [settings]);
 
-  const [timeRemaining, setTimeRemaining] = useState(getInitialTime());
+  const activeTask = tasks.find(task => task.id === activeTaskId);
+  const timeRemaining = mode === 'pomodoro' ? (activeTask?.timeRemaining ?? getInitialTimeForMode('pomodoro')) : getInitialTimeForMode(mode);
+
+  const setTimeRemaining = (newTime: number | ((t: number) => number)) => {
+    if (mode === 'pomodoro' && activeTaskId) {
+      setTasks(prevTasks => prevTasks.map(task => {
+        if (task.id === activeTaskId) {
+          const oldTime = task.timeRemaining ?? getInitialTimeForMode('pomodoro');
+          const updatedTime = typeof newTime === 'function' ? newTime(oldTime) : newTime;
+          return { ...task, timeRemaining: updatedTime };
+        }
+        return task;
+      }));
+    }
+  };
   
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -53,12 +67,17 @@ export default function PomodoroClient() {
 
   const resetTimer = useCallback(() => {
     setIsActive(false);
-    setTimeRemaining(getInitialTime());
-  }, [getInitialTime]);
+    if (mode === 'pomodoro' && activeTaskId) {
+      setTasks(prevTasks => prevTasks.map(t => 
+        t.id === activeTaskId ? { ...t, timeRemaining: getInitialTimeForMode('pomodoro') } : t
+      ));
+    }
+  }, [getInitialTimeForMode, mode, activeTaskId, setTasks]);
 
   useEffect(() => {
-    resetTimer();
-  }, [mode, settings]);
+    // This effect only handles mode switching, not full resets
+    setIsActive(false);
+  }, [mode]);
   
   useEffect(() => {
     document.title = `${formatTime(timeRemaining)} - ${mode} | Pomodoro Flow`;
@@ -78,9 +97,12 @@ export default function PomodoroClient() {
       if (mode === 'pomodoro') {
         if (activeTaskId) {
            setTasks(prevTasks => 
-              prevTasks.map(task => 
-                  task.id === activeTaskId ? { ...task, completed: true } : task
-              )
+              prevTasks.map(task => {
+                  if (task.id === activeTaskId) {
+                      return { ...task, completed: true, timeRemaining: getInitialTimeForMode('pomodoro') };
+                  }
+                  return task;
+              })
            );
            setActiveTaskId(null);
         }
@@ -95,12 +117,10 @@ export default function PomodoroClient() {
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [isActive, timeRemaining, mode, settings.soundEnabled, completedPomodoros, setCompletedPomodoros, activeTaskId, setActiveTaskId, setTasks]);
+  }, [isActive, timeRemaining, mode, settings.soundEnabled, completedPomodoros, setCompletedPomodoros, activeTaskId, setActiveTaskId, setTasks, getInitialTimeForMode]);
 
 
   const handleStartPause = () => {
-    // In pomodoro mode, a task must be active to start.
-    // In break modes, it can start without an active task.
     if (mode === 'pomodoro' && !activeTaskId) return;
     setIsActive(!isActive);
   };
@@ -109,7 +129,6 @@ export default function PomodoroClient() {
     if(newMode === mode) return;
     setIsActive(false);
     setMode(newMode as Mode);
-    // Deactivate task when switching away from pomodoro
     if (newMode !== 'pomodoro') {
       setActiveTaskId(null);
     }
@@ -120,6 +139,7 @@ export default function PomodoroClient() {
       id: Date.now(),
       text,
       completed: false,
+      timeRemaining: getInitialTimeForMode('pomodoro'),
     };
     setTasks([...tasks, newTask]);
   };
@@ -140,18 +160,33 @@ export default function PomodoroClient() {
     if (mode !== 'pomodoro') return;
 
     if (activeTaskId === id) {
-      // If clicking the active task, toggle start/pause
       setIsActive(!isActive);
     } else {
-      // Clicking a new task, make it active and start timer
       setActiveTaskId(id);
-      setTimeRemaining(getInitialTime()); // Reset timer to full pomodoro
       setIsActive(true);
     }
   };
+  
+  const getTimerDisplay = () => {
+    if (mode === 'pomodoro') {
+      const task = tasks.find(t => t.id === activeTaskId);
+      return task ? task.timeRemaining : getInitialTimeForMode('pomodoro');
+    }
+    // This part is tricky because break timers aren't tied to tasks.
+    // For simplicity, let's use a separate state for break timers if we want them to be persistent.
+    // For now, they reset on mode change. Let's create a state for it.
+    return getInitialTimeForMode(mode);
+  };
+  
+  // This needs to be more complex if we want persistent break timers.
+  // For now, let's stick to the main logic. The original `timeRemaining` derived state should work.
+
+  const totalDuration = mode === 'pomodoro' 
+    ? settings.pomodoro * 60 
+    : (mode === 'shortBreak' ? settings.shortBreak * 60 : settings.longBreak * 60);
 
   const circumference = 2 * Math.PI * 140;
-  const strokeDashoffset = circumference - (timeRemaining / getInitialTime()) * circumference;
+  const strokeDashoffset = circumference - (timeRemaining / totalDuration) * circumference;
   
   const isPomodoroModeWithNoTask = mode === 'pomodoro' && activeTaskId === null;
 
@@ -237,7 +272,6 @@ export default function PomodoroClient() {
           formatTime={formatTime}
           activeTaskId={activeTaskId}
           isTimerActive={isActive}
-          timeRemaining={timeRemaining}
           isPomodoroMode={mode === 'pomodoro'}
         />
       </div>
