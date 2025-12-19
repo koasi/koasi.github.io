@@ -93,7 +93,6 @@ export default function PomodoroClient() {
         setMode('pomodoro');
       }
       setIsActive(false);
-      setActiveTaskId(null);
     }
     return () => {
       if (interval) clearInterval(interval);
@@ -204,7 +203,7 @@ export default function PomodoroClient() {
             onClick={handleStartPause} 
             size="lg" 
             className="w-32 text-lg font-bold shadow-md"
-            disabled={isPomodoroModeWithNoTask}
+            disabled={isPomodoroModeWithNoTask && mode === 'pomodoro'}
           >
             {isActive ? <Pause className="mr-2" /> : <Play className="mr-2" />}
             {isActive ? 'Pause' : 'Start'}
