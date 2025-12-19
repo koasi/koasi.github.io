@@ -58,10 +58,7 @@ export default function PomodoroClient() {
 
   useEffect(() => {
     resetTimer();
-    if(mode !== 'pomodoro') {
-      setActiveTaskId(null);
-    }
-  }, [mode, settings, resetTimer, setActiveTaskId]);
+  }, [mode, settings]);
   
   useEffect(() => {
     document.title = `${formatTime(timeRemaining)} - ${mode} | Pomodoro Flow`;
@@ -85,6 +82,7 @@ export default function PomodoroClient() {
                   task.id === activeTaskId ? { ...task, completed: true } : task
               )
            );
+           setActiveTaskId(null);
         }
         setCompletedPomodoros(prev => prev + 1);
         const nextMode = (completedPomodoros + 1) % 4 === 0 ? 'longBreak' : 'shortBreak';
@@ -101,6 +99,8 @@ export default function PomodoroClient() {
 
 
   const handleStartPause = () => {
+    // In pomodoro mode, a task must be active to start.
+    // In break modes, it can start without an active task.
     if (mode === 'pomodoro' && !activeTaskId) return;
     setIsActive(!isActive);
   };
@@ -109,6 +109,10 @@ export default function PomodoroClient() {
     if(newMode === mode) return;
     setIsActive(false);
     setMode(newMode as Mode);
+    // Deactivate task when switching away from pomodoro
+    if (newMode !== 'pomodoro') {
+      setActiveTaskId(null);
+    }
   };
 
   const handleAddTask = (text: string) => {
