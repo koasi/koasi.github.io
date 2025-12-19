@@ -27,10 +27,6 @@ export default function Home() {
             </svg>
             <h1 className="text-2xl font-bold font-headline">Pomodoro Flow</h1>
           </div>
-
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
-          </div>
         </div>
       </header>
       <main className="flex-grow container mx-auto">

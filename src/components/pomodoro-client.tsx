@@ -10,6 +10,7 @@ import { TodoList } from '@/components/todo-list';
 import useLocalStorage from '@/hooks/use-local-storage';
 import { Play, Pause, RotateCcw } from 'lucide-react';
 import * as Tone from 'tone';
+import { ThemeToggle } from './theme-toggle';
 
 const formatTime = (seconds: number) => {
   const mins = Math.floor(seconds / 60);
@@ -115,7 +116,7 @@ export default function PomodoroClient() {
 
   return (
     <div className="flex flex-col md:grid md:grid-cols-2 gap-8 w-full h-full p-4 md:p-8">
-      <Card className="flex flex-col items-center justify-center p-6 space-y-6 shadow-lg">
+      <Card className="relative flex flex-col items-center justify-center p-6 space-y-6 shadow-lg">
         <Tabs value={mode} onValueChange={handleModeChange} className="w-full max-w-sm">
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="pomodoro">Pomodoro</TabsTrigger>
@@ -172,6 +173,7 @@ export default function PomodoroClient() {
 
          <div className="absolute top-4 right-4 md:top-8 md:right-8 flex gap-2">
             <SettingsDialog settings={settings} onSave={setSettings} />
+            <ThemeToggle />
         </div>
         
         <p className="text-muted-foreground">Completed Pomodoros: {completedPomodoros}</p>
