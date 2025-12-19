@@ -1,13 +1,14 @@
 'use client';
 
 import type { FC, FormEvent } from 'react';
-import { Plus, Trash2 } from 'lucide-react';
+import { Plus, Trash2, Mic } from 'lucide-react';
 import type { Task } from '@/lib/types';
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Checkbox } from './ui/checkbox';
 import { Input } from './ui/input';
 import { ScrollArea } from './ui/scroll-area';
+import { useState, useRef, useEffect } from 'react';
 
 interface TodoListProps {
   tasks: Task[];
@@ -22,14 +23,62 @@ export const TodoList: FC<TodoListProps> = ({
   onToggleTask,
   onDeleteTask,
 }) => {
+  const [isListening, setIsListening] = useState(false);
+  const recognitionRef = useRef<any>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const SpeechRecognition =
+        window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (SpeechRecognition) {
+        const recognition = new SpeechRecognition();
+        recognition.continuous = false;
+        recognition.lang = 'zh-TW';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+
+        recognition.onresult = (event) => {
+          const transcript = event.results[0][0].transcript;
+          onAddTask(transcript);
+          setIsListening(false);
+        };
+
+        recognition.onerror = (event) => {
+          console.error('Speech recognition error', event.error);
+          setIsListening(false);
+        };
+
+        recognition.onend = () => {
+          setIsListening(false);
+        };
+        
+        recognitionRef.current = recognition;
+      }
+    }
+  }, [onAddTask]);
+
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const input = event.currentTarget.elements.namedItem('task-input') as HTMLInputElement;
-    if (input.value.trim()) {
-      onAddTask(input.value.trim());
-      input.value = '';
+    if (inputRef.current && inputRef.current.value.trim()) {
+      onAddTask(inputRef.current.value.trim());
+      inputRef.current.value = '';
     }
   };
+
+  const handleVoiceInput = () => {
+    if (recognitionRef.current) {
+      if (isListening) {
+        recognitionRef.current.stop();
+      } else {
+        recognitionRef.current.start();
+        setIsListening(true);
+      }
+    } else {
+      alert('您的瀏覽器不支援語音辨識功能。');
+    }
+  };
+
 
   return (
     <Card className="w-full h-full shadow-lg">
@@ -38,10 +87,19 @@ export const TodoList: FC<TodoListProps> = ({
       </CardHeader>
       <CardContent className="flex flex-col h-[calc(100%-80px)]">
         <form onSubmit={handleSubmit} className="flex gap-2 mb-4">
-          <Input name="task-input" placeholder="Add a new task..." />
+          <Input 
+            ref={inputRef}
+            name="task-input" 
+            placeholder={isListening ? "正在聆聽..." : "Add a new task..."}
+          />
           <Button type="submit" size="icon" aria-label="Add Task">
             <Plus />
           </Button>
+          {recognitionRef.current && (
+            <Button type="button" size="icon" aria-label="Add Task with voice" onClick={handleVoiceInput} variant={isListening ? 'destructive' : 'outline'}>
+              <Mic />
+            </Button>
+          )}
         </form>
         <ScrollArea className="flex-grow pr-4">
           <div className="space-y-3">
