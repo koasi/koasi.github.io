@@ -11,6 +11,7 @@ import useLocalStorage from '@/hooks/use-local-storage';
 import { Play, Pause, RotateCcw } from 'lucide-react';
 import * as Tone from 'tone';
 import { IncenseTimer } from './incense-timer';
+import { useTheme } from 'next-themes';
 
 const formatTime = (seconds: number) => {
   const mins = Math.floor(seconds / 60);
@@ -47,28 +48,15 @@ export default function PomodoroClient() {
   
   const activeTask = tasks.find(task => task.id === activeTaskId);
   
-  const timeRemaining = activeTask?.timeRemaining ?? (mode === 'pomodoro' ? getInitialTimeForMode('pomodoro') : getInitialTimeForMode(mode));
-
-  const setTimeRemaining = useCallback((newTime: number | ((t: number) => number)) => {
-    if (mode === 'pomodoro' && activeTaskId) {
-      setTasks(prevTasks => prevTasks.map(task => {
-        if (task.id === activeTaskId) {
-          const oldTime = task.timeRemaining;
-          const updatedTime = typeof newTime === 'function' ? newTime(oldTime) : newTime;
-          return { ...task, timeRemaining: updatedTime };
-        }
-        return task;
-      }));
-    } else if (mode !== 'pomodoro') {
-      // This is a bit of a hack, but we'll store break time in a separate state
-      // that is not persisted. The main timeRemaining logic is now tied to tasks.
-    }
-  }, [mode, activeTaskId, setTasks]);
-  
   const [breakTime, setBreakTime] = useState(getInitialTimeForMode('shortBreak'));
 
-  const effectiveTimeRemaining = mode === 'pomodoro' ? (activeTask?.timeRemaining ?? getInitialTimeForMode('pomodoro')) : breakTime;
+  const effectiveTimeRemaining = mode === 'pomodoro' 
+    ? (activeTask?.timeRemaining ?? getInitialTimeForMode('pomodoro')) 
+    : breakTime;
 
+  const totalDuration = mode === 'pomodoro'
+    ? getInitialTimeForMode('pomodoro')
+    : getInitialTimeForMode(mode);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -91,17 +79,32 @@ export default function PomodoroClient() {
     document.title = `${formatTime(effectiveTimeRemaining)} - ${mode} | Pomodoro Flow`;
   }, [effectiveTimeRemaining, mode]);
 
+  const handleModeChange = useCallback((newMode: string, forceReset: boolean = false) => {
+    const newModeTyped = newMode as Mode;
+    if(newModeTyped === mode && !forceReset) return;
+    
+    setIsActive(false);
+    setMode(newModeTyped);
+    
+    if (newModeTyped !== 'pomodoro') {
+        setActiveTaskId(null); // Deactivate task when switching to breaks
+        setBreakTime(getInitialTimeForMode(newModeTyped));
+    }
+  }, [mode, getInitialTimeForMode, setActiveTaskId]);
+
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
     if (isActive && effectiveTimeRemaining > 0) {
       interval = setInterval(() => {
         if (mode === 'pomodoro') {
-            setTimeRemaining((time) => time - 1);
+            setTasks(prevTasks => prevTasks.map(task => 
+                task.id === activeTaskId ? { ...task, timeRemaining: task.timeRemaining - 1 } : task
+            ));
         } else {
             setBreakTime(t => t - 1);
         }
       }, 1000);
-    } else if (isActive && effectiveTimeRemaining === 0) {
+    } else if (isActive && effectiveTimeRemaining <= 0) {
       if (settings.soundEnabled && synth.current) {
         synth.current.triggerAttackRelease("C4", "0.5");
       }
@@ -118,36 +121,23 @@ export default function PomodoroClient() {
         const newCompletedCount = completedPomodoros + 1;
         setCompletedPomodoros(newCompletedCount);
         const nextMode = newCompletedCount % 4 === 0 ? 'longBreak' : 'shortBreak';
-        handleModeChange(nextMode, true); // Automatically switch to break
-      } else {
-        handleModeChange('pomodoro', true); // Automatically switch to pomodoro
+        handleModeChange(nextMode, true);
+      } else { // break finished
+        handleModeChange('pomodoro', true);
       }
-      setIsActive(false);
+      setIsActive(false); // Stop timer after it finishes
     }
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [isActive, effectiveTimeRemaining, mode, settings.soundEnabled, completedPomodoros, activeTaskId, getInitialTimeForMode, setTimeRemaining, setTasks, setCompletedPomodoros]);
+  }, [isActive, effectiveTimeRemaining, mode, settings.soundEnabled, completedPomodoros, activeTaskId, getInitialTimeForMode, setTasks, setCompletedPomodoros, handleModeChange]);
 
 
   const handleStartPause = () => {
-    if (mode === 'pomodoro' && !activeTaskId) return;
+    if (mode === 'pomodoro' && !activeTaskId) return; // Cant start pomodoro without a task
     setIsActive(!isActive);
   };
   
-  const handleModeChange = (newMode: string, forceReset: boolean = false) => {
-    const newModeTyped = newMode as Mode;
-    if(newModeTyped === mode && !forceReset) return;
-    
-    setIsActive(false);
-    setMode(newModeTyped);
-    
-    if (newModeTyped !== 'pomodoro') {
-        setActiveTaskId(null);
-        setBreakTime(getInitialTimeForMode(newModeTyped));
-    }
-  };
-
   const handleAddTask = (text: string) => {
     const newTask: Task = {
       id: Date.now(),
@@ -176,17 +166,13 @@ export default function PomodoroClient() {
     }
 
     if (activeTaskId === id) {
-      setIsActive(!isActive);
+      setIsActive(!isActive); // Pause/resume current task
     } else {
-      setIsActive(true);
+      setIsActive(true); // Start new task, pausing old one
       setActiveTaskId(id);
     }
   };
   
-  const totalDuration = mode === 'pomodoro'
-    ? getInitialTimeForMode('pomodoro')
-    : getInitialTimeForMode(mode);
-
   const isPomodoroModeWithNoTask = mode === 'pomodoro' && activeTaskId === null;
 
   return (
