@@ -28,6 +28,7 @@ export default function PomodoroClient() {
   const [isActive, setIsActive] = useState(false);
   const [completedPomodoros, setCompletedPomodoros] = useLocalStorage('completed-pomodoros', 0);
   const [tasks, setTasks] = useLocalStorage<Task[]>('pomodoro-tasks', []);
+  const [activeTaskId, setActiveTaskId] = useLocalStorage<number | null>('active-task-id', null);
   
   const synth = useRef<Tone.Synth | null>(null);
 
@@ -53,7 +54,8 @@ export default function PomodoroClient() {
   const resetTimer = useCallback(() => {
     setIsActive(false);
     setTimeRemaining(getInitialTime());
-  }, [getInitialTime]);
+    setActiveTaskId(null);
+  }, [getInitialTime, setActiveTaskId]);
 
   useEffect(() => {
     resetTimer();
@@ -73,6 +75,17 @@ export default function PomodoroClient() {
       if (settings.soundEnabled && synth.current) {
         synth.current.triggerAttackRelease("C4", "0.5");
       }
+      
+      // Mark active task as complete
+      if (mode === 'pomodoro' && activeTaskId) {
+         setTasks(prevTasks => 
+            prevTasks.map(task => 
+                task.id === activeTaskId ? { ...task, completed: true } : task
+            )
+         );
+      }
+
+      // Increment pomodoro count and switch mode
       if (mode === 'pomodoro') {
         setCompletedPomodoros(prev => prev + 1);
         const nextMode = (completedPomodoros + 1) % 4 === 0 ? 'longBreak' : 'shortBreak';
@@ -81,41 +94,24 @@ export default function PomodoroClient() {
         setMode('pomodoro');
       }
       setIsActive(false);
+      setActiveTaskId(null);
     }
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [isActive, timeRemaining, mode, settings.soundEnabled, completedPomodoros, setCompletedPomodoros]);
-
-  // Effect for individual task timers
-  useEffect(() => {
-    const taskInterval = setInterval(() => {
-      setTasks(prevTasks => 
-        prevTasks.map(task => {
-          if (task.isActive && task.timeRemaining > 0) {
-            return { ...task, timeRemaining: task.timeRemaining - 1 };
-          } else if (task.isActive && task.timeRemaining === 0) {
-            if (settings.soundEnabled && synth.current) {
-                synth.current.triggerAttackRelease("A4", "0.5");
-            }
-            return { ...task, isActive: false, completed: true };
-          }
-          return task;
-        })
-      );
-    }, 1000);
-
-    return () => clearInterval(taskInterval);
-  }, [setTasks, settings.soundEnabled]);
+  }, [isActive, timeRemaining, mode, settings.soundEnabled, completedPomodoros, setCompletedPomodoros, activeTaskId, setActiveTaskId, setTasks]);
 
 
   const handleStartPause = () => {
+    // If no task is active, don't allow starting the main timer
+    if (!activeTaskId && !isActive) return;
     setIsActive(!isActive);
   };
   
   const handleModeChange = (newMode: string) => {
     if(newMode === mode) return;
     setIsActive(false);
+    setActiveTaskId(null);
     setMode(newMode as Mode);
   };
 
@@ -124,8 +120,6 @@ export default function PomodoroClient() {
       id: Date.now(),
       text,
       completed: false,
-      timeRemaining: settings.pomodoro * 60,
-      isActive: false,
     };
     setTasks([...tasks, newTask]);
   };
@@ -135,19 +129,33 @@ export default function PomodoroClient() {
   };
 
   const handleDeleteTask = (id: number) => {
+    if (activeTaskId === id) {
+      resetTimer();
+    }
     setTasks(tasks.filter((task) => task.id !== id));
   };
   
   const handleTaskTimerToggle = (id: number) => {
-    setTasks(prevTasks =>
-      prevTasks.map(task =>
-        task.id === id ? { ...task, isActive: !task.isActive } : task
-      )
-    );
+    if (mode !== 'pomodoro') {
+        // Optionally, show a toast or alert that timers can only be run in pomodoro mode
+        return;
+    }
+    if (activeTaskId === id) {
+      // If clicking the active task, pause it
+      setIsActive(false);
+      setActiveTaskId(null);
+    } else {
+      // Clicking a new task
+      setTimeRemaining(getInitialTime()); // Reset timer
+      setActiveTaskId(id);
+      setIsActive(true);
+    }
   };
 
   const circumference = 2 * Math.PI * 140;
   const strokeDashoffset = circumference - (timeRemaining / getInitialTime()) * circumference;
+  
+  const isPomodoroModeAndActive = mode === 'pomodoro' && activeTaskId !== null;
 
   return (
     <div className="flex flex-col md:grid md:grid-cols-2 gap-8 w-full h-full p-4 md:p-8">
@@ -156,6 +164,7 @@ export default function PomodoroClient() {
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="pomodoro">Pomodoro</TabsTrigger>
             <TabsTrigger value="shortBreak">Short Break</TabsTrigger>
+
             <TabsTrigger value="longBreak">Long Break</TabsTrigger>
           </TabsList>
         </Tabs>
@@ -197,9 +206,14 @@ export default function PomodoroClient() {
         </div>
 
         <div className="flex space-x-4">
-          <Button onClick={handleStartPause} size="lg" className="w-32 text-lg font-bold shadow-md">
-            {isActive ? <Pause className="mr-2" /> : <Play className="mr-2" />}
-            {isActive ? 'Pause' : 'Start'}
+          <Button 
+            onClick={handleStartPause} 
+            size="lg" 
+            className="w-32 text-lg font-bold shadow-md"
+            disabled={mode !== 'pomodoro' && !isActive}
+          >
+            {isActive && isPomodoroModeAndActive ? <Pause className="mr-2" /> : <Play className="mr-2" />}
+            {isActive && isPomodoroModeAndActive ? 'Pause' : 'Start'}
           </Button>
           <Button onClick={resetTimer} variant="secondary" size="lg" className="shadow-md">
             <RotateCcw />
@@ -219,6 +233,10 @@ export default function PomodoroClient() {
           settings={settings}
           onSaveSettings={setSettings}
           formatTime={formatTime}
+          activeTaskId={activeTaskId}
+          isTimerActive={isActive}
+          timeRemaining={timeRemaining}
+          isPomodoroMode={mode === 'pomodoro'}
         />
       </div>
     </div>

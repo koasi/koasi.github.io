@@ -28,6 +28,10 @@ interface TodoListProps {
   settings: Settings;
   onSaveSettings: (newSettings: Settings) => void;
   formatTime: (seconds: number) => string;
+  activeTaskId: number | null;
+  isTimerActive: boolean;
+  timeRemaining: number;
+  isPomodoroMode: boolean;
 }
 
 export const TodoList: FC<TodoListProps> = ({
@@ -39,6 +43,10 @@ export const TodoList: FC<TodoListProps> = ({
   settings,
   onSaveSettings,
   formatTime,
+  activeTaskId,
+  isTimerActive,
+  timeRemaining,
+  isPomodoroMode,
 }) => {
   const [isListening, setIsListening] = useState(false);
   const [newTask, setNewTask] = useState('');
@@ -166,47 +174,56 @@ export const TodoList: FC<TodoListProps> = ({
         <ScrollArea className="flex-grow pr-4">
           <div className="space-y-3">
             {tasks.length > 0 ? (
-              tasks.map((task) => (
-                <div
-                  key={task.id}
-                  className="flex items-center gap-3 p-3 rounded-lg bg-background hover:bg-secondary transition-colors"
-                >
-                  <Checkbox
-                    id={`task-${task.id}`}
-                    checked={task.completed}
-                    onCheckedChange={() => onToggleTask(task.id)}
-                  />
-                  <label
-                    htmlFor={`task-${task.id}`}
-                    className={`flex-grow text-sm cursor-pointer ${
-                      task.completed ? 'line-through text-muted-foreground' : ''
-                    }`}
+              tasks.map((task) => {
+                const isTaskActive = activeTaskId === task.id && isTimerActive;
+                return (
+                  <div
+                    key={task.id}
+                    className="flex items-center gap-3 p-3 rounded-lg bg-background hover:bg-secondary transition-colors"
                   >
-                    {task.text}
-                  </label>
-                   <span className="text-sm font-mono text-muted-foreground w-14 text-right">
-                    {formatTime(task.timeRemaining)}
-                  </span>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => onTaskTimerToggle(task.id)}
-                    className="w-8 h-8"
-                    aria-label={`Start/Pause timer for task: ${task.text}`}
-                  >
-                    {task.isActive ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => onDeleteTask(task.id)}
-                    className="w-8 h-8 text-muted-foreground hover:text-destructive"
-                    aria-label={`Delete task: ${task.text}`}
-                  >
-                    <Trash2 className="w-4 h-4" />
-                  </Button>
-                </div>
-              ))
+                    <Checkbox
+                      id={`task-${task.id}`}
+                      checked={task.completed}
+                      onCheckedChange={() => onToggleTask(task.id)}
+                      disabled={isTaskActive}
+                    />
+                    <label
+                      htmlFor={`task-${task.id}`}
+                      onClick={() => onTaskTimerToggle(task.id)}
+                      className={`flex-grow text-sm cursor-pointer ${
+                        task.completed ? 'line-through text-muted-foreground' : ''
+                      } ${ isTaskActive ? 'font-bold text-primary' : '' }`}
+                    >
+                      {task.text}
+                    </label>
+                    <span className="text-sm font-mono text-muted-foreground w-14 text-right">
+                      {activeTaskId === task.id
+                        ? formatTime(timeRemaining)
+                        : formatTime(settings.pomodoro * 60)}
+                    </span>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => onTaskTimerToggle(task.id)}
+                      className="w-8 h-8"
+                      aria-label={`Start/Pause timer for task: ${task.text}`}
+                      disabled={!isPomodoroMode}
+                    >
+                      {isTaskActive ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                    </Button>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => onDeleteTask(task.id)}
+                      className="w-8 h-8 text-muted-foreground hover:text-destructive"
+                      aria-label={`Delete task: ${task.text}`}
+                      disabled={isTaskActive}
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </Button>
+                  </div>
+                )
+              })
             ) : (
               <p className="text-center text-muted-foreground py-8">
                 No tasks yet. Add one to get started!
