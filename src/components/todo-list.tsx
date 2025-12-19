@@ -1,6 +1,6 @@
 'use client';
 
-import type { FC, FormEvent } from 'react';
+import type { FC, FormEvent, RefObject } from 'react';
 import { Plus, Trash2, Mic, Play, Pause } from 'lucide-react';
 import type { Task } from '@/lib/types';
 import { Button } from './ui/button';
@@ -24,12 +24,9 @@ interface TodoListProps {
   onAddTask: (text: string) => void;
   onToggleTask: (id: number) => void;
   onDeleteTask: (id: number) => void;
+  onTaskTimerToggle: (id: number) => void;
   settings: Settings;
   onSaveSettings: (newSettings: Settings) => void;
-  onTaskTimerToggle: (id: number) => void;
-  activeTaskId: number | null;
-  timeRemaining: number;
-  isTimerActive: boolean;
   formatTime: (seconds: number) => string;
 }
 
@@ -38,20 +35,18 @@ export const TodoList: FC<TodoListProps> = ({
   onAddTask,
   onToggleTask,
   onDeleteTask,
+  onTaskTimerToggle,
   settings,
   onSaveSettings,
-  onTaskTimerToggle,
-  activeTaskId,
-  timeRemaining,
-  isTimerActive,
   formatTime,
 }) => {
   const [isListening, setIsListening] = useState(false);
   const [newTask, setNewTask] = useState('');
-  const [isSpeechRecognitionSupported, setIsSpeechRecognitionSupported] = useState(false);
   const recognitionRef = useRef<any>(null);
   const { toast } = useToast();
-
+  const [isSpeechRecognitionSupported, setIsSpeechRecognitionSupported] = useState(false);
+  const formRef: RefObject<HTMLFormElement> = useRef(null);
+  
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const SpeechRecognition =
@@ -71,16 +66,21 @@ export const TodoList: FC<TodoListProps> = ({
         };
 
         recognition.onerror = (event) => {
-          if (event.error === 'not-allowed') {
-            toast({
-              variant: 'destructive',
-              title: 'Speech permission denied',
-              description: 'Please allow microphone access in your browser settings.',
-            });
-          } else {
-            console.error('Speech recognition error', event.error);
-          }
-          setIsListening(false);
+            if (event.error === 'not-allowed') {
+                toast({
+                variant: 'destructive',
+                title: 'Speech permission denied',
+                description: 'Please allow microphone access in your browser settings.',
+                });
+            } else {
+                console.error('Speech recognition error', event.error);
+                toast({
+                    variant: 'destructive',
+                    title: 'Speech recognition error',
+                    description: `Error: ${event.error}`,
+                });
+            }
+            setIsListening(false);
         };
 
         recognition.onend = () => {
@@ -104,6 +104,7 @@ export const TodoList: FC<TodoListProps> = ({
     if (recognitionRef.current) {
       if (isListening) {
         recognitionRef.current.stop();
+        setIsListening(false);
       } else {
           navigator.mediaDevices.getUserMedia({ audio: true }).then(() => {
             recognitionRef.current.start();
@@ -136,7 +137,7 @@ export const TodoList: FC<TodoListProps> = ({
         </div>
       </CardHeader>
       <CardContent className="flex flex-col h-[calc(100%-80px)]">
-        <form onSubmit={handleSubmit} className="flex gap-2 mb-4">
+        <form ref={formRef} onSubmit={handleSubmit} className="flex gap-2 mb-4">
           <div className="relative w-full">
             <Input 
               value={newTask}
@@ -180,12 +181,11 @@ export const TodoList: FC<TodoListProps> = ({
                     className={`flex-grow text-sm cursor-pointer ${
                       task.completed ? 'line-through text-muted-foreground' : ''
                     }`}
-                    onClick={() => onTaskTimerToggle(task.id)}
                   >
                     {task.text}
                   </label>
                    <span className="text-sm font-mono text-muted-foreground w-14 text-right">
-                    {activeTaskId === task.id ? formatTime(timeRemaining) : ''}
+                    {formatTime(task.timeRemaining)}
                   </span>
                   <Button
                     variant="ghost"
@@ -194,7 +194,7 @@ export const TodoList: FC<TodoListProps> = ({
                     className="w-8 h-8"
                     aria-label={`Start/Pause timer for task: ${task.text}`}
                   >
-                    {isTimerActive && activeTaskId === task.id ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                    {task.isActive ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                   </Button>
                   <Button
                     variant="ghost"

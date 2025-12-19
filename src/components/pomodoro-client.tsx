@@ -3,14 +3,12 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { Mode, Task } from '@/lib/types';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { SettingsDialog } from '@/components/settings-dialog';
 import { TodoList } from '@/components/todo-list';
 import useLocalStorage from '@/hooks/use-local-storage';
 import { Play, Pause, RotateCcw } from 'lucide-react';
 import * as Tone from 'tone';
-import { ThemeToggle } from './theme-toggle';
 
 const formatTime = (seconds: number) => {
   const mins = Math.floor(seconds / 60);
@@ -30,7 +28,8 @@ export default function PomodoroClient() {
   const [isActive, setIsActive] = useState(false);
   const [completedPomodoros, setCompletedPomodoros] = useLocalStorage('completed-pomodoros', 0);
   const [tasks, setTasks] = useLocalStorage<Task[]>('pomodoro-tasks', []);
-  const [activeTaskId, setActiveTaskId] = useState<number | null>(null);
+  
+  const synth = useRef<Tone.Synth | null>(null);
 
   const getInitialTime = useCallback(() => {
     switch (mode) {
@@ -44,8 +43,7 @@ export default function PomodoroClient() {
   }, [mode, settings]);
 
   const [timeRemaining, setTimeRemaining] = useState(getInitialTime());
-  const synth = useRef<Tone.Synth | null>(null);
-
+  
   useEffect(() => {
     if (typeof window !== 'undefined') {
       synth.current = new Tone.Synth().toDestination();
@@ -55,7 +53,6 @@ export default function PomodoroClient() {
   const resetTimer = useCallback(() => {
     setIsActive(false);
     setTimeRemaining(getInitialTime());
-    setActiveTaskId(null);
   }, [getInitialTime]);
 
   useEffect(() => {
@@ -77,9 +74,6 @@ export default function PomodoroClient() {
         synth.current.triggerAttackRelease("C4", "0.5");
       }
       if (mode === 'pomodoro') {
-        if (activeTaskId !== null) {
-            setTasks(prevTasks => prevTasks.map(t => t.id === activeTaskId ? {...t, completed: true} : t));
-        }
         setCompletedPomodoros(prev => prev + 1);
         const nextMode = (completedPomodoros + 1) % 4 === 0 ? 'longBreak' : 'shortBreak';
         setMode(nextMode);
@@ -87,38 +81,53 @@ export default function PomodoroClient() {
         setMode('pomodoro');
       }
       setIsActive(false);
-      setActiveTaskId(null);
     }
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [isActive, timeRemaining, mode, settings.soundEnabled, completedPomodoros, setCompletedPomodoros, activeTaskId, setTasks]);
+  }, [isActive, timeRemaining, mode, settings.soundEnabled, completedPomodoros, setCompletedPomodoros]);
+
+  // Effect for individual task timers
+  useEffect(() => {
+    const taskInterval = setInterval(() => {
+      setTasks(prevTasks => 
+        prevTasks.map(task => {
+          if (task.isActive && task.timeRemaining > 0) {
+            return { ...task, timeRemaining: task.timeRemaining - 1 };
+          } else if (task.isActive && task.timeRemaining === 0) {
+            if (settings.soundEnabled && synth.current) {
+                synth.current.triggerAttackRelease("A4", "0.5");
+            }
+            return { ...task, isActive: false, completed: true };
+          }
+          return task;
+        })
+      );
+    }, 1000);
+
+    return () => clearInterval(taskInterval);
+  }, [setTasks, settings.soundEnabled]);
 
 
-  const handleStartPause = (taskId: number | null = null) => {
-    if (taskId !== null && mode !== 'pomodoro') {
-      setMode('pomodoro');
-    }
-
-    if (isActive && activeTaskId === taskId) {
-      setIsActive(false); // Pause if the same task is clicked again
-    } else if (isActive && activeTaskId !== taskId) {
-      setActiveTaskId(taskId); // Switch to a new task while timer is running
-    } else {
-      setIsActive(!isActive); // Start or resume timer
-      setActiveTaskId(taskId);
-    }
+  const handleStartPause = () => {
+    setIsActive(!isActive);
   };
   
   const handleModeChange = (newMode: string) => {
     if(newMode === mode) return;
     setIsActive(false);
-    setActiveTaskId(null);
     setMode(newMode as Mode);
   };
 
   const handleAddTask = (text: string) => {
-    setTasks([...tasks, { id: Date.now(), text, completed: false }]);
+    const newTask: Task = {
+      id: Date.now(),
+      text,
+      completed: false,
+      timeRemaining: settings.pomodoro * 60,
+      isActive: false,
+    };
+    setTasks([...tasks, newTask]);
   };
 
   const handleToggleTask = (id: number) => {
@@ -127,11 +136,16 @@ export default function PomodoroClient() {
 
   const handleDeleteTask = (id: number) => {
     setTasks(tasks.filter((task) => task.id !== id));
-    if(activeTaskId === id) {
-        resetTimer();
-    }
   };
   
+  const handleTaskTimerToggle = (id: number) => {
+    setTasks(prevTasks =>
+      prevTasks.map(task =>
+        task.id === id ? { ...task, isActive: !task.isActive } : task
+      )
+    );
+  };
+
   const circumference = 2 * Math.PI * 140;
   const strokeDashoffset = circumference - (timeRemaining / getInitialTime()) * circumference;
 
@@ -183,7 +197,7 @@ export default function PomodoroClient() {
         </div>
 
         <div className="flex space-x-4">
-          <Button onClick={() => handleStartPause(activeTaskId)} size="lg" className="w-32 text-lg font-bold shadow-md">
+          <Button onClick={handleStartPause} size="lg" className="w-32 text-lg font-bold shadow-md">
             {isActive ? <Pause className="mr-2" /> : <Play className="mr-2" />}
             {isActive ? 'Pause' : 'Start'}
           </Button>
@@ -201,12 +215,9 @@ export default function PomodoroClient() {
           onAddTask={handleAddTask}
           onToggleTask={handleToggleTask}
           onDeleteTask={handleDeleteTask}
+          onTaskTimerToggle={handleTaskTimerToggle}
           settings={settings}
           onSaveSettings={setSettings}
-          onTaskTimerToggle={handleStartPause}
-          activeTaskId={activeTaskId}
-          timeRemaining={timeRemaining}
-          isTimerActive={isActive}
           formatTime={formatTime}
         />
       </div>
