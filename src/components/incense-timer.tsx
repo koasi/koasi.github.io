@@ -1,6 +1,7 @@
+
 "use client";
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useTheme } from '@/components/theme-provider';
 
 interface IncenseTimerProps {
@@ -18,10 +19,22 @@ interface SmokeParticle {
   vy: number;
 }
 
+interface FallingEmbers {
+    x: number;
+    y: number;
+    size: number;
+    opacity: number;
+    vx: number;
+    vy: number;
+}
+
 export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, totalDuration, isBurning }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const { theme } = useTheme();
   const smokeParticles = useRef<SmokeParticle[]>([]);
+  const fallingEmbers = useRef<FallingEmbers[]>([]);
+  const [lastProgressSegment, setLastProgressSegment] = useState(1);
+
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -40,24 +53,48 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
     const height = canvas.height / dpr;
 
     let animationFrameId: number;
+    
+    const progress = Math.max(0, timeRemaining / totalDuration);
+    const currentProgressSegment = Math.floor(progress * 20); // Segment into 5% chunks
+
+    if (isBurning && currentProgressSegment < lastProgressSegment) {
+        const incenseTotalHeight = height * 0.6;
+        const incenseBurntHeight = incenseTotalHeight * (1 - progress);
+        const incenseTopY = height * 0.2 + incenseBurntHeight;
+
+        fallingEmbers.current.push({
+            x: width / 2,
+            y: incenseTopY,
+            size: Math.random() * 1.5 + 1,
+            opacity: 1,
+            vx: Math.random() * 0.2 - 0.1,
+            vy: 0.5 + Math.random() * 0.5,
+        });
+        setLastProgressSegment(currentProgressSegment);
+    }
+     if (!isBurning && progress === 1) { // Reset embers when timer is reset
+        fallingEmbers.current = [];
+        setLastProgressSegment(20);
+    }
+
 
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
+      
+      const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
       const progress = Math.max(0, timeRemaining / totalDuration);
       const incenseTotalHeight = height * 0.6;
       const incenseBurntHeight = incenseTotalHeight * (1 - progress);
       const incenseUnburntHeight = incenseTotalHeight * progress;
       const incenseTopY = height * 0.2 + incenseBurntHeight;
-
-      // 1. Draw Holder
       const holderY = height * 0.8;
       const holderWidth = width * 0.4;
       const holderHeight = height * 0.1;
-      
-      const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      const stickX = width / 2;
+      const stickWidth = 4;
 
-      // Glass effect
+      // 1. Draw Holder
       const glassGradient = ctx.createLinearGradient(0, holderY - holderHeight, 0, holderY);
       if (isDark) {
         glassGradient.addColorStop(0, 'hsla(210, 10%, 25%, 0.5)');
@@ -84,22 +121,34 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
+      // 2. Draw falling embers
+      ctx.fillStyle = isDark ? '#7f7f7f' : '#a0a0a0';
+      fallingEmbers.current.forEach((ember) => {
+        if (ember.y < holderY - holderHeight * 0.3) {
+            ember.x += ember.vx;
+            ember.y += ember.vy;
+            ember.vy += 0.02; // gravity
+        }
+        ctx.globalAlpha = ember.opacity;
+        ctx.beginPath();
+        ctx.arc(ember.x, ember.y, ember.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1.0;
 
-      // 2. Draw Incense Stick
-      const stickX = width / 2;
-      const stickWidth = 4;
-      
+
+      // 3. Draw Incense Stick
       // Ash part
       if (progress < 1) {
-        ctx.fillStyle = isDark ? '#4a5568' : '#a0aec0'; // gray-600 dark:gray-500
+        ctx.fillStyle = isDark ? '#4a5568' : '#a0aec0';
         ctx.fillRect(stickX - stickWidth / 2, height * 0.2, stickWidth, incenseBurntHeight);
       }
 
       // Unburnt part
-      ctx.fillStyle = isDark ? '#78350f' : '#9a3412'; // amber-900 dark:amber-800
+      ctx.fillStyle = isDark ? '#78350f' : '#9a3412';
       ctx.fillRect(stickX - stickWidth / 2, incenseTopY, stickWidth, incenseUnburntHeight);
       
-      // 3. Draw Burning Tip & Smoke
+      // 4. Draw Burning Tip & Smoke
       if (isBurning && timeRemaining > 0) {
         // Glow
         const glowRadius = 7;
@@ -111,20 +160,22 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
         ctx.fillRect(stickX - glowRadius, incenseTopY - glowRadius, glowRadius * 2, glowRadius * 2);
         
         // Tip
-        ctx.fillStyle = 'rgba(239, 68, 68, 1)'; // red-500
+        ctx.fillStyle = 'rgba(239, 68, 68, 1)';
         ctx.beginPath();
         ctx.arc(stickX, incenseTopY, stickWidth / 2 + 1, 0, 2 * Math.PI);
         ctx.fill();
 
         // Generate new smoke particle
-        smokeParticles.current.push({
-          x: stickX,
-          y: incenseTopY,
-          size: Math.random() * 2 + 1,
-          opacity: 0.8,
-          vx: Math.random() * 0.4 - 0.2,
-          vy: -(Math.random() * 0.5 + 0.3),
-        });
+        if (Math.random() > 0.5) { // generate less smoke
+            smokeParticles.current.push({
+              x: stickX,
+              y: incenseTopY,
+              size: Math.random() * 2 + 1,
+              opacity: 0.8,
+              vx: Math.random() * 0.4 - 0.2,
+              vy: -(Math.random() * 0.5 + 0.3),
+            });
+        }
       }
       
       // Update and draw smoke particles
@@ -154,7 +205,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [timeRemaining, totalDuration, isBurning, theme]);
+  }, [timeRemaining, totalDuration, isBurning, theme, lastProgressSegment]);
 
   return (
     <div className="relative w-80 h-80 flex items-center justify-center">
