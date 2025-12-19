@@ -36,8 +36,8 @@ export const TodoList: FC<TodoListProps> = ({
   onSaveSettings,
 }) => {
   const [isListening, setIsListening] = useState(false);
+  const [newTask, setNewTask] = useState('');
   const recognitionRef = useRef<any>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -72,9 +72,9 @@ export const TodoList: FC<TodoListProps> = ({
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (inputRef.current && inputRef.current.value.trim()) {
-      onAddTask(inputRef.current.value.trim());
-      inputRef.current.value = '';
+    if (newTask.trim()) {
+      onAddTask(newTask.trim());
+      setNewTask('');
     }
   };
 
@@ -104,7 +104,8 @@ export const TodoList: FC<TodoListProps> = ({
       <CardContent className="flex flex-col h-[calc(100%-80px)]">
         <form onSubmit={handleSubmit} className="flex gap-2 mb-4">
           <Input 
-            ref={inputRef}
+            value={newTask}
+            onChange={(e) => setNewTask(e.target.value)}
             name="task-input" 
             placeholder={isListening ? "正在聆聽..." : "Add a new task..."}
           />
