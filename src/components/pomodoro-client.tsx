@@ -58,7 +58,7 @@ export default function PomodoroClient() {
     ? (activeTask?.timeRemaining ?? getInitialTimeForMode('pomodoro')) 
     : breakTime;
 
-  const setTimeRemaining = (newTime: number | ((t: number) => number)) => {
+  const setTimeRemaining = useCallback((newTime: number | ((t: number) => number)) => {
     if (mode === 'pomodoro' && activeTaskId) {
       setTasks(prevTasks => prevTasks.map(task => {
         if (task.id === activeTaskId) {
@@ -71,7 +71,7 @@ export default function PomodoroClient() {
     } else if (mode !== 'pomodoro') {
         setBreakTime(newTime);
     }
-  };
+  }, [mode, activeTaskId, setTasks]);
   
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -115,15 +115,16 @@ export default function PomodoroClient() {
                   return task;
               })
            );
-           setActiveTaskId(null);
         }
         setCompletedPomodoros(prev => prev + 1);
         const nextMode = (completedPomodoros + 1) % 4 === 0 ? 'longBreak' : 'shortBreak';
         setMode(nextMode);
+        setIsActive(false);
+        setActiveTaskId(null);
       } else {
         setMode('pomodoro');
+        setIsActive(false);
       }
-      setIsActive(false);
     }
     return () => {
       if (interval) clearInterval(interval);
@@ -173,10 +174,8 @@ export default function PomodoroClient() {
     }
 
     if (activeTaskId === id) {
-      // If clicking the same task, just toggle play/pause
       setIsActive(!isActive);
     } else {
-      // If clicking a new task, make it active and start timer
       setIsActive(true);
       setActiveTaskId(id);
     }
