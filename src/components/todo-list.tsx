@@ -11,6 +11,7 @@ import { ScrollArea } from './ui/scroll-area';
 import { useState, useRef, useEffect } from 'react';
 import { SettingsDialog } from './settings-dialog';
 import { ThemeToggle } from './theme-toggle';
+import { useToast } from '@/hooks/use-toast';
 
 interface Settings {
   pomodoro: number;
@@ -39,6 +40,7 @@ export const TodoList: FC<TodoListProps> = ({
   const [newTask, setNewTask] = useState('');
   const [isSpeechRecognitionSupported, setIsSpeechRecognitionSupported] = useState(false);
   const recognitionRef = useRef<any>(null);
+  const { toast } = useToast();
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -59,7 +61,15 @@ export const TodoList: FC<TodoListProps> = ({
         };
 
         recognition.onerror = (event) => {
-          console.error('Speech recognition error', event.error);
+          if (event.error === 'not-allowed') {
+            toast({
+              variant: 'destructive',
+              title: '語音權限被拒絕',
+              description: '請在瀏覽器設定中允許麥克風存取。',
+            });
+          } else {
+            console.error('Speech recognition error', event.error);
+          }
           setIsListening(false);
         };
 
@@ -70,7 +80,7 @@ export const TodoList: FC<TodoListProps> = ({
         recognitionRef.current = recognition;
       }
     }
-  }, [onAddTask]);
+  }, [onAddTask, toast]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -86,15 +96,27 @@ export const TodoList: FC<TodoListProps> = ({
         recognitionRef.current.stop();
       } else {
         try {
-          recognitionRef.current.start();
-          setIsListening(true);
+          navigator.mediaDevices.getUserMedia({ audio: true }).then(() => {
+            recognitionRef.current.start();
+            setIsListening(true);
+          }).catch(() => {
+             toast({
+              variant: 'destructive',
+              title: '無法取得麥克風權限',
+              description: '請確認您已允許瀏覽器存取麥克風。',
+            });
+            setIsListening(false);
+          });
         } catch (error) {
           console.error("Speech recognition could not be started.", error);
           setIsListening(false);
         }
       }
     } else {
-      alert('您的瀏覽器不支援語音辨識功能。');
+       toast({
+        title: '不支援語音辨識',
+        description: '您的瀏覽器不支援此功能。',
+      });
     }
   };
 
