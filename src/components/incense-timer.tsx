@@ -24,7 +24,7 @@ interface PiledAsh {
     width: number;
 }
 
-const ASH_BREAK_INTERVAL = 5000; // 5 seconds
+const ASH_BREAK_INTERVAL = 8000; // 8 seconds, to let ash grow longer
 
 export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, totalDuration, isBurning }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -35,70 +35,68 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
   const fallingAsh = useRef<FallingAsh[]>([]);
   const piledAsh = useRef<PiledAsh[]>([]);
   const lastBreakTime = useRef<number>(0);
-  const lastProgress = useRef(1);
-
+  
   const resetAnimation = () => {
       smokeParticles.current = [];
       fallingAsh.current = [];
       piledAsh.current = [];
-      lastBreakTime.current = Date.now();
-      lastProgress.current = 1;
+      lastBreakTime.current = 0;
   };
   
-  useEffect(() => {
-    // Reset animation when timer is reset (goes from active to inactive, or time resets to full)
-    const progress = Math.max(0, timeRemaining / totalDuration);
-    if (!isBurning || progress >= 1) {
-        resetAnimation();
-    }
-     lastProgress.current = progress;
-  }, [isBurning, timeRemaining, totalDuration]);
-
-
+  // Reset animation when timer is reset
   useEffect(() => {
     if (!isBurning) {
-        lastBreakTime.current = Date.now();
+        resetAnimation();
+    }
+  }, [isBurning]);
+
+
+  // Effect for breaking off ash
+  useEffect(() => {
+    if (!isBurning) {
         return;
     }
+    
+    // Initialize lastBreakTime when burning starts
     if (lastBreakTime.current === 0) {
         lastBreakTime.current = Date.now();
     }
 
-    const breakInterval = setInterval(() => {
-        if (isBurning && timeRemaining > 0 && timeRemaining < totalDuration) {
-            const dpr = window.devicePixelRatio || 1;
-            const canvas = canvasRef.current;
-            if(!canvas) return;
-            const height = canvas.height / dpr;
-            const width = canvas.width / dpr;
+    const breakIntervalId = setInterval(() => {
+        const dpr = window.devicePixelRatio || 1;
+        const canvas = canvasRef.current;
+        if(!canvas) return;
+        const height = canvas.height / dpr;
+        const width = canvas.width / dpr;
 
-            const incenseTotalHeight = height * 0.6;
-            const burnRate = incenseTotalHeight / totalDuration;
-            
-            const elapsedSinceLastBreak = (Date.now() - lastBreakTime.current) / 1000;
-            const burntHeightSinceLastBreak = burnRate * elapsedSinceLastBreak;
+        const incenseTotalHeight = height * 0.6;
+        const burnRate = incenseTotalHeight / totalDuration;
+        
+        // Calculate how much should have burnt since the last break
+        const elapsedSinceLastBreak = (Date.now() - lastBreakTime.current) / 1000;
+        const burntHeightSinceLastBreak = burnRate * elapsedSinceLastBreak;
+        
+        const currentProgress = 1 - (timeRemaining / totalDuration);
+        const totalBurntHeight = incenseTotalHeight * currentProgress;
 
-            if (burntHeightSinceLastBreak > 1) {
-                const currentProgress = 1 - (timeRemaining / totalDuration);
-                const totalBurntHeight = incenseTotalHeight * currentProgress;
-                
-                fallingAsh.current.push({
-                    x: width / 2,
-                    y: height * 0.2 + totalBurntHeight - burntHeightSinceLastBreak,
-                    height: burntHeightSinceLastBreak,
-                    vy: 0.5,
-                });
-                lastBreakTime.current = Date.now();
-            }
+        if (burntHeightSinceLastBreak > 1) { // Ensure there's something to break off
+            fallingAsh.current.push({
+                x: width / 2,
+                y: height * 0.2 + totalBurntHeight - burntHeightSinceLastBreak,
+                height: burntHeightSinceLastBreak,
+                vy: 0.5,
+            });
+            lastBreakTime.current = Date.now(); // Reset the timer for the next break
         }
     }, ASH_BREAK_INTERVAL);
 
     return () => {
-        clearInterval(breakInterval);
+        clearInterval(breakIntervalId);
     }
   }, [isBurning, timeRemaining, totalDuration]);
 
   
+  // Effect for drawing on canvas
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -107,7 +105,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
     if (!ctx) return;
     
     const dpr = window.devicePixelRatio || 1;
-    const rect = canvas.getBoundingClientRect();
+    let rect = canvas.getBoundingClientRect();
     if (canvas.width !== rect.width * dpr || canvas.height !== rect.height * dpr) {
       canvas.width = rect.width * dpr;
       canvas.height = rect.height * dpr;
@@ -120,24 +118,35 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
     let animationFrameId: number;
     
     const draw = () => {
+      // Recalculate dimensions in case of resize
+      rect = canvas.getBoundingClientRect();
+      if (canvas.width !== rect.width * dpr || canvas.height !== rect.height * dpr) {
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        ctx.scale(dpr, dpr);
+      }
+      
       ctx.clearRect(0, 0, width, height);
       
       const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
       const progress = Math.max(0, timeRemaining / totalDuration);
       const incenseTotalHeight = height * 0.6;
-      const incenseBurntHeight = incenseTotalHeight * (1 - progress);
-      const incenseUnburntHeight = incenseTotalHeight * progress;
-      const incenseTopY = height * 0.2 + incenseBurntHeight;
-
-      const holderY = height * 0.8;
-      const holderWidth = width * 0.4;
-      const holderHeight = height * 0.1;
       const stickX = width / 2;
       const stickWidth = 4;
+      
+      // Calculate current dimensions based on time
+      const unburntHeight = incenseTotalHeight * progress;
+      const burntHeight = incenseTotalHeight * (1 - progress);
+      const unburntTopY = height * 0.2 + burntHeight;
+
       const ashColor = isDark ? '#4a5568' : '#a0aec0';
 
       // 1. Draw Holder
+      const holderY = height * 0.8;
+      const holderWidth = width * 0.4;
+      const holderHeight = height * 0.1;
+      
       const glassGradient = ctx.createLinearGradient(0, holderY - holderHeight, 0, holderY);
       if (isDark) {
         glassGradient.addColorStop(0, 'hsla(210, 10%, 25%, 0.5)');
@@ -165,9 +174,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
       
       // 2. Draw Piled Ash
       let piledHeight = 0;
-      piledAsh.current.forEach(ash => {
-          piledHeight += ash.height;
-      });
+      piledAsh.current.forEach(ash => piledHeight += ash.height);
 
       piledAsh.current.forEach(ash => {
           ctx.fillStyle = ashColor;
@@ -195,7 +202,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
                   height: ash.height/3,
                   width: pileWidth,
               });
-              return false;
+              return false; // Remove from falling array
           }
       });
       
@@ -203,7 +210,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
       // Unburnt part
       if (progress > 0) {
         ctx.fillStyle = isDark ? '#78350f' : '#9a3412';
-        ctx.fillRect(stickX - stickWidth / 2, incenseTopY, stickWidth, incenseUnburntHeight);
+        ctx.fillRect(stickX - stickWidth / 2, unburntTopY, stickWidth, unburntHeight);
       }
       
       // Ash part still on stick (grows since last break)
@@ -212,7 +219,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
           const burnRate = incenseTotalHeight / totalDuration;
           const ashOnStickHeight = burnRate * elapsedSinceBreak;
           ctx.fillStyle = ashColor;
-          ctx.fillRect(stickX - stickWidth / 2, incenseTopY - ashOnStickHeight, stickWidth, ashOnStickHeight);
+          ctx.fillRect(stickX - stickWidth / 2, unburntTopY - ashOnStickHeight, stickWidth, ashOnStickHeight);
       }
 
       // 5. Draw Burning Tip & Smoke
@@ -220,7 +227,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
         const elapsedSinceBreak = (Date.now() - (lastBreakTime.current || Date.now())) / 1000;
         const burnRate = incenseTotalHeight / totalDuration;
         const ashOnStickHeight = burnRate * elapsedSinceBreak;
-        const tipY = incenseTopY - ashOnStickHeight;
+        const tipY = unburntTopY - ashOnStickHeight;
 
         const glowRadius = 7;
         const glowGradient = ctx.createRadialGradient(stickX, tipY, 0, stickX, tipY, glowRadius);
