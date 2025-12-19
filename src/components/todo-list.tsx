@@ -9,12 +9,22 @@ import { Checkbox } from './ui/checkbox';
 import { Input } from './ui/input';
 import { ScrollArea } from './ui/scroll-area';
 import { useState, useRef, useEffect } from 'react';
+import { SettingsDialog } from './settings-dialog';
+import { ThemeToggle } from './theme-toggle';
 
+interface Settings {
+  pomodoro: number;
+  shortBreak: number;
+  longBreak: number;
+  soundEnabled: boolean;
+}
 interface TodoListProps {
   tasks: Task[];
   onAddTask: (text: string) => void;
   onToggleTask: (id: number) => void;
   onDeleteTask: (id: number) => void;
+  settings: Settings;
+  onSaveSettings: (newSettings: Settings) => void;
 }
 
 export const TodoList: FC<TodoListProps> = ({
@@ -22,6 +32,8 @@ export const TodoList: FC<TodoListProps> = ({
   onAddTask,
   onToggleTask,
   onDeleteTask,
+  settings,
+  onSaveSettings,
 }) => {
   const [isListening, setIsListening] = useState(false);
   const recognitionRef = useRef<any>(null);
@@ -81,9 +93,13 @@ export const TodoList: FC<TodoListProps> = ({
 
 
   return (
-    <Card className="w-full h-full shadow-lg">
-      <CardHeader>
+    <Card className="w-full h-full shadow-lg relative">
+      <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="font-headline">To-Do List</CardTitle>
+        <div className="flex gap-2">
+            <SettingsDialog settings={settings} onSave={onSaveSettings} />
+            <ThemeToggle />
+        </div>
       </CardHeader>
       <CardContent className="flex flex-col h-[calc(100%-80px)]">
         <form onSubmit={handleSubmit} className="flex gap-2 mb-4">

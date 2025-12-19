@@ -170,11 +170,6 @@ export default function PomodoroClient() {
             <RotateCcw />
           </Button>
         </div>
-
-         <div className="absolute top-4 right-4 md:top-8 md:right-8 flex gap-2">
-            <SettingsDialog settings={settings} onSave={setSettings} />
-            <ThemeToggle />
-        </div>
         
         <p className="text-muted-foreground">Completed Pomodoros: {completedPomodoros}</p>
 
@@ -185,6 +180,8 @@ export default function PomodoroClient() {
           onAddTask={handleAddTask}
           onToggleTask={handleToggleTask}
           onDeleteTask={handleDeleteTask}
+          settings={settings}
+          onSaveSettings={setSettings}
         />
       </div>
     </div>
