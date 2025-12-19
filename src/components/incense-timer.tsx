@@ -224,10 +224,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
 
       // 5. Draw Burning Tip & Smoke
       if (isBurning && timeRemaining > 0) {
-        const elapsedSinceBreak = (Date.now() - (lastBreakTime.current || Date.now())) / 1000;
-        const burnRate = incenseTotalHeight / totalDuration;
-        const ashOnStickHeight = burnRate * elapsedSinceBreak;
-        const tipY = unburntTopY - ashOnStickHeight;
+        const tipY = unburntTopY; // The top of the unburnt stick
 
         const glowRadius = 7;
         const glowGradient = ctx.createRadialGradient(stickX, tipY, 0, stickX, tipY, glowRadius);
@@ -245,7 +242,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
         if (Math.random() > 0.5) {
             smokeParticles.current.push({
               x: stickX,
-              y: tipY,
+              y: tipY, // Smoke originates from the burning tip
               size: Math.random() * 2 + 1,
               opacity: 0.8,
               vx: Math.random() * 0.4 - 0.2,
