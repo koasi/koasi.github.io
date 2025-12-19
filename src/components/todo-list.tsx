@@ -37,6 +37,7 @@ export const TodoList: FC<TodoListProps> = ({
 }) => {
   const [isListening, setIsListening] = useState(false);
   const [newTask, setNewTask] = useState('');
+  const [isSpeechRecognitionSupported, setIsSpeechRecognitionSupported] = useState(false);
   const recognitionRef = useRef<any>(null);
 
   useEffect(() => {
@@ -44,6 +45,7 @@ export const TodoList: FC<TodoListProps> = ({
       const SpeechRecognition =
         window.SpeechRecognition || window.webkitSpeechRecognition;
       if (SpeechRecognition) {
+        setIsSpeechRecognitionSupported(true);
         const recognition = new SpeechRecognition();
         recognition.continuous = false;
         recognition.lang = 'zh-TW';
@@ -83,8 +85,13 @@ export const TodoList: FC<TodoListProps> = ({
       if (isListening) {
         recognitionRef.current.stop();
       } else {
-        recognitionRef.current.start();
-        setIsListening(true);
+        try {
+          recognitionRef.current.start();
+          setIsListening(true);
+        } catch (error) {
+          console.error("Speech recognition could not be started.", error);
+          setIsListening(false);
+        }
       }
     } else {
       alert('您的瀏覽器不支援語音辨識功能。');
@@ -103,20 +110,30 @@ export const TodoList: FC<TodoListProps> = ({
       </CardHeader>
       <CardContent className="flex flex-col h-[calc(100%-80px)]">
         <form onSubmit={handleSubmit} className="flex gap-2 mb-4">
-          <Input 
-            value={newTask}
-            onChange={(e) => setNewTask(e.target.value)}
-            name="task-input" 
-            placeholder={isListening ? "正在聆聽..." : "Add a new task..."}
-          />
+          <div className="relative w-full">
+            <Input 
+              value={newTask}
+              onChange={(e) => setNewTask(e.target.value)}
+              name="task-input" 
+              placeholder={isListening ? "正在聆聽..." : "Add a new task..."}
+              className={isSpeechRecognitionSupported ? "pr-10" : ""}
+            />
+            {isSpeechRecognitionSupported && (
+              <Button 
+                type="button" 
+                size="icon" 
+                variant={isListening ? 'destructive' : 'ghost'} 
+                onClick={handleVoiceInput}
+                className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8"
+                aria-label="Add task with voice"
+              >
+                <Mic className="h-4 w-4" />
+              </Button>
+            )}
+          </div>
           <Button type="submit" size="icon" aria-label="Add Task">
             <Plus />
           </Button>
-          {recognitionRef.current && (
-            <Button type="button" size="icon" aria-label="Add Task with voice" onClick={handleVoiceInput} variant={isListening ? 'destructive' : 'outline'}>
-              <Mic />
-            </Button>
-          )}
         </form>
         <ScrollArea className="flex-grow pr-4">
           <div className="space-y-3">
