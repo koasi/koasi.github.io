@@ -1,0 +1,17 @@
+{
+  "name": "Pomodoro Flow",
+  "short_name": "Pomodoro",
+  "description": "A Pomodoro timer with a to-do list to help you stay focused.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFF3E0",
+  "theme_color": "#FFB347",
+  "icons": [
+    {
+      "src": "/tomato.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
