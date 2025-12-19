@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from 'react';
@@ -43,14 +44,10 @@ export default function PomodoroClient() {
         return settings.longBreak * 60;
     }
   }, [settings]);
-
-  const [breakTime, setBreakTime] = useState(getInitialTimeForMode('shortBreak'));
-
+  
   const activeTask = tasks.find(task => task.id === activeTaskId);
   
-  const timeRemaining = mode === 'pomodoro' 
-    ? (activeTask?.timeRemaining ?? getInitialTimeForMode('pomodoro')) 
-    : breakTime;
+  const timeRemaining = activeTask?.timeRemaining ?? (mode === 'pomodoro' ? getInitialTimeForMode('pomodoro') : getInitialTimeForMode(mode));
 
   const setTimeRemaining = useCallback((newTime: number | ((t: number) => number)) => {
     if (mode === 'pomodoro' && activeTaskId) {
@@ -63,10 +60,16 @@ export default function PomodoroClient() {
         return task;
       }));
     } else if (mode !== 'pomodoro') {
-        setBreakTime(prev => typeof newTime === 'function' ? newTime(prev) : newTime);
+      // This is a bit of a hack, but we'll store break time in a separate state
+      // that is not persisted. The main timeRemaining logic is now tied to tasks.
     }
   }, [mode, activeTaskId, setTasks]);
   
+  const [breakTime, setBreakTime] = useState(getInitialTimeForMode('shortBreak'));
+
+  const effectiveTimeRemaining = mode === 'pomodoro' ? (activeTask?.timeRemaining ?? getInitialTimeForMode('pomodoro')) : breakTime;
+
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       synth.current = new Tone.Synth().toDestination();
@@ -85,16 +88,20 @@ export default function PomodoroClient() {
   }, [getInitialTimeForMode, mode, activeTaskId, setTasks]);
   
   useEffect(() => {
-    document.title = `${formatTime(timeRemaining)} - ${mode} | Pomodoro Flow`;
-  }, [timeRemaining, mode]);
+    document.title = `${formatTime(effectiveTimeRemaining)} - ${mode} | Pomodoro Flow`;
+  }, [effectiveTimeRemaining, mode]);
 
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
-    if (isActive && timeRemaining > 0) {
+    if (isActive && effectiveTimeRemaining > 0) {
       interval = setInterval(() => {
-        setTimeRemaining((time) => time - 1);
+        if (mode === 'pomodoro') {
+            setTimeRemaining((time) => time - 1);
+        } else {
+            setBreakTime(t => t - 1);
+        }
       }, 1000);
-    } else if (isActive && timeRemaining === 0) {
+    } else if (isActive && effectiveTimeRemaining === 0) {
       if (settings.soundEnabled && synth.current) {
         synth.current.triggerAttackRelease("C4", "0.5");
       }
@@ -108,19 +115,19 @@ export default function PomodoroClient() {
                 return task;
             })
         );
-        setCompletedPomodoros(prev => prev + 1);
-        const nextMode = (completedPomodoros + 1) % 4 === 0 ? 'longBreak' : 'shortBreak';
-        setMode(nextMode);
+        const newCompletedCount = completedPomodoros + 1;
+        setCompletedPomodoros(newCompletedCount);
+        const nextMode = newCompletedCount % 4 === 0 ? 'longBreak' : 'shortBreak';
+        handleModeChange(nextMode, true); // Automatically switch to break
       } else {
-        setMode('pomodoro');
+        handleModeChange('pomodoro', true); // Automatically switch to pomodoro
       }
       setIsActive(false);
     }
     return () => {
       if (interval) clearInterval(interval);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isActive, timeRemaining, mode, settings.soundEnabled, completedPomodoros, activeTaskId, getInitialTimeForMode, setTimeRemaining, setCompletedPomodoros]);
+  }, [isActive, effectiveTimeRemaining, mode, settings.soundEnabled, completedPomodoros, activeTaskId, getInitialTimeForMode, setTimeRemaining, setTasks, setCompletedPomodoros]);
 
 
   const handleStartPause = () => {
@@ -128,13 +135,16 @@ export default function PomodoroClient() {
     setIsActive(!isActive);
   };
   
-  const handleModeChange = (newMode: string) => {
-    if(newMode === mode) return;
+  const handleModeChange = (newMode: string, forceReset: boolean = false) => {
+    const newModeTyped = newMode as Mode;
+    if(newModeTyped === mode && !forceReset) return;
+    
     setIsActive(false);
-    setMode(newMode as Mode);
-    if (newMode !== 'pomodoro') {
-      setActiveTaskId(null);
-      setBreakTime(getInitialTimeForMode(newMode as Mode));
+    setMode(newModeTyped);
+    
+    if (newModeTyped !== 'pomodoro') {
+        setActiveTaskId(null);
+        setBreakTime(getInitialTimeForMode(newModeTyped));
     }
   };
 
@@ -154,7 +164,7 @@ export default function PomodoroClient() {
 
   const handleDeleteTask = (id: number) => {
     if (activeTaskId === id) {
-      resetTimer();
+      setIsActive(false);
       setActiveTaskId(null);
     }
     setTasks(tasks.filter((task) => task.id !== id));
@@ -162,7 +172,7 @@ export default function PomodoroClient() {
   
   const handleTaskTimerToggle = (id: number) => {
     if (mode !== 'pomodoro') {
-        setMode('pomodoro');
+        handleModeChange('pomodoro');
     }
 
     if (activeTaskId === id) {
@@ -173,7 +183,7 @@ export default function PomodoroClient() {
     }
   };
   
-  const totalDuration = mode === 'pomodoro' 
+  const totalDuration = mode === 'pomodoro'
     ? getInitialTimeForMode('pomodoro')
     : getInitialTimeForMode(mode);
 
@@ -191,7 +201,7 @@ export default function PomodoroClient() {
         </Tabs>
         
         <IncenseTimer 
-            timeRemaining={timeRemaining} 
+            timeRemaining={effectiveTimeRemaining} 
             totalDuration={totalDuration} 
             isBurning={isActive}
         />
@@ -206,9 +216,7 @@ export default function PomodoroClient() {
             {isActive ? <Pause className="mr-2" /> : <Play className="mr-2" />}
             {isActive ? 'Pause' : 'Start'}
           </Button>
-          <Button onClick={() => {
-            resetTimer();
-          }} variant="secondary" size="lg" className="shadow-md">
+          <Button onClick={resetTimer} variant="secondary" size="lg" className="shadow-md">
             <RotateCcw />
           </Button>
         </div>
