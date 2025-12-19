@@ -43,7 +43,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
       lastBreakTime.current = 0;
   };
   
-  // Reset animation when timer is reset
+  // Reset animation when timer is reset (stops burning)
   useEffect(() => {
     if (!isBurning) {
         resetAnimation();
@@ -72,12 +72,11 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
         const incenseTotalHeight = height * 0.6;
         const burnRate = incenseTotalHeight / totalDuration;
         
-        // Calculate how much should have burnt since the last break
-        const elapsedSinceLastBreak = (Date.now() - lastBreakTime.current) / 1000;
-        const burntHeightSinceLastBreak = burnRate * elapsedSinceLastBreak;
-        
         const currentProgress = 1 - (timeRemaining / totalDuration);
         const totalBurntHeight = incenseTotalHeight * currentProgress;
+
+        const elapsedSinceLastBreak = (Date.now() - lastBreakTime.current) / 1000;
+        const burntHeightSinceLastBreak = burnRate * elapsedSinceLastBreak;
 
         if (burntHeightSinceLastBreak > 1) { // Ensure there's something to break off
             fallingAsh.current.push({
@@ -176,13 +175,16 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
       let piledHeight = 0;
       piledAsh.current.forEach(ash => piledHeight += ash.height);
 
+      let currentPileY = holderY - holderHeight * 0.2;
       piledAsh.current.forEach(ash => {
           ctx.fillStyle = ashColor;
           ctx.beginPath();
-          const currentPileY = (holderY - holderHeight * 0.2) - (piledHeight - ash.y);
-          ctx.ellipse(ash.x, currentPileY, ash.width / 2, ash.height/2);
+          currentPileY -= ash.height / 2; // Move up by half the height of the current piece
+          ctx.ellipse(ash.x, currentPileY, ash.width / 2, ash.height/2, 0, 0, 2*Math.PI);
           ctx.fill();
+          currentPileY -= ash.height / 2; // Move up by the other half for the next piece
       });
+
 
       // 3. Draw and update falling ash
       fallingAsh.current = fallingAsh.current.filter(ash => {
@@ -199,7 +201,7 @@ export const IncenseTimer: React.FC<IncenseTimerProps> = ({ timeRemaining, total
               piledAsh.current.push({
                   x: ash.x,
                   y: piledHeight, // Use current total height as base y
-                  height: ash.height/3,
+                  height: ash.height/3, // Becomes squashed on impact
                   width: pileWidth,
               });
               return false; // Remove from falling array
