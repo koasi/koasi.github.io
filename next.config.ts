@@ -1,6 +1,6 @@
 import type {NextConfig} from 'next';
 
-const repoName = process.env.REPO_NAME || 'your-repo-name';
+const repoName = process.env.REPO_NAME || 'Pomodoro';
 
 const nextConfig: NextConfig = {
   /* config options here */
