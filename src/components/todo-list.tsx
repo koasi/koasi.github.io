@@ -71,18 +71,19 @@ export const TodoList: FC<TodoListProps> = ({
   
 
   const filteredTasks = useMemo(() => {
+    const pomodoroDuration = settings.pomodoro * 60;
     switch (filter) {
       case 'done':
         return tasks.filter(task => task.completed);
       case 'counting down':
-        return tasks.filter(task => !task.completed && task.started);
+        return tasks.filter(task => !task.completed && task.timeRemaining < pomodoroDuration);
       case 'no start':
-        return tasks.filter(task => !task.completed && !task.started);
+        return tasks.filter(task => !task.completed && task.timeRemaining === pomodoroDuration);
       case 'all':
       default:
-        return tasks;
+        return tasks.filter(task => !task.completed);
     }
-  }, [tasks, filter]);
+  }, [tasks, filter, settings.pomodoro]);
 
   useEffect(() => {
     setCurrentPage(1);

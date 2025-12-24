@@ -67,7 +67,7 @@ export default function PomodoroClient() {
     setIsActive(false);
     if (mode === 'pomodoro' && activeTaskId) {
       setTasks(prevTasks => prevTasks.map(t => 
-        t.id === activeTaskId ? { ...t, timeRemaining: getInitialTimeForMode('pomodoro'), started: false } : t
+        t.id === activeTaskId ? { ...t, timeRemaining: getInitialTimeForMode('pomodoro') } : t
       ));
     } else if (mode !== 'pomodoro') {
       setBreakTime(getInitialTimeForMode(mode));
@@ -112,7 +112,7 @@ export default function PomodoroClient() {
         setTasks(prevTasks => 
             prevTasks.map(task => {
                 if (task.id === activeTaskId) {
-                    return { ...task, completed: true, timeRemaining: getInitialTimeForMode('pomodoro'), started: false };
+                    return { ...task, completed: true, timeRemaining: getInitialTimeForMode('pomodoro') };
                 }
                 return task;
             })
@@ -135,11 +135,6 @@ export default function PomodoroClient() {
   const handleStartPause = () => {
     if (mode === 'pomodoro' && !activeTaskId) return; // Cant start pomodoro without a task
     setIsActive(!isActive);
-    if (!isActive && activeTaskId) {
-      setTasks(prevTasks => prevTasks.map(t =>
-        t.id === activeTaskId ? { ...t, started: true } : t
-      ));
-    }
   };
   
   const handleAddTask = (text: string) => {
@@ -148,7 +143,6 @@ export default function PomodoroClient() {
       text,
       completed: false,
       timeRemaining: getInitialTimeForMode('pomodoro'),
-      started: false,
     };
     setTasks(prevTasks => [...prevTasks, newTask]);
   };
@@ -174,10 +168,6 @@ export default function PomodoroClient() {
     if (activeTaskId === id) {
       setIsActive(!isActive);
     } else {
-      // Mark new task as started
-      setTasks(prevTasks => prevTasks.map(t => 
-        (t.id === id) ? { ...t, started: true } : t
-      ));
       setIsActive(true); // Start the new task
       setActiveTaskId(id);
     }

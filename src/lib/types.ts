@@ -6,5 +6,4 @@ export interface Task {
   text: string;
   completed: boolean;
   timeRemaining: number;
-  started: boolean;
 }
