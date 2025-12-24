@@ -11,7 +11,6 @@ import useLocalStorage from '@/hooks/use-local-storage';
 import { Play, Pause, RotateCcw } from 'lucide-react';
 import * as Tone from 'tone';
 import { IncenseTimer } from './incense-timer';
-import { useTheme } from 'next-themes';
 
 const formatTime = (seconds: number) => {
   const mins = Math.floor(seconds / 60);
@@ -98,7 +97,7 @@ export default function PomodoroClient() {
       interval = setInterval(() => {
         if (mode === 'pomodoro') {
             setTasks(prevTasks => prevTasks.map(task => 
-                task.id === activeTaskId ? { ...task, timeRemaining: task.timeRemaining - 1, started: true } : task
+                task.id === activeTaskId ? { ...task, timeRemaining: task.timeRemaining - 1 } : task
             ));
         } else {
             setBreakTime(t => t - 1);
@@ -175,9 +174,9 @@ export default function PomodoroClient() {
     if (activeTaskId === id) {
       setIsActive(!isActive);
     } else {
-      // If switching to a new task, mark the old one as 'started' but not active.
+      // Mark new task as started
       setTasks(prevTasks => prevTasks.map(t => 
-          (t.id === activeTaskId && t.timeRemaining < getInitialTimeForMode('pomodoro')) ? { ...t, started: true } : t
+        (t.id === id) ? { ...t, started: true } : t
       ));
       setIsActive(true); // Start the new task
       setActiveTaskId(id);

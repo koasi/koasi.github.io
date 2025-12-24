@@ -14,8 +14,18 @@ import { SettingsDialog } from './settings-dialog';
 import { ThemeToggle } from './theme-toggle';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination"
 
 type FilterType = 'all' | 'counting down' | 'no start' | 'done';
+const TASKS_PER_PAGE = 6;
 
 interface Settings {
   pomodoro: number;
@@ -57,20 +67,39 @@ export const TodoList: FC<TodoListProps> = ({
   const [isSpeechRecognitionSupported, setIsSpeechRecognitionSupported] = useState(false);
   const formRef: RefObject<HTMLFormElement> = useRef(null);
   const [filter, setFilter] = useState<FilterType>('all');
+  const [currentPage, setCurrentPage] = useState(1);
+  
 
   const filteredTasks = useMemo(() => {
     switch (filter) {
       case 'done':
         return tasks.filter(task => task.completed);
       case 'counting down':
-        return tasks.filter(task => task.id === activeTaskId && isTimerActive);
+        return tasks.filter(task => !task.completed && task.started);
       case 'no start':
         return tasks.filter(task => !task.completed && !task.started);
       case 'all':
       default:
         return tasks;
     }
-  }, [tasks, filter, activeTaskId, isTimerActive]);
+  }, [tasks, filter]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filter]);
+
+  const totalPages = Math.ceil(filteredTasks.length / TASKS_PER_PAGE);
+  const paginatedTasks = useMemo(() => {
+      const startIndex = (currentPage - 1) * TASKS_PER_PAGE;
+      const endIndex = startIndex + TASKS_PER_PAGE;
+      return filteredTasks.slice(startIndex, endIndex);
+  }, [filteredTasks, currentPage]);
+
+  const handlePageChange = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
   
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -208,8 +237,8 @@ export const TodoList: FC<TodoListProps> = ({
 
         <ScrollArea className="flex-grow pr-4">
           <div className="space-y-3">
-            {filteredTasks.length > 0 ? (
-              filteredTasks.map((task) => {
+            {paginatedTasks.length > 0 ? (
+              paginatedTasks.map((task) => {
                 const isTaskActive = activeTaskId === task.id && isTimerActive;
                 return (
                   <div
@@ -265,6 +294,25 @@ export const TodoList: FC<TodoListProps> = ({
             )}
           </div>
         </ScrollArea>
+        {totalPages > 1 && (
+            <Pagination className="mt-4">
+                <PaginationContent>
+                    <PaginationItem>
+                        <PaginationPrevious href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage - 1); }} />
+                    </PaginationItem>
+                    {[...Array(totalPages)].map((_, i) => (
+                        <PaginationItem key={i}>
+                            <PaginationLink href="#" onClick={(e) => { e.preventDefault(); handlePageChange(i + 1); }} isActive={currentPage === i + 1}>
+                                {i + 1}
+                            </PaginationLink>
+                        </PaginationItem>
+                    ))}
+                    <PaginationItem>
+                        <PaginationNext href="#" onClick={(e) => { e.preventDefault(); handlePageChange(currentPage + 1); }} />
+                    </PaginationItem>
+                </PaginationContent>
+            </Pagination>
+        )}
       </CardContent>
     </Card>
   );
