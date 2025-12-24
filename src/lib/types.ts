@@ -1,3 +1,4 @@
+
 export type Mode = 'pomodoro' | 'shortBreak' | 'longBreak';
 
 export interface Task {
@@ -5,4 +6,5 @@ export interface Task {
   text: string;
   completed: boolean;
   timeRemaining: number;
+  started: boolean;
 }

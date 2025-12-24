@@ -68,7 +68,7 @@ export default function PomodoroClient() {
     setIsActive(false);
     if (mode === 'pomodoro' && activeTaskId) {
       setTasks(prevTasks => prevTasks.map(t => 
-        t.id === activeTaskId ? { ...t, timeRemaining: getInitialTimeForMode('pomodoro') } : t
+        t.id === activeTaskId ? { ...t, timeRemaining: getInitialTimeForMode('pomodoro'), started: false } : t
       ));
     } else if (mode !== 'pomodoro') {
       setBreakTime(getInitialTimeForMode(mode));
@@ -98,7 +98,7 @@ export default function PomodoroClient() {
       interval = setInterval(() => {
         if (mode === 'pomodoro') {
             setTasks(prevTasks => prevTasks.map(task => 
-                task.id === activeTaskId ? { ...task, timeRemaining: task.timeRemaining - 1 } : task
+                task.id === activeTaskId ? { ...task, timeRemaining: task.timeRemaining - 1, started: true } : task
             ));
         } else {
             setBreakTime(t => t - 1);
@@ -113,7 +113,7 @@ export default function PomodoroClient() {
         setTasks(prevTasks => 
             prevTasks.map(task => {
                 if (task.id === activeTaskId) {
-                    return { ...task, completed: true, timeRemaining: getInitialTimeForMode('pomodoro') };
+                    return { ...task, completed: true, timeRemaining: getInitialTimeForMode('pomodoro'), started: false };
                 }
                 return task;
             })
@@ -136,6 +136,11 @@ export default function PomodoroClient() {
   const handleStartPause = () => {
     if (mode === 'pomodoro' && !activeTaskId) return; // Cant start pomodoro without a task
     setIsActive(!isActive);
+    if (!isActive && activeTaskId) {
+      setTasks(prevTasks => prevTasks.map(t =>
+        t.id === activeTaskId ? { ...t, started: true } : t
+      ));
+    }
   };
   
   const handleAddTask = (text: string) => {
@@ -144,6 +149,7 @@ export default function PomodoroClient() {
       text,
       completed: false,
       timeRemaining: getInitialTimeForMode('pomodoro'),
+      started: false,
     };
     setTasks(prevTasks => [...prevTasks, newTask]);
   };
@@ -164,11 +170,16 @@ export default function PomodoroClient() {
     if (mode !== 'pomodoro') {
         handleModeChange('pomodoro');
     }
-
+    
+    // If the selected task is already the active one, just toggle pause/play
     if (activeTaskId === id) {
-      setIsActive(!isActive); // Pause/resume current task
+      setIsActive(!isActive);
     } else {
-      setIsActive(true); // Start new task, pausing old one
+      // If switching to a new task, mark the old one as 'started' but not active.
+      setTasks(prevTasks => prevTasks.map(t => 
+          (t.id === activeTaskId && t.timeRemaining < getInitialTimeForMode('pomodoro')) ? { ...t, started: true } : t
+      ));
+      setIsActive(true); // Start the new task
       setActiveTaskId(id);
     }
   };

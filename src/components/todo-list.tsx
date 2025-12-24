@@ -1,3 +1,4 @@
+
 'use client';
 
 import type { FC, FormEvent, RefObject } from 'react';
@@ -8,10 +9,13 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Checkbox } from './ui/checkbox';
 import { Input } from './ui/input';
 import { ScrollArea } from './ui/scroll-area';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import { SettingsDialog } from './settings-dialog';
 import { ThemeToggle } from './theme-toggle';
 import { useToast } from '@/hooks/use-toast';
+import { cn } from '@/lib/utils';
+
+type FilterType = 'all' | 'counting down' | 'no start' | 'done';
 
 interface Settings {
   pomodoro: number;
@@ -52,6 +56,21 @@ export const TodoList: FC<TodoListProps> = ({
   const { toast } = useToast();
   const [isSpeechRecognitionSupported, setIsSpeechRecognitionSupported] = useState(false);
   const formRef: RefObject<HTMLFormElement> = useRef(null);
+  const [filter, setFilter] = useState<FilterType>('all');
+
+  const filteredTasks = useMemo(() => {
+    switch (filter) {
+      case 'done':
+        return tasks.filter(task => task.completed);
+      case 'counting down':
+        return tasks.filter(task => task.id === activeTaskId && isTimerActive);
+      case 'no start':
+        return tasks.filter(task => !task.completed && !task.started);
+      case 'all':
+      default:
+        return tasks;
+    }
+  }, [tasks, filter, activeTaskId, isTimerActive]);
   
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -137,7 +156,7 @@ export const TodoList: FC<TodoListProps> = ({
 
 
   return (
-    <Card className="w-full h-full shadow-lg relative">
+    <Card className="w-full h-full shadow-lg relative flex flex-col">
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="font-headline">To-Do List</CardTitle>
         <div className="flex gap-2">
@@ -172,10 +191,25 @@ export const TodoList: FC<TodoListProps> = ({
             <Plus />
           </Button>
         </form>
+
+        <div className="flex gap-2 mb-4">
+          {(['all', 'counting down', 'no start', 'done'] as FilterType[]).map(f => (
+            <Button
+              key={f}
+              variant={filter === f ? 'secondary' : 'ghost'}
+              size="sm"
+              onClick={() => setFilter(f)}
+              className="capitalize"
+            >
+              {f}
+            </Button>
+          ))}
+        </div>
+
         <ScrollArea className="flex-grow pr-4">
           <div className="space-y-3">
-            {tasks.length > 0 ? (
-              tasks.map((task) => {
+            {filteredTasks.length > 0 ? (
+              filteredTasks.map((task) => {
                 const isTaskActive = activeTaskId === task.id && isTimerActive;
                 return (
                   <div
@@ -191,9 +225,10 @@ export const TodoList: FC<TodoListProps> = ({
                     <label
                       htmlFor={`task-${task.id}`}
                       onClick={() => onTaskTimerToggle(task.id)}
-                      className={`flex-grow text-sm cursor-pointer ${
-                        task.completed ? 'line-through text-muted-foreground' : ''
-                      } ${ isTaskActive ? 'font-bold text-primary' : '' }`}
+                      className={cn(`flex-grow text-sm cursor-pointer`,
+                        task.completed && 'line-through text-muted-foreground',
+                        isTaskActive && 'font-bold text-primary'
+                      )}
                     >
                       {task.text}
                     </label>
@@ -206,7 +241,7 @@ export const TodoList: FC<TodoListProps> = ({
                       onClick={() => onTaskTimerToggle(task.id)}
                       className="w-8 h-8"
                       aria-label={`Start/Pause timer for task: ${task.text}`}
-                      disabled={!isPomodoroMode}
+                      disabled={!isPomodoroMode && !isTaskActive}
                     >
                       {isTaskActive ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
                     </Button>
@@ -225,7 +260,7 @@ export const TodoList: FC<TodoListProps> = ({
               })
             ) : (
               <p className="text-center text-muted-foreground py-8">
-                No tasks yet. Add one to get started!
+                No tasks for this filter.
               </p>
             )}
           </div>
