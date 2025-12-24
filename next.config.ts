@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
   basePath: process.env.NODE_ENV === 'production' ? `/${repoName}` : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? `https://your-username.github.io/${repoName}/` : '/',
+  assetPrefix: process.env.NODE_ENV === 'production' ? `https://koasi.github.io/${repoName}/` : '/',
   typescript: {
     ignoreBuildErrors: true,
   },
