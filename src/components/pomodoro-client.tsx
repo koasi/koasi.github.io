@@ -11,6 +11,7 @@ import useLocalStorage from '@/hooks/use-local-storage';
 import { Play, Pause, RotateCcw } from 'lucide-react';
 import * as Tone from 'tone';
 import { IncenseTimer } from './incense-timer';
+import { CigaretteTimer } from './cigarette-timer';
 
 const formatTime = (seconds: number) => {
   const mins = Math.floor(seconds / 60);
@@ -24,6 +25,7 @@ export default function PomodoroClient() {
     shortBreak: 5,
     longBreak: 15,
     soundEnabled: true,
+    animationMode: 'incense',
   });
 
   const [mode, setMode] = useState<Mode>('pomodoro');
@@ -129,7 +131,7 @@ export default function PomodoroClient() {
     return () => {
       if (interval) clearInterval(interval);
     };
-  }, [isActive, effectiveTimeRemaining, mode, settings.soundEnabled, completedPomodoros, activeTaskId, getInitialTimeForMode, setTasks, setCompletedPomodoros, handleModeChange]);
+  }, [isActive, effectiveTimeRemaining, mode, settings.soundEnabled, completedPomodoros, activeTaskId, getInitialTimeForMode, setTasks, setCompletedPomodoros, handleModeChange, settings.animationMode]);
 
 
   const handleStartPause = () => {
@@ -186,11 +188,20 @@ export default function PomodoroClient() {
           </TabsList>
         </Tabs>
         
-        <IncenseTimer 
+        {settings.animationMode === 'cigarette' ? (
+          <CigaretteTimer 
             timeRemaining={effectiveTimeRemaining} 
             totalDuration={totalDuration} 
             isBurning={isActive}
-        />
+          />
+        ) : (
+          <IncenseTimer 
+            timeRemaining={effectiveTimeRemaining} 
+            totalDuration={totalDuration} 
+            isBurning={isActive}
+          />
+        )}
+
 
         <div className="flex space-x-4">
           <Button 

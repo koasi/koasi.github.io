@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Settings, Volume2, VolumeX } from 'lucide-react';
@@ -14,13 +15,17 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useState, type FC } from 'react';
+
+type AnimationMode = 'incense' | 'cigarette';
 
 interface Settings {
   pomodoro: number;
   shortBreak: number;
   longBreak: number;
   soundEnabled: boolean;
+  animationMode: AnimationMode;
 }
 
 interface SettingsDialogProps {
@@ -34,9 +39,26 @@ export const SettingsDialog: FC<SettingsDialogProps> = ({ settings, onSave }) =>
   const handleSave = () => {
     onSave(localSettings);
   };
+  
+  // Ensure localSettings has animationMode, providing a default if it's missing
+  // This is for backward compatibility if users have old settings in localStorage
+  useState(() => {
+    if (!localSettings.animationMode) {
+      setLocalSettings(prev => ({ ...prev, animationMode: 'incense' }));
+    }
+  });
+
 
   return (
-    <Dialog onOpenChange={(open) => !open && setLocalSettings(settings)}>
+    <Dialog onOpenChange={(open) => {
+        if (!open) {
+          // when closing, reset to original settings
+          setLocalSettings(settings);
+        } else {
+          // when opening, ensure local state is in sync with latest props
+          setLocalSettings(prev => ({...settings, animationMode: prev.animationMode || 'incense'}));
+        }
+    }}>
       <DialogTrigger asChild>
         <Button variant="outline" size="icon">
           <Settings className="h-[1.2rem] w-[1.2rem]" />
@@ -105,6 +127,25 @@ export const SettingsDialog: FC<SettingsDialogProps> = ({ settings, onSave }) =>
                 {localSettings.soundEnabled ? <Volume2 className="h-5 w-5"/> : <VolumeX className="h-5 w-5"/>}
               </Button>
             </div>
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label className="text-right">Animation</Label>
+            <RadioGroup
+              value={localSettings.animationMode}
+              onValueChange={(value: AnimationMode) =>
+                setLocalSettings({ ...localSettings, animationMode: value })
+              }
+              className="col-span-3 flex gap-4"
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="incense" id="r-incense" />
+                <Label htmlFor="r-incense">Incense</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="cigarette" id="r-cigarette" />
+                <Label htmlFor="r-cigarette">Cigarette</Label>
+              </div>
+            </RadioGroup>
           </div>
         </div>
         <DialogFooter>
