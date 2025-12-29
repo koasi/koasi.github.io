@@ -179,8 +179,8 @@ export default function PomodoroClient() {
 
   return (
     <div className="flex flex-col md:grid md:grid-cols-2 gap-8 w-full h-full p-4 md:p-8">
-      <Card className="relative flex flex-col items-center justify-center p-6 space-y-6 shadow-lg">
-        <Tabs value={mode} onValueChange={handleModeChange} className="w-full max-w-sm">
+      <Card className="relative flex flex-col items-center justify-center p-6 space-y-4 shadow-lg overflow-hidden">
+        <Tabs value={mode} onValueChange={handleModeChange} className="w-full max-w-sm z-10">
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="pomodoro">Pomodoro</TabsTrigger>
             <TabsTrigger value="shortBreak">Short Break</TabsTrigger>
@@ -188,22 +188,24 @@ export default function PomodoroClient() {
           </TabsList>
         </Tabs>
         
-        {settings.animationMode === 'cigarette' ? (
-          <CigaretteTimer 
-            timeRemaining={effectiveTimeRemaining} 
-            totalDuration={totalDuration} 
-            isBurning={isActive}
-          />
-        ) : (
-          <IncenseTimer 
-            timeRemaining={effectiveTimeRemaining} 
-            totalDuration={totalDuration} 
-            isBurning={isActive}
-          />
-        )}
+        <div className="flex-grow flex items-center justify-center w-full h-full">
+            {settings.animationMode === 'cigarette' ? (
+              <CigaretteTimer 
+                timeRemaining={effectiveTimeRemaining} 
+                totalDuration={totalDuration} 
+                isBurning={isActive}
+              />
+            ) : (
+              <IncenseTimer 
+                timeRemaining={effectiveTimeRemaining} 
+                totalDuration={totalDuration} 
+                isBurning={isActive}
+              />
+            )}
+        </div>
 
 
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 z-10">
           <Button 
             onClick={handleStartPause} 
             size="lg" 
@@ -218,7 +220,7 @@ export default function PomodoroClient() {
           </Button>
         </div>
         
-        <p className="text-muted-foreground">Completed Pomodoros: {completedPomodoros}</p>
+        <p className="text-muted-foreground z-10">Completed Pomodoros: {completedPomodoros}</p>
 
       </Card>
       <div className="min-h-[500px] md:min-h-0">
@@ -239,3 +241,5 @@ export default function PomodoroClient() {
     </div>
   );
 }
+
+    
